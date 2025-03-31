@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://bey5tf3ss3lij"]
+
+[ext_resource type="Texture2D" uid="uid://tvd5yb5i54jl" path="res://icon.svg" id="1_y5rs1"]
+[ext_resource type="PackedScene" uid="uid://bnebn015yw8l2" path="res://Scenes/Characters/jack.tscn" id="2_5qpg1"]
+[ext_resource type="Script" uid="uid://bpg2jgjdgxkmp" path="res://Scripts/player.gd" id="3_nbyko"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i86av"]
+size = Vector2(128, 128)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Hello World!"
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(576, 583)
+scale = Vector2(8.98438, 1)
+texture = ExtResource("1_y5rs1")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Icon"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Icon/StaticBody2D"]
+shape = SubResource("RectangleShape2D_i86av")
+
+[node name="Jack" parent="." instance=ExtResource("2_5qpg1")]
+position = Vector2(576, 508)
+
+[node name="Player" type="Node" parent="Jack"]
+script = ExtResource("3_nbyko")

@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+@export var sprite_direction_left : bool
+
 @export_category("Locomotion")
 @export var _speed : float = 8
 @export var _acceleration : float = 16
@@ -8,6 +10,7 @@ extends CharacterBody2D
 @export_category("Jump")
 @export var _jump_height : float = 2.5
 @export var _air_control : float = 0.5
+@export var _jump_dust : PackedScene
 var _jump_velocity : float
 
 @onready var _sprite : Sprite2D = $Sprite2D
@@ -27,10 +30,16 @@ func _ready():
 
 #region Public Methods
 func face_left():
-	_sprite.flip_h = true
+	if sprite_direction_left:
+		_sprite.flip_h = false
+	else:
+		_sprite.flip_h = true
 	
 func face_right():
-	_sprite.flip_h = false
+	if sprite_direction_left:
+		_sprite.flip_h = true
+	else:
+		_sprite.flip_h = false
 	
 func run(direction : float):
 	_direction = direction
@@ -38,6 +47,7 @@ func run(direction : float):
 func jump():
 	if is_on_floor():
 		velocity.y = _jump_velocity
+		_spawn_dust(_jump_dust)
 
 # If velocity.y is less than 0, the character is going go up. 
 # If the character is moving up, we set its velocity to 0 to stop it moving.
@@ -73,3 +83,9 @@ func _air_physics(delta : float):
 		velocity.y += gravity * delta
 		if _direction:
 			velocity.x = move_toward(velocity.x, _direction * _speed, _acceleration * _air_control * delta)
+
+func _spawn_dust(dust : PackedScene):
+	var _dust = dust.instantiate()
+	_dust.position = position
+	_dust.flip_h = _sprite.flip_h
+	get_parent().add_child(_dust)

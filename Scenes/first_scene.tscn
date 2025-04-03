@@ -1,8 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://bey5tf3ss3lij"]
+[gd_scene load_steps=8 format=3 uid="uid://bey5tf3ss3lij"]
 
 [ext_resource type="Texture2D" uid="uid://tvd5yb5i54jl" path="res://icon.svg" id="1_y5rs1"]
 [ext_resource type="PackedScene" uid="uid://bnebn015yw8l2" path="res://Scenes/Characters/jack.tscn" id="2_5qpg1"]
 [ext_resource type="Script" uid="uid://bpg2jgjdgxkmp" path="res://Scripts/player.gd" id="3_nbyko"]
+[ext_resource type="PackedScene" uid="uid://dgs2pwg3ovd1c" path="res://Scenes/Characters/crabby.tscn" id="4_pilgx"]
+[ext_resource type="PackedScene" uid="uid://tn1eqikm0kdm" path="res://Scenes/Characters/pink_star.tscn" id="5_eh6ij"]
+[ext_resource type="PackedScene" uid="uid://bgyxw0r2v2c3e" path="res://Scenes/Characters/fierce_tooth.tscn" id="6_eh6ij"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i86av"]
 size = Vector2(128, 128)
@@ -27,9 +30,18 @@ shape = SubResource("RectangleShape2D_i86av")
 [node name="Jack" parent="." instance=ExtResource("2_5qpg1")]
 position = Vector2(576, 508)
 
-[node name="Player" type="Node" parent="Jack"]
-script = ExtResource("3_nbyko")
-
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(586, 462)
 zoom = Vector2(3, 3)
+
+[node name="Crabby" parent="." instance=ExtResource("4_pilgx")]
+position = Vector2(696, 479)
+
+[node name="Player" type="Node" parent="Crabby"]
+script = ExtResource("3_nbyko")
+
+[node name="Fierce Tooth" parent="." instance=ExtResource("6_eh6ij")]
+position = Vector2(420, 478)
+
+[node name="Pink Star" parent="." instance=ExtResource("5_eh6ij")]
+position = Vector2(500, 491)

@@ -1,7 +1,5 @@
 extends CharacterBody2D
 
-@export var sprite_direction_left : bool
-
 @export_category("Locomotion")
 @export var _speed : float = 8
 @export var _acceleration : float = 16
@@ -13,7 +11,14 @@ extends CharacterBody2D
 @export var _jump_dust : PackedScene
 var _jump_velocity : float
 
+@export_category("Sprite")
+@export var _is_facing_left : bool
+@export var _sprite_direction_left : bool
 @onready var _sprite : Sprite2D = $Sprite2D
+var _was_on_floor : bool
+
+signal changed_direction(is_facing_left : bool)
+signal landed(floor_height : float)
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 # Para assets 16 bits ir a configuración del proyecto/general/fisicas/2d/gravedad predeterminada : 9.8 * 16 * 8
@@ -27,19 +32,24 @@ func _ready():
 	_deceleration *= Global.ppt
 	_jump_height *= Global.ppt
 	_jump_velocity = sqrt(_jump_height * gravity * 2) * -1
+	face_left() if _is_facing_left else face_right()
 
 #region Public Methods
 func face_left():
-	if sprite_direction_left:
+	_is_facing_left = true
+	if _sprite_direction_left:
 		_sprite.flip_h = false
 	else:
 		_sprite.flip_h = true
+	changed_direction.emit(_is_facing_left)
 	
 func face_right():
-	if sprite_direction_left:
+	_is_facing_left = false
+	if _sprite_direction_left:
 		_sprite.flip_h = true
 	else:
 		_sprite.flip_h = false
+	changed_direction.emit(_is_facing_left)
 	
 func run(direction : float):
 	_direction = direction
@@ -58,15 +68,18 @@ func stop_jump():
 #endregion
 
 func _physics_process(delta : float):
-	if sign(_direction) == -1:
+	if not _is_facing_left && sign(_direction) == -1:
 		face_left()
-	elif sign(_direction) == 1:
+	elif _is_facing_left && sign(_direction) == 1:
 		face_right()
 	if is_on_floor():
 		_ground_physics(delta)
 	else:
 		_air_physics(delta)
+	_was_on_floor = is_on_floor()
 	move_and_slide()
+	if not _was_on_floor && is_on_floor():
+		_landed()
 	
 func _ground_physics(delta : float):
 	# decelerate to zero
@@ -83,6 +96,9 @@ func _air_physics(delta : float):
 		velocity.y += gravity * delta
 		if _direction:
 			velocity.x = move_toward(velocity.x, _direction * _speed, _acceleration * _air_control * delta)
+
+func _landed():
+	landed.emit(position.y)
 
 func _spawn_dust(dust : PackedScene):
 	var _dust = dust.instantiate()

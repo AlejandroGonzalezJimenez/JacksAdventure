@@ -251,8 +251,9 @@ height = 22.0
 
 [node name="Fierce Tooth" type="CharacterBody2D"]
 script = ExtResource("1_dufwr")
-sprite_direction_left = true
 _jump_dust = ExtResource("2_qa4du")
+_is_facing_left = true
+_sprite_direction_left = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -13)

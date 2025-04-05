@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://bey5tf3ss3lij"]
+
+[ext_resource type="Script" uid="uid://chk3emgj38dvd" path="res://Scripts/game_manager.gd" id="1_i6g32"]
+[ext_resource type="Script" uid="uid://dw6le4vg1houw" path="res://Scripts/camera.gd" id="1_wowpa"]
+[ext_resource type="PackedScene" uid="uid://cre4dalncoglv" path="res://Scenes/background.tscn" id="2_i6g32"]
+[ext_resource type="PackedScene" uid="uid://bnebn015yw8l2" path="res://Scenes/Characters/jack.tscn" id="3_1l0tm"]
+[ext_resource type="Script" uid="uid://bpg2jgjdgxkmp" path="res://Scripts/player.gd" id="4_v158k"]
+[ext_resource type="PackedScene" uid="uid://b1hr8js8tsiro" path="res://Scenes/Levels/level_1-1.tscn" id="5_h4fw4"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_i6g32")
+
+[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("_subject")]
+position = Vector2(72, -24)
+zoom = Vector2(3, 3)
+script = ExtResource("1_wowpa")
+_subject = NodePath("../Jack")
+_offset = Vector2(2, -1)
+_look_ahead_trans_type = 1
+_look_ahead_ease_Type = 2
+_look_ahead_duration = 2.0
+_floor_height_trans_type = 1
+_floor_height_ease_Type = 1
+
+[node name="Background" parent="Camera2D" instance=ExtResource("2_i6g32")]
+
+[node name="Jack" parent="." instance=ExtResource("3_1l0tm")]
+
+[node name="Player" type="Node" parent="Jack"]
+script = ExtResource("4_v158k")
+
+[node name="Level" parent="." instance=ExtResource("5_h4fw4")]
+
+[connection signal="changed_direction" from="Jack" to="Camera2D" method="_on_subject_changed_direction"]
+[connection signal="landed" from="Jack" to="Camera2D" method="_on_subject_landed"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cj2xp744kh4gn"
+path="res://.godot/imported/406087__yin_yang_jake007__water-splash.mp3-d4e89721b34a5fdd11d97eb7c546eb41.mp3str"
+
+[deps]
+
+source_file="res://Sound Effects/Impacts/406087__yin_yang_jake007__water-splash.mp3"
+dest_files=["res://.godot/imported/406087__yin_yang_jake007__water-splash.mp3-d4e89721b34a5fdd11d97eb7c546eb41.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://bo1wpxdu2wsm8"]
+
+[ext_resource type="Texture2D" uid="uid://5a4l1anvsst3" path="res://Treasure Hunters/Pirate Ship/Sprites/Tilesets/Platforms (32x32).png" id="1_isbmy"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nb51f"]
+texture = ExtResource("1_isbmy")
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_nnt18"]
+sources/0 = SubResource("TileSetAtlasSource_nb51f")
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ewbju"]
+a = Vector2(29, 2)
+b = Vector2(-1, 2)
+
+[node name="Ship Platform 1" type="StaticBody2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_nnt18")
+format = 2
+layer_0/tile_data = PackedInt32Array(1310743, 524288, 4, 1310744, 589824, 4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(370, 321)
+shape = SubResource("SegmentShape2D_ewbju")
+one_way_collision = true

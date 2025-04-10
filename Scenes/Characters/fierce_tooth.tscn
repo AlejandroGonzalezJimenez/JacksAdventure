@@ -250,6 +250,8 @@ radius = 9.0
 height = 22.0
 
 [node name="Fierce Tooth" type="CharacterBody2D"]
+collision_layer = 65536
+collision_mask = 65793
 script = ExtResource("1_dufwr")
 _jump_dust = ExtResource("2_qa4du")
 _is_facing_left = true

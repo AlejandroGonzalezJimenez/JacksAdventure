@@ -27,7 +27,7 @@ _floor_height_ease_Type = 1
 _scroll_speed = -32.0
 
 [node name="Jack" parent="." instance=ExtResource("3_1l0tm")]
-position = Vector2(24, 32)
+position = Vector2(-40, 56)
 _speed = 5.0
 _acceleration = 10.0
 _deceleration = 20.0
@@ -36,10 +36,9 @@ _deceleration = 20.0
 script = ExtResource("4_v158k")
 
 [node name="Level" parent="." instance=ExtResource("5_h4fw4")]
-position = Vector2(136, -48)
 
-[node name="Level 1-2" parent="." instance=ExtResource("7_1l0tm")]
-position = Vector2(-2376, 1120)
+[node name="Level2" parent="." instance=ExtResource("7_1l0tm")]
+position = Vector2(-2040, 680)
 
 [connection signal="changed_direction" from="Jack" to="Camera2D" method="_on_subject_changed_direction"]
 [connection signal="landed" from="Jack" to="Camera2D" method="_on_subject_landed"]

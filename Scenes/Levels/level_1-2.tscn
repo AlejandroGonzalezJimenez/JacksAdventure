@@ -1206,7 +1206,7 @@ sources/3 = SubResource("TileSetAtlasSource_85qyi")
 sources/4 = SubResource("TileSetAtlasSource_iivbl")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1phco"]
-size = Vector2(1794, 1300.5)
+size = Vector2(1800, 1431.13)
 
 [node name="Level" type="Area2D"]
 script = ExtResource("1_b0uwu")
@@ -1262,7 +1262,7 @@ position = Vector2(-544, -9)
 position = Vector2(467, -9)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(559, 7.25)
+position = Vector2(564, -59.5625)
 shape = SubResource("RectangleShape2D_1phco")
 debug_color = Color(0, 0.6, 0.701961, 0)
 

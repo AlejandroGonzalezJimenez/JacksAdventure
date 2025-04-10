@@ -250,6 +250,8 @@ radius = 11.0
 height = 22.0
 
 [node name="Pink Star" type="CharacterBody2D"]
+collision_layer = 65536
+collision_mask = 65793
 script = ExtResource("1_ov85h")
 _jump_dust = ExtResource("2_b7ddn")
 _is_facing_left = true

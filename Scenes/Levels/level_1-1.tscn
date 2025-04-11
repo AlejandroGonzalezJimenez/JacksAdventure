@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://b1hr8js8tsiro"]
+[gd_scene load_steps=26 format=3 uid="uid://b1hr8js8tsiro"]
 
 [ext_resource type="Texture2D" uid="uid://b216ljljooxbm" path="res://Treasure Hunters/Palm Tree Island/Sprites/Terrain/Terrain (32x32).png" id="1_booo5"]
 [ext_resource type="Script" uid="uid://br7o45rvjst03" path="res://Scripts/level.gd" id="1_w4kc1"]
@@ -17,6 +17,8 @@
 [ext_resource type="PackedScene" uid="uid://tn1eqikm0kdm" path="res://Scenes/Characters/pink_star.tscn" id="14_lg4kb"]
 [ext_resource type="PackedScene" uid="uid://dg8h5qgleqx8x" path="res://Scenes/Treasure/silver_coin.tscn" id="16_3rrt1"]
 [ext_resource type="PackedScene" uid="uid://bry83v11glxba" path="res://Scenes/Treasure/gold_coin.tscn" id="17_bcykt"]
+[ext_resource type="PackedScene" uid="uid://xdikldfbmc2g" path="res://Scenes/Treasure/golden_skull.tscn" id="18_bcykt"]
+[ext_resource type="PackedScene" uid="uid://c2hbxwo3mv6d7" path="res://Scenes/Treasure/chest.tscn" id="19_3lm4w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kdu3h"]
 texture = ExtResource("1_booo5")
@@ -796,13 +798,13 @@ position = Vector2(1088, 416)
 position = Vector2(-504, -408)
 
 [node name="Crabby" parent="Enemies" instance=ExtResource("12_4yllm")]
-position = Vector2(640, 496)
+position = Vector2(888, 469)
 
 [node name="Fierce Tooth" parent="Enemies" instance=ExtResource("13_2egns")]
-position = Vector2(600, 496)
+position = Vector2(848, 469)
 
 [node name="Pink Star" parent="Enemies" instance=ExtResource("14_lg4kb")]
-position = Vector2(680, 496)
+position = Vector2(928, 469)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1288.5, -79)
@@ -816,6 +818,13 @@ position = Vector2(38, 47)
 
 [node name="Gold Coin" parent="Treasure" instance=ExtResource("17_bcykt")]
 position = Vector2(265, 23)
+
+[node name="Golden Skull" parent="Treasure" instance=ExtResource("18_bcykt")]
+position = Vector2(489, -42)
+
+[node name="Chest" parent="Treasure" instance=ExtResource("19_3lm4w")]
+position = Vector2(192, 104)
+_total_value = 19
 
 [connection signal="body_entered" from="Water" to="Water" method="_on_body_entered"]
 [connection signal="body_exited" from="Water" to="Water" method="_on_body_exited"]

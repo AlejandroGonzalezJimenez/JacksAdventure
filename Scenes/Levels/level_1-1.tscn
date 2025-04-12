@@ -1,9 +1,9 @@
-[gd_scene load_steps=26 format=3 uid="uid://b1hr8js8tsiro"]
+[gd_scene load_steps=29 format=3 uid="uid://b1hr8js8tsiro"]
 
 [ext_resource type="Texture2D" uid="uid://b216ljljooxbm" path="res://Treasure Hunters/Palm Tree Island/Sprites/Terrain/Terrain (32x32).png" id="1_booo5"]
-[ext_resource type="Script" uid="uid://br7o45rvjst03" path="res://Scripts/level.gd" id="1_w4kc1"]
+[ext_resource type="Script" uid="uid://br7o45rvjst03" path="res://Scripts/Environment/level.gd" id="1_w4kc1"]
 [ext_resource type="Texture2D" uid="uid://f21f0i5nuqtb" path="res://Treasure Hunters/Palm Tree Island/Sprites/Front Palm Trees/Front Palm Bottom and Grass (32x32).png" id="2_w4kc1"]
-[ext_resource type="Script" uid="uid://btnguexlnia26" path="res://Scripts/water.gd" id="3_ox03y"]
+[ext_resource type="Script" uid="uid://btnguexlnia26" path="res://Scripts/Environment/water.gd" id="3_ox03y"]
 [ext_resource type="PackedScene" uid="uid://qdgrq1n211si" path="res://Scenes/Dust/splash.tscn" id="4_3rrt1"]
 [ext_resource type="Texture2D" uid="uid://nfcrol3wdehf" path="res://Treasure Hunters/Merchant Ship/Sprites/Water/Water/Bottom/1.png" id="5_bcykt"]
 [ext_resource type="Texture2D" uid="uid://c3ef6kof2guvr" path="res://Treasure Hunters/Merchant Ship/Sprites/Water/Water/Top/1.png" id="6_3lm4w"]
@@ -19,6 +19,9 @@
 [ext_resource type="PackedScene" uid="uid://bry83v11glxba" path="res://Scenes/Treasure/gold_coin.tscn" id="17_bcykt"]
 [ext_resource type="PackedScene" uid="uid://xdikldfbmc2g" path="res://Scenes/Treasure/golden_skull.tscn" id="18_bcykt"]
 [ext_resource type="PackedScene" uid="uid://c2hbxwo3mv6d7" path="res://Scenes/Treasure/chest.tscn" id="19_3lm4w"]
+[ext_resource type="PackedScene" uid="uid://ck34652ieymj" path="res://Scenes/Treasure/key.tscn" id="20_t3yd5"]
+[ext_resource type="PackedScene" uid="uid://b75hguuvv66ly" path="res://Scenes/Treasure/small_map_2.tscn" id="21_ebuj1"]
+[ext_resource type="PackedScene" uid="uid://cgc7ji5lqb44m" path="res://Scenes/Decorations/spikes.tscn" id="22_2kucg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kdu3h"]
 texture = ExtResource("1_booo5")
@@ -813,18 +816,108 @@ debug_color = Color(0, 0.6, 0.701961, 0)
 
 [node name="Treasure" type="Node2D" parent="."]
 
-[node name="Silver Coin" parent="Treasure" instance=ExtResource("16_3rrt1")]
-position = Vector2(38, 47)
-
-[node name="Gold Coin" parent="Treasure" instance=ExtResource("17_bcykt")]
-position = Vector2(265, 23)
-
 [node name="Golden Skull" parent="Treasure" instance=ExtResource("18_bcykt")]
-position = Vector2(489, -42)
+position = Vector2(968, 72)
 
 [node name="Chest" parent="Treasure" instance=ExtResource("19_3lm4w")]
-position = Vector2(192, 104)
+position = Vector2(2568, 104)
+_is_locked = true
 _total_value = 19
+
+[node name="Key" parent="Treasure" instance=ExtResource("20_t3yd5")]
+position = Vector2(2104, -88)
+
+[node name="Small Map 2" parent="Treasure" instance=ExtResource("21_ebuj1")]
+position = Vector2(2824, 48)
+
+[node name="Coins" type="Node2D" parent="Treasure"]
+
+[node name="Silver Coin" parent="Treasure/Coins" instance=ExtResource("16_3rrt1")]
+position = Vector2(38, 47)
+
+[node name="Silver Coin2" parent="Treasure/Coins" instance=ExtResource("16_3rrt1")]
+position = Vector2(408, -16)
+
+[node name="Silver Coin3" parent="Treasure/Coins" instance=ExtResource("16_3rrt1")]
+position = Vector2(488, -48)
+
+[node name="Silver Coin4" parent="Treasure/Coins" instance=ExtResource("16_3rrt1")]
+position = Vector2(600, -16)
+
+[node name="Silver Coin5" parent="Treasure/Coins" instance=ExtResource("16_3rrt1")]
+position = Vector2(664, -48)
+
+[node name="Silver Coin6" parent="Treasure/Coins" instance=ExtResource("16_3rrt1")]
+position = Vector2(728, -80)
+
+[node name="Silver Coin7" parent="Treasure/Coins" instance=ExtResource("16_3rrt1")]
+position = Vector2(1016, -80)
+
+[node name="Silver Coin8" parent="Treasure/Coins" instance=ExtResource("16_3rrt1")]
+position = Vector2(1144, -16)
+
+[node name="Silver Coin9" parent="Treasure/Coins" instance=ExtResource("16_3rrt1")]
+position = Vector2(712, 96)
+
+[node name="Silver Coin10" parent="Treasure/Coins" instance=ExtResource("16_3rrt1")]
+position = Vector2(1256, -80)
+
+[node name="Silver Coin11" parent="Treasure/Coins" instance=ExtResource("16_3rrt1")]
+position = Vector2(1368, -16)
+
+[node name="Silver Coin12" parent="Treasure/Coins" instance=ExtResource("16_3rrt1")]
+position = Vector2(1256, 96)
+
+[node name="Silver Coin13" parent="Treasure/Coins" instance=ExtResource("16_3rrt1")]
+position = Vector2(1256, 64)
+
+[node name="Silver Coin14" parent="Treasure/Coins" instance=ExtResource("16_3rrt1")]
+position = Vector2(1688, -16)
+
+[node name="Silver Coin15" parent="Treasure/Coins" instance=ExtResource("16_3rrt1")]
+position = Vector2(1848, -16)
+
+[node name="Silver Coin16" parent="Treasure/Coins" instance=ExtResource("16_3rrt1")]
+position = Vector2(1736, -56)
+
+[node name="Silver Coin17" parent="Treasure/Coins" instance=ExtResource("16_3rrt1")]
+position = Vector2(1800, -56)
+
+[node name="Silver Coin18" parent="Treasure/Coins" instance=ExtResource("16_3rrt1")]
+position = Vector2(1768, 8)
+
+[node name="Silver Coin19" parent="Treasure/Coins" instance=ExtResource("16_3rrt1")]
+position = Vector2(1992, 96)
+
+[node name="Silver Coin20" parent="Treasure/Coins" instance=ExtResource("16_3rrt1")]
+position = Vector2(2152, -176)
+
+[node name="Silver Coin21" parent="Treasure/Coins" instance=ExtResource("16_3rrt1")]
+position = Vector2(2328, -208)
+
+[node name="Silver Coin22" parent="Treasure/Coins" instance=ExtResource("16_3rrt1")]
+position = Vector2(2424, -272)
+
+[node name="Silver Coin23" parent="Treasure/Coins" instance=ExtResource("16_3rrt1")]
+position = Vector2(2360, -336)
+
+[node name="Silver Coin24" parent="Treasure/Coins" instance=ExtResource("16_3rrt1")]
+position = Vector2(2536, -88)
+
+[node name="Gold Coin" parent="Treasure/Coins" instance=ExtResource("17_bcykt")]
+position = Vector2(264, 16)
+
+[node name="Gold Coin2" parent="Treasure/Coins" instance=ExtResource("17_bcykt")]
+position = Vector2(792, -112)
+
+[node name="Gold Coin3" parent="Treasure/Coins" instance=ExtResource("17_bcykt")]
+position = Vector2(1256, 32)
+
+[node name="Gold Coin4" parent="Treasure/Coins" instance=ExtResource("17_bcykt")]
+position = Vector2(2360, -368)
+
+[node name="Spikes" parent="." instance=ExtResource("22_2kucg")]
+position = Vector2(-8, 104)
 
 [connection signal="body_entered" from="Water" to="Water" method="_on_body_entered"]
 [connection signal="body_exited" from="Water" to="Water" method="_on_body_exited"]

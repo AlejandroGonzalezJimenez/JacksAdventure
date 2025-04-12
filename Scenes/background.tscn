@@ -1,7 +1,7 @@
 [gd_scene load_steps=24 format=3 uid="uid://cre4dalncoglv"]
 
 [ext_resource type="Texture2D" uid="uid://dnv2peehgudc7" path="res://Treasure Hunters/Palm Tree Island/Sprites/Background/Additional Sky.png" id="1_4aqey"]
-[ext_resource type="Script" uid="uid://c8rwmdu6t2qkl" path="res://Scripts/paralax.gd" id="1_yfwmw"]
+[ext_resource type="Script" uid="uid://c8rwmdu6t2qkl" path="res://Scripts/Environment/paralax.gd" id="1_yfwmw"]
 [ext_resource type="Texture2D" uid="uid://cbuj20s3jx3de" path="res://Treasure Hunters/Palm Tree Island/Sprites/Background/Additional Water.png" id="2_xgxeb"]
 [ext_resource type="Texture2D" uid="uid://deumigubgmjqy" path="res://Treasure Hunters/Palm Tree Island/Sprites/Background/BG Image.png" id="3_ltlj5"]
 [ext_resource type="Texture2D" uid="uid://dd6piiprf17ar" path="res://Treasure Hunters/Palm Tree Island/Sprites/Background/Water Reflect Big 01.png" id="4_jieww"]

@@ -28,6 +28,9 @@ var _water_surface_height : float
 var _is_in_water : bool
 var _is_below_surface : bool
 
+@export_range(1, 100) var _max_health : int = 5
+@onready var _current_health : int = _max_health
+
 signal changed_direction(is_facing_left : bool)
 signal landed(floor_height : float)
 
@@ -46,6 +49,11 @@ func _ready():
 	face_left() if _is_facing_left else face_right()
 
 #region Public Methods
+
+func take_damage(amount : int):
+	_current_health -= amount
+	print(_current_health)
+	# invencible
 
 func set_bounds(min_boundary : Vector2, max_boundary : Vector2):
 	_is_bound = true

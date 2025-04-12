@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bbq04i3x5f4ky" path="res://Treasure Hunters/Merchant Ship/Sprites/Water/Water Splash 1/3.png" id="3_y58mv"]
 [ext_resource type="Texture2D" uid="uid://cohrany5c2to6" path="res://Treasure Hunters/Merchant Ship/Sprites/Water/Water Splash 1/4.png" id="4_ubjk5"]
 [ext_resource type="Texture2D" uid="uid://bx6h716oyemi6" path="res://Treasure Hunters/Merchant Ship/Sprites/Water/Water Splash 1/5.png" id="5_sh7iy"]
-[ext_resource type="Script" uid="uid://8ff51q1ecduh" path="res://Scripts/dust.gd" id="6_pytd4"]
+[ext_resource type="Script" uid="uid://8ff51q1ecduh" path="res://Scripts/Environment/dust.gd" id="6_pytd4"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_egqjt"]
 animations = [{

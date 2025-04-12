@@ -1,6 +1,6 @@
 [gd_scene load_steps=24 format=3 uid="uid://cjudt8nrgddv0"]
 
-[ext_resource type="Script" uid="uid://br7o45rvjst03" path="res://Scripts/level.gd" id="1_b0uwu"]
+[ext_resource type="Script" uid="uid://br7o45rvjst03" path="res://Scripts/Environment/level.gd" id="1_b0uwu"]
 [ext_resource type="Texture2D" uid="uid://drwua8cu2pjto" path="res://Treasure Hunters/Pirate Ship/Sprites/Tilesets/Terrain and Back Wall (32x32).png" id="2_1ppq2"]
 [ext_resource type="Texture2D" uid="uid://5a4l1anvsst3" path="res://Treasure Hunters/Pirate Ship/Sprites/Tilesets/Platforms (32x32).png" id="3_qv4bk"]
 [ext_resource type="Texture2D" uid="uid://bie3e1cc2phxn" path="res://Treasure Hunters/Pirate Ship/Sprites/Decorations/Barrels and Bottles/01.png" id="4_kcw6k"]

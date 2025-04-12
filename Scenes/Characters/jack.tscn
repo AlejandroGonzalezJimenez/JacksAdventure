@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://bnebn015yw8l2"]
+[gd_scene load_steps=55 format=3 uid="uid://bnebn015yw8l2"]
 
 [ext_resource type="Texture2D" uid="uid://38m08waxuspw" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Idle 01.png" id="1_6ryh8"]
 [ext_resource type="Script" uid="uid://4dlfjfbomllq" path="res://Scripts/character.gd" id="1_svv1t"]
@@ -301,9 +301,13 @@ graph_offset = Vector2(120.868, 0)
 radius = 8.0
 height = 26.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mry82"]
+radius = 8.0
+height = 26.0
+
 [node name="Jack" type="CharacterBody2D"]
 collision_layer = 256
-collision_mask = 65537
+collision_mask = 65543
 script = ExtResource("1_svv1t")
 _jump_dust = ExtResource("2_5kux5")
 
@@ -327,3 +331,12 @@ position = Vector2(0, -13)
 shape = SubResource("CapsuleShape2D_svv1t")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[node name="HurtBox" type="Area2D" parent="."]
+collision_layer = 512
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(0, -13)
+shape = SubResource("CapsuleShape2D_mry82")
+debug_color = Color(4.33177e-06, 0.639782, 0.359661, 0.42)

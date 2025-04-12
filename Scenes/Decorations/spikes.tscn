@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://cgc7ji5lqb44m"]
+
+[ext_resource type="Texture2D" uid="uid://6lm4f8qos3yr" path="res://Treasure Hunters/Palm Tree Island/Sprites/Objects/Spikes/Spikes.png" id="1_fp26o"]
+[ext_resource type="Script" uid="uid://bkqxkhrr3qj3y" path="res://Scripts/Environment/hazard.gd" id="1_onkkb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vo021"]
+size = Vector2(32, 8.5)
+
+[node name="Spikes" type="StaticBody2D"]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_onkkb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -16)
+texture = ExtResource("1_fp26o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3.75)
+shape = SubResource("RectangleShape2D_vo021")
+
+[node name="HitBox" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 131584
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HitBox"]
+scale = Vector2(1.6, 1.6)
+polygon = PackedVector2Array(-8.125, -6.25, -3.125, -9.375, 6.875, -9.375)
+
+[connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]

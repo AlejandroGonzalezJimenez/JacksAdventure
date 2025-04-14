@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://dgs2pwg3ovd1c"]
+[gd_scene load_steps=55 format=3 uid="uid://dgs2pwg3ovd1c"]
 
 [ext_resource type="Script" uid="uid://4dlfjfbomllq" path="res://Scripts/character.gd" id="1_iqjo2"]
 [ext_resource type="Texture2D" uid="uid://c4umgyl2u4bs2" path="res://Treasure Hunters/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 01.png" id="1_tq08e"]
@@ -251,6 +251,10 @@ transitions = ["Start", "Attack", SubResource("AnimationNodeStateMachineTransiti
 radius = 8.0
 height = 22.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fukbj"]
+radius = 8.0
+height = 22.0
+
 [node name="Crabby" type="CharacterBody2D"]
 collision_layer = 65536
 collision_mask = 65793
@@ -278,3 +282,14 @@ anim_player = NodePath("..")
 position = Vector2(1, -8)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_pilgx")
+
+[node name="HurtBox" type="Area2D" parent="."]
+collision_layer = 131072
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(1, -8)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_fukbj")
+debug_color = Color(0, 0.64614, 0.244158, 0.42)

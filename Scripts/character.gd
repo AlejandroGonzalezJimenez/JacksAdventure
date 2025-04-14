@@ -28,11 +28,17 @@ var _water_surface_height : float
 var _is_in_water : bool
 var _is_below_surface : bool
 
+@export_category("Combat")
 @export_range(1, 100) var _max_health : int = 5
+@export_range(0, 5) var _invincible_duration : float = 0
+@export var _is_hit : bool
 @onready var _current_health : int = _max_health
+@onready var _hurt_box : Area2D = $HurtBox
+var _invincible_time : Timer
 
 signal changed_direction(is_facing_left : bool)
 signal landed(floor_height : float)
+signal health_changed(percentage : float)
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 # Para assets 16 bits ir a configuración del proyecto/general/fisicas/2d/gravedad predeterminada : 9.8 * 16 * 8
@@ -47,13 +53,28 @@ func _ready():
 	_jump_height *= Global.ppt
 	_jump_velocity = sqrt(_jump_height * gravity * 2) * -1
 	face_left() if _is_facing_left else face_right()
+	if _invincible_duration != 0:
+		_invincible_time = $HurtBox/Invincible
 
 #region Public Methods
 
-func take_damage(amount : int):
+func take_damage(amount : int, direction : Vector2):
 	_current_health -= amount
-	print(_current_health)
-	# invencible
+	health_changed.emit(float(_current_health) / _max_health)
+	_is_hit = true
+	velocity = direction * Global.ppt * 5
+	if _invincible_duration != 0:
+		become_invincible(_invincible_duration)
+
+func recover(amount : int):
+	_current_health = min(_current_health + amount, _max_health)
+	health_changed.emit(float(_current_health) / _max_health)
+
+func become_invincible(duration : float):
+	_hurt_box.set_deferred("monitorable", false)
+	_invincible_time.start(duration)
+	await _invincible_time.timeout
+	_hurt_box.monitorable = true
 
 func set_bounds(min_boundary : Vector2, max_boundary : Vector2):
 	_is_bound = true

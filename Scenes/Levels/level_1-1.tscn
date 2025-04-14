@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://b1hr8js8tsiro"]
+[gd_scene load_steps=30 format=3 uid="uid://b1hr8js8tsiro"]
 
 [ext_resource type="Texture2D" uid="uid://b216ljljooxbm" path="res://Treasure Hunters/Palm Tree Island/Sprites/Terrain/Terrain (32x32).png" id="1_booo5"]
 [ext_resource type="Script" uid="uid://br7o45rvjst03" path="res://Scripts/Environment/level.gd" id="1_w4kc1"]
@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://ck34652ieymj" path="res://Scenes/Treasure/key.tscn" id="20_t3yd5"]
 [ext_resource type="PackedScene" uid="uid://b75hguuvv66ly" path="res://Scenes/Treasure/small_map_2.tscn" id="21_ebuj1"]
 [ext_resource type="PackedScene" uid="uid://cgc7ji5lqb44m" path="res://Scenes/Decorations/spikes.tscn" id="22_2kucg"]
+[ext_resource type="PackedScene" uid="uid://cxmlm2gcik16x" path="res://Scenes/Treasure/red_potion.tscn" id="22_vo021"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kdu3h"]
 texture = ExtResource("1_booo5")
@@ -915,6 +916,9 @@ position = Vector2(1256, 32)
 
 [node name="Gold Coin4" parent="Treasure/Coins" instance=ExtResource("17_bcykt")]
 position = Vector2(2360, -368)
+
+[node name="Red Potion" parent="Treasure" instance=ExtResource("22_vo021")]
+position = Vector2(38, 13)
 
 [node name="Spikes" parent="." instance=ExtResource("22_2kucg")]
 position = Vector2(-8, 104)

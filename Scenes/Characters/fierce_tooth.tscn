@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://bgyxw0r2v2c3e"]
+[gd_scene load_steps=54 format=3 uid="uid://bgyxw0r2v2c3e"]
 
 [ext_resource type="Texture2D" uid="uid://cg0thdxw3sbl" path="res://Treasure Hunters/The Crusty Crew/Sprites/Fierce Tooth/01-Idle/Idle 01.png" id="1_86f21"]
 [ext_resource type="Script" uid="uid://4dlfjfbomllq" path="res://Scripts/character.gd" id="1_dufwr"]
@@ -249,6 +249,10 @@ transitions = ["Start", "Attack", SubResource("AnimationNodeStateMachineTransiti
 radius = 9.0
 height = 22.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_njfnt"]
+radius = 9.0
+height = 22.0
+
 [node name="Fierce Tooth" type="CharacterBody2D"]
 collision_layer = 65536
 collision_mask = 65793
@@ -275,3 +279,13 @@ anim_player = NodePath("..")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -11)
 shape = SubResource("CapsuleShape2D_2fa4l")
+
+[node name="HurtBox" type="Area2D" parent="."]
+collision_layer = 131072
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(0, -11)
+shape = SubResource("CapsuleShape2D_njfnt")
+debug_color = Color(8.66354e-07, 0.641863, 0.327386, 0.42)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bey5tf3ss3lij"]
+[gd_scene load_steps=29 format=3 uid="uid://bey5tf3ss3lij"]
 
 [ext_resource type="Script" uid="uid://chk3emgj38dvd" path="res://Scripts/game_manager.gd" id="1_i6g32"]
 [ext_resource type="Script" uid="uid://dw6le4vg1houw" path="res://Scripts/Environment/camera.gd" id="1_wowpa"]
@@ -22,7 +22,12 @@
 [ext_resource type="Texture2D" uid="uid://cvt47phqnr8ih" path="res://Treasure Hunters/Pirate Treasure/Sprites/Golden Skull/00.png" id="20_7nbq1"]
 [ext_resource type="Texture2D" uid="uid://bq6kc6le1p4u4" path="res://Treasure Hunters/Merchant Ship/Sprites/Chest Key/Idle/1.png" id="21_exi56"]
 [ext_resource type="PackedScene" uid="uid://buw8jeq616p61" path="res://Scenes/fade.tscn" id="22_mg4q0"]
+[ext_resource type="Texture2D" uid="uid://cb1enajgyva4g" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Life Bars/Big Bars/1.png" id="23_fkdbe"]
+[ext_resource type="Script" uid="uid://ddl6gueyfiaeq" path="res://Scripts/UI/gauge.gd" id="23_tgy6u"]
 [ext_resource type="AudioStream" uid="uid://dg2twsw5ve1gg" path="res://Sound Effects/Music/677858__el_boss__game-success-fanfare-short.wav" id="23_vm72l"]
+[ext_resource type="Texture2D" uid="uid://ct7anubq007hd" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Life Bars/Big Bars/3.png" id="24_81klo"]
+[ext_resource type="Texture2D" uid="uid://bn0ne6dn3r6g3" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Life Bars/Big Bars/4.png" id="25_tgy6u"]
+[ext_resource type="Texture2D" uid="uid://cqvcgk46cl55y" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Life Bars/Colors/1.png" id="27_cwurv"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_i6g32")
@@ -124,10 +129,51 @@ offset_bottom = 136.0
 scale = Vector2(2, 2)
 texture = ExtResource("21_exi56")
 
+[node name="HealthGauge" type="Control" parent="UserInterface"]
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 32.0
+offset_top = -40.0
+offset_right = 72.0
+grow_vertical = 0
+scale = Vector2(4, 4)
+pivot_offset = Vector2(0, 40)
+script = ExtResource("23_tgy6u")
+
+[node name="Background" type="HBoxContainer" parent="UserInterface/HealthGauge"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 0
+
+[node name="TextureRect" type="TextureRect" parent="UserInterface/HealthGauge/Background"]
+layout_mode = 2
+texture = ExtResource("23_fkdbe")
+
+[node name="TextureRect2" type="TextureRect" parent="UserInterface/HealthGauge/Background"]
+layout_mode = 2
+texture = ExtResource("24_81klo")
+
+[node name="TextureRect3" type="TextureRect" parent="UserInterface/HealthGauge/Background"]
+layout_mode = 2
+texture = ExtResource("25_tgy6u")
+
+[node name="Fill" type="TextureRect" parent="UserInterface/HealthGauge"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 18.0
+offset_right = 92.0
+offset_bottom = 20.0
+texture = ExtResource("27_cwurv")
+expand_mode = 1
+
 [node name="Fade" parent="UserInterface" instance=ExtResource("22_mg4q0")]
 
 [node name="Fanfare" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("23_vm72l")
 
 [connection signal="changed_direction" from="Jack" to="Camera2D" method="_on_subject_changed_direction"]
+[connection signal="health_changed" from="Jack" to="UserInterface/HealthGauge" method="set_value"]
 [connection signal="landed" from="Jack" to="Camera2D" method="_on_subject_landed"]

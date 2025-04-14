@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://tn1eqikm0kdm"]
+[gd_scene load_steps=54 format=3 uid="uid://tn1eqikm0kdm"]
 
 [ext_resource type="Texture2D" uid="uid://dao7rwsfqois7" path="res://Treasure Hunters/The Crusty Crew/Sprites/Pink Star/01-Idle/Idle 01.png" id="1_2yebh"]
 [ext_resource type="Script" uid="uid://4dlfjfbomllq" path="res://Scripts/character.gd" id="1_ov85h"]
@@ -249,6 +249,9 @@ transitions = ["Start", "Attack", SubResource("AnimationNodeStateMachineTransiti
 radius = 11.0
 height = 22.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_bu78a"]
+radius = 11.0
+
 [node name="Pink Star" type="CharacterBody2D"]
 collision_layer = 65536
 collision_mask = 65793
@@ -275,3 +278,13 @@ anim_player = NodePath("..")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -11)
 shape = SubResource("CapsuleShape2D_eh6ij")
+
+[node name="HurtBox" type="Area2D" parent="."]
+collision_layer = 131072
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(0, -11)
+shape = SubResource("CircleShape2D_bu78a")
+debug_color = Color(0.198364, 0.634858, 0.265936, 0.42)

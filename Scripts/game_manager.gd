@@ -1,5 +1,8 @@
 extends Node2D
 
+@export var _victory : AudioStream
+@export var _death : AudioStream
+@export var _gameover : AudioStream
 @onready var _camera : Camera2D = $Camera2D
 @onready var _player_character : CharacterBody2D = $Jack
 @onready var _player : Node = $Jack/Player
@@ -15,6 +18,7 @@ func _ready() -> void:
 	_fade.visible = true
 	_init_boundaries()
 	_init_ui()
+	_spawn_player()
 	await _fade.fade_to_clear()
 	_player.set_enabled(true)
 
@@ -31,8 +35,13 @@ func _init_ui():
 	_coin_counter.set_value(File.data.coins)
 	_lives_counter.set_value(File.data.lives)
 
+func _spawn_player():
+	_player_character.global_position = _level.get_checkpoint_position(File.data.checkpoint)
+	_player_character.velocity = Vector2.ZERO
+
 func collect_map():
 	_player.set_enabled(false)
+	_fanfare.stream = _victory
 	_fanfare.play()
 	await _fanfare.finished
 	await _fade.fade_to_black()
@@ -57,3 +66,27 @@ func collect_key():
 func use_key():
 	File.data.has_key = false
 	_key_icon.visible = false
+
+
+func _on_player_died() -> void:
+	if File.data.lives == 0:
+		_game_over()
+	else:
+		File.data.lives -= 1
+		_lives_counter.set_value(File.data.lives)
+		_fanfare.stream = _death
+		_fanfare.play()
+		_return_to_last_checkpoint()
+
+func _return_to_last_checkpoint():
+	_player.set_enabled(false)
+	await _fade.fade_to_black()
+	_spawn_player()
+	_player_character.revive()
+	await _fade.fade_to_clear()
+	_player.set_enabled(true)
+
+func _game_over():
+	_fanfare.stream = _gameover
+	_fanfare.play()
+	print("GAME OVER!")

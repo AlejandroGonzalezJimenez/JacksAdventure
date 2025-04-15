@@ -32,13 +32,18 @@ var _is_below_surface : bool
 @export_range(1, 100) var _max_health : int = 5
 @export_range(0, 5) var _invincible_duration : float = 0
 @export var _is_hit : bool
+@export var _is_dead : bool
 @onready var _current_health : int = _max_health
 @onready var _hurt_box : Area2D = $HurtBox
 var _invincible_time : Timer
 
+var _collision_layer : int = collision_layer
+var _collision_mask : int = collision_mask
+
 signal changed_direction(is_facing_left : bool)
 signal landed(floor_height : float)
 signal health_changed(percentage : float)
+signal died()
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 # Para assets 16 bits ir a configuración del proyecto/general/fisicas/2d/gravedad predeterminada : 9.8 * 16 * 8
@@ -59,12 +64,15 @@ func _ready():
 #region Public Methods
 
 func take_damage(amount : int, direction : Vector2):
-	_current_health -= amount
+	_current_health = max(_current_health - amount, 0)
 	health_changed.emit(float(_current_health) / _max_health)
-	_is_hit = true
 	velocity = direction * Global.ppt * 5
-	if _invincible_duration != 0:
-		become_invincible(_invincible_duration)
+	if _current_health == 0:
+		_die()
+	else:
+		_is_hit = true
+		if _invincible_duration != 0:
+			become_invincible(_invincible_duration)
 
 func recover(amount : int):
 	_current_health = min(_current_health + amount, _max_health)
@@ -86,6 +94,8 @@ func set_bounds(min_boundary : Vector2, max_boundary : Vector2):
 	_min.y += sprite_size.y
 
 func face_left():
+	if _is_dead:
+		return
 	_is_facing_left = true
 	if _sprite_direction_left:
 		_sprite.flip_h = false
@@ -94,6 +104,8 @@ func face_left():
 	changed_direction.emit(_is_facing_left)
 	
 func face_right():
+	if _is_dead:
+		return
 	_is_facing_left = false
 	if _sprite_direction_left:
 		_sprite.flip_h = true
@@ -102,9 +114,13 @@ func face_right():
 	changed_direction.emit(_is_facing_left)
 	
 func run(direction : float):
+	if _is_dead:
+		return
 	_direction = direction
 
 func jump():
+	if _is_dead:
+		return
 	if _is_in_water:
 		if _is_below_surface:
 			velocity.y = _jump_velocity * _drag
@@ -118,6 +134,8 @@ func jump():
 # If velocity.y is less than 0, the character is going go up. 
 # If the character is moving up, we set its velocity to 0 to stop it moving.
 func stop_jump():
+	if _is_dead:
+		return
 	if velocity.y < 0 && not _is_in_water:
 		velocity.y = 0
 
@@ -134,6 +152,15 @@ func exit_water():
 	
 func dive():
 	_is_below_surface = true
+
+func revive():
+	_is_dead = false
+	_current_health = _max_health
+	_hurt_box.monitorable = true
+	collision_layer = _collision_layer
+	collision_mask = _collision_mask
+	landed.emit(global_position.y)
+	health_changed.emit(float(_current_health) / _max_health)
 
 #endregion
 
@@ -192,3 +219,11 @@ func _spawn_dust(dust : PackedScene):
 	_dust.position = position
 	_dust.flip_h = _sprite.flip_h
 	get_parent().add_child(_dust)
+
+func _die():
+	_is_dead = true
+	died.emit()
+	_hurt_box.set_deferred("monitorable", false)
+	collision_layer = 0
+	collision_mask = 1
+	_direction = 0

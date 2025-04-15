@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://b1hr8js8tsiro"]
+[gd_scene load_steps=31 format=3 uid="uid://b1hr8js8tsiro"]
 
 [ext_resource type="Texture2D" uid="uid://b216ljljooxbm" path="res://Treasure Hunters/Palm Tree Island/Sprites/Terrain/Terrain (32x32).png" id="1_booo5"]
 [ext_resource type="Script" uid="uid://br7o45rvjst03" path="res://Scripts/Environment/level.gd" id="1_w4kc1"]
@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://b75hguuvv66ly" path="res://Scenes/Treasure/small_map_2.tscn" id="21_ebuj1"]
 [ext_resource type="PackedScene" uid="uid://cgc7ji5lqb44m" path="res://Scenes/Decorations/spikes.tscn" id="22_2kucg"]
 [ext_resource type="PackedScene" uid="uid://cxmlm2gcik16x" path="res://Scenes/Treasure/red_potion.tscn" id="22_vo021"]
+[ext_resource type="PackedScene" uid="uid://cgdpqi6plraj7" path="res://Scenes/checkpoint.tscn" id="23_axncg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kdu3h"]
 texture = ExtResource("1_booo5")
@@ -811,7 +812,7 @@ position = Vector2(848, 469)
 position = Vector2(928, 469)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1288.5, -79)
+position = Vector2(1334, -64)
 shape = SubResource("RectangleShape2D_booo5")
 debug_color = Color(0, 0.6, 0.701961, 0)
 
@@ -827,9 +828,6 @@ _total_value = 19
 
 [node name="Key" parent="Treasure" instance=ExtResource("20_t3yd5")]
 position = Vector2(2104, -88)
-
-[node name="Small Map 2" parent="Treasure" instance=ExtResource("21_ebuj1")]
-position = Vector2(2824, 48)
 
 [node name="Coins" type="Node2D" parent="Treasure"]
 
@@ -859,9 +857,6 @@ position = Vector2(1144, -16)
 
 [node name="Silver Coin9" parent="Treasure/Coins" instance=ExtResource("16_3rrt1")]
 position = Vector2(712, 96)
-
-[node name="Silver Coin10" parent="Treasure/Coins" instance=ExtResource("16_3rrt1")]
-position = Vector2(1256, -80)
 
 [node name="Silver Coin11" parent="Treasure/Coins" instance=ExtResource("16_3rrt1")]
 position = Vector2(1368, -16)
@@ -922,6 +917,17 @@ position = Vector2(38, 13)
 
 [node name="Spikes" parent="." instance=ExtResource("22_2kucg")]
 position = Vector2(-8, 104)
+
+[node name="Checkpoints" type="Node2D" parent="."]
+
+[node name="Start" type="Node2D" parent="Checkpoints"]
+position = Vector2(-120, 91)
+
+[node name="Middle" parent="Checkpoints" instance=ExtResource("23_axncg")]
+position = Vector2(1256, -56)
+
+[node name="End" parent="Checkpoints" instance=ExtResource("21_ebuj1")]
+position = Vector2(2824, 48)
 
 [connection signal="body_entered" from="Water" to="Water" method="_on_body_entered"]
 [connection signal="body_exited" from="Water" to="Water" method="_on_body_exited"]

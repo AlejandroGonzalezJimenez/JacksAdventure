@@ -10,6 +10,7 @@ extends Node2D
 @onready var _coin_counter : Control = $UserInterface/CoinCounter
 @onready var _lives_counter : Control = $UserInterface/LivesCounter
 @onready var _key_icon : Control = $UserInterface/KeyIcon
+@onready var _game_over_menu : Control = $UserInterface/GameOverMenu
 @onready var _fade : ColorRect = $UserInterface/Fade
 @onready var _fanfare : AudioStreamPlayer = $Fanfare
 
@@ -34,6 +35,7 @@ func _init_ui():
 	#initialize the UI
 	_coin_counter.set_value(File.data.coins)
 	_lives_counter.set_value(File.data.lives)
+	_game_over_menu.visible = false
 
 func _spawn_player():
 	_player_character.global_position = _level.get_checkpoint_position(File.data.checkpoint)
@@ -89,4 +91,28 @@ func _return_to_last_checkpoint():
 func _game_over():
 	_fanfare.stream = _gameover
 	_fanfare.play()
-	print("GAME OVER!")
+	_game_over_menu.visible = true
+
+func _on_retry_pressed() -> void:
+	_game_over_menu.visible = false
+	await _fade.fade_to_black()
+	File.data.retry()
+	_level.queue_free()
+	_level = load("res://Scenes/Levels/level_" + str(File.data.world) + "-" + str(File.data.level) + ".tscn").instantiate()
+	add_child(_level)
+	_spawn_player()
+	_player.set_enabled(false)
+	_player_character.revive()
+	await _fade.fade_to_clear()
+	_player.set_enabled(true)
+
+func _on_level_select_pressed() -> void:
+	_game_over_menu.visible = false
+	await _fade.fade_to_black()
+	File.data.retry()
+	print("Return to level selection menu")
+
+func _on_exit_pressed() -> void:
+	_game_over_menu.visible = false
+	await _fade.fade_to_black()
+	get_tree().quit()

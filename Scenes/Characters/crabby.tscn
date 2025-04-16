@@ -261,7 +261,6 @@ collision_mask = 65793
 script = ExtResource("1_iqjo2")
 _jump_dust = ExtResource("2_ewrh8")
 _is_facing_left = true
-_sprite_direction_left = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -13)

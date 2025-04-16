@@ -18,7 +18,7 @@ var _was_on_floor : bool
 
 @export_category("Sprite")
 @export var _is_facing_left : bool
-@export var _sprite_direction_left : bool
+@export var _sprites_face_left : bool
 @onready var _sprite : Sprite2D = $Sprite2D
 
 @export_category("Swim")
@@ -31,10 +31,13 @@ var _is_below_surface : bool
 @export_category("Combat")
 @export_range(1, 100) var _max_health : int = 5
 @export_range(0, 5) var _invincible_duration : float = 0
+@export_range(0, 5) var _attack_damage : int = 1
 @export var _is_hit : bool
 @export var _is_dead : bool
+@export var _wants_to_attack : bool
 @onready var _current_health : int = _max_health
 @onready var _hurt_box : Area2D = $HurtBox
+@onready var _hit_box : Area2D = $HitBox
 var _invincible_time : Timer
 
 var _collision_layer : int = collision_layer
@@ -60,8 +63,15 @@ func _ready():
 	face_left() if _is_facing_left else face_right()
 	if _invincible_duration != 0:
 		_invincible_time = $HurtBox/Invincible
+	#_hit_box.monitoring = false
 
 #region Public Methods
+
+func is_facing_left() -> bool:
+	return _is_facing_left
+
+func attack():
+	_wants_to_attack = true
 
 func take_damage(amount : int, direction : Vector2):
 	_current_health = max(_current_health - amount, 0)
@@ -97,20 +107,18 @@ func face_left():
 	if _is_dead:
 		return
 	_is_facing_left = true
-	if _sprite_direction_left:
-		_sprite.flip_h = false
-	else:
-		_sprite.flip_h = true
+	_sprite.flip_h = not _sprites_face_left
+	if _hit_box:
+		_hit_box.scale.x = 1 if _sprites_face_left else -1
 	changed_direction.emit(_is_facing_left)
 	
 func face_right():
 	if _is_dead:
 		return
 	_is_facing_left = false
-	if _sprite_direction_left:
-		_sprite.flip_h = true
-	else:
-		_sprite.flip_h = false
+	_sprite.flip_h = _sprites_face_left
+	if _hit_box:
+		_hit_box.scale.x = -1 if _sprites_face_left else 1
 	changed_direction.emit(_is_facing_left)
 	
 func run(direction : float):
@@ -227,3 +235,7 @@ func _die():
 	collision_layer = 0
 	collision_mask = 1
 	_direction = 0
+
+func _on_hit_box_area_entered(area: Area2D) -> void:
+	area.get_parent().take_damage(_attack_damage, (area.global_position - global_position).normalized())
+	pass # Replace with function body.

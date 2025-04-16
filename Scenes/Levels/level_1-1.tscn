@@ -806,7 +806,12 @@ position = Vector2(-504, -408)
 position = Vector2(888, 469)
 
 [node name="Fierce Tooth" parent="Enemies" instance=ExtResource("13_2egns")]
-position = Vector2(848, 469)
+position = Vector2(435, 509)
+_sprites_face_left = true
+
+[node name="Timer" type="Timer" parent="Enemies/Fierce Tooth"]
+wait_time = 2.0
+autostart = true
 
 [node name="Pink Star" parent="Enemies" instance=ExtResource("14_lg4kb")]
 position = Vector2(928, 469)
@@ -931,3 +936,4 @@ position = Vector2(2824, 48)
 
 [connection signal="body_entered" from="Water" to="Water" method="_on_body_entered"]
 [connection signal="body_exited" from="Water" to="Water" method="_on_body_exited"]
+[connection signal="timeout" from="Enemies/Fierce Tooth/Timer" to="Enemies/Fierce Tooth" method="attack"]

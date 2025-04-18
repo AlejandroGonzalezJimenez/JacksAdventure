@@ -1,7 +1,7 @@
-[gd_scene load_steps=54 format=3 uid="uid://tn1eqikm0kdm"]
+[gd_scene load_steps=98 format=3 uid="uid://tn1eqikm0kdm"]
 
 [ext_resource type="Texture2D" uid="uid://dao7rwsfqois7" path="res://Treasure Hunters/The Crusty Crew/Sprites/Pink Star/01-Idle/Idle 01.png" id="1_2yebh"]
-[ext_resource type="Script" uid="uid://4dlfjfbomllq" path="res://Scripts/character.gd" id="1_ov85h"]
+[ext_resource type="Script" uid="uid://4dlfjfbomllq" path="res://Scripts/Characters/character.gd" id="1_ov85h"]
 [ext_resource type="PackedScene" uid="uid://nos2u3bbioqk" path="res://Scenes/Dust/jump_dust.tscn" id="2_b7ddn"]
 [ext_resource type="Texture2D" uid="uid://tjlf0vlxq3vd" path="res://Treasure Hunters/The Crusty Crew/Sprites/Pink Star/01-Idle/Idle 02.png" id="2_nltpt"]
 [ext_resource type="Texture2D" uid="uid://dclp8l7j7i227" path="res://Treasure Hunters/The Crusty Crew/Sprites/Pink Star/01-Idle/Idle 03.png" id="3_gnyto"]
@@ -24,6 +24,29 @@
 [ext_resource type="Texture2D" uid="uid://c2faa50ad8oq6" path="res://Treasure Hunters/The Crusty Crew/Sprites/Pink Star/05-Ground/Ground 01.png" id="19_egv4q"]
 [ext_resource type="Texture2D" uid="uid://c7tqdg85n8c41" path="res://Treasure Hunters/The Crusty Crew/Sprites/Pink Star/05-Ground/Ground 02.png" id="20_mbwcf"]
 [ext_resource type="PackedScene" uid="uid://27sxpvlrifct" path="res://Scenes/Dust/fall_dust.tscn" id="24_b2rd6"]
+[ext_resource type="Texture2D" uid="uid://ce6u4pftevnp8" path="res://Treasure Hunters/The Crusty Crew/Sprites/Pink Star/08-Hit/Hit 01.png" id="25_xo8y4"]
+[ext_resource type="Texture2D" uid="uid://2njkdqy83mpl" path="res://Treasure Hunters/The Crusty Crew/Sprites/Pink Star/08-Hit/Hit 02.png" id="26_6wyp3"]
+[ext_resource type="Texture2D" uid="uid://bdcc070l8hatf" path="res://Treasure Hunters/The Crusty Crew/Sprites/Pink Star/08-Hit/Hit 03.png" id="27_m4tfr"]
+[ext_resource type="Texture2D" uid="uid://dd0t8ei3ffg3w" path="res://Treasure Hunters/The Crusty Crew/Sprites/Pink Star/08-Hit/Hit 04.png" id="28_wjosq"]
+[ext_resource type="Texture2D" uid="uid://dl1nm6s2sgoek" path="res://Treasure Hunters/The Crusty Crew/Sprites/Pink Star/09-Dead Hit/Dead Hit 01.png" id="29_18vdw"]
+[ext_resource type="Texture2D" uid="uid://cal86d481kw4h" path="res://Treasure Hunters/The Crusty Crew/Sprites/Pink Star/09-Dead Hit/Dead Hit 02.png" id="30_8f06q"]
+[ext_resource type="Texture2D" uid="uid://duotf7wepr73m" path="res://Treasure Hunters/The Crusty Crew/Sprites/Pink Star/09-Dead Hit/Dead Hit 03.png" id="31_y04wb"]
+[ext_resource type="Texture2D" uid="uid://b4deypr21arxt" path="res://Treasure Hunters/The Crusty Crew/Sprites/Pink Star/09-Dead Hit/Dead Hit 04.png" id="32_6tp0y"]
+[ext_resource type="Texture2D" uid="uid://dbraabujupvgu" path="res://Treasure Hunters/The Crusty Crew/Sprites/Pink Star/10-Dead Ground/Dead Ground 01.png" id="33_3shms"]
+[ext_resource type="Texture2D" uid="uid://tnjpynnlmroj" path="res://Treasure Hunters/The Crusty Crew/Sprites/Pink Star/10-Dead Ground/Dead Ground 02.png" id="34_457vh"]
+[ext_resource type="Texture2D" uid="uid://mkbiajvmmpy0" path="res://Treasure Hunters/The Crusty Crew/Sprites/Pink Star/10-Dead Ground/Dead Ground 03.png" id="35_4neaw"]
+[ext_resource type="Texture2D" uid="uid://di54kpconm4ni" path="res://Treasure Hunters/The Crusty Crew/Sprites/Pink Star/10-Dead Ground/Dead Ground 04.png" id="36_hsigw"]
+[ext_resource type="Texture2D" uid="uid://dmqh6cd3oapv" path="res://Treasure Hunters/The Crusty Crew/Sprites/Pink Star/06-Anticipation/Anticipation 01.png" id="37_jv24m"]
+[ext_resource type="Texture2D" uid="uid://v5ws4i4xi6w4" path="res://Treasure Hunters/The Crusty Crew/Sprites/Pink Star/06-Anticipation/Anticipation 02.png" id="38_yoya2"]
+[ext_resource type="Texture2D" uid="uid://bwvufie6tqh3w" path="res://Treasure Hunters/The Crusty Crew/Sprites/Pink Star/06-Anticipation/Anticipation 03.png" id="39_d7if7"]
+[ext_resource type="Texture2D" uid="uid://d28lq5ff2w6c3" path="res://Treasure Hunters/The Crusty Crew/Sprites/Pink Star/07-Attack/Attack 01.png" id="40_18vdw"]
+[ext_resource type="Texture2D" uid="uid://bb1tkisef5mbp" path="res://Treasure Hunters/The Crusty Crew/Sprites/Pink Star/07-Attack/Attack 02.png" id="41_8f06q"]
+[ext_resource type="Texture2D" uid="uid://dqtx7hkcowo5h" path="res://Treasure Hunters/The Crusty Crew/Sprites/Pink Star/07-Attack/Attack 03.png" id="42_y04wb"]
+[ext_resource type="Texture2D" uid="uid://f3rnbtbbcp0r" path="res://Treasure Hunters/The Crusty Crew/Sprites/Pink Star/07-Attack/Attack 04.png" id="43_6tp0y"]
+[ext_resource type="Texture2D" uid="uid://c8wdmc6w777tp" path="res://Treasure Hunters/The Crusty Crew/Sprites/Pink Star/11-Attack Effect/Attack Effect 01.png" id="44_3shms"]
+[ext_resource type="Texture2D" uid="uid://c0m2xea8wp5op" path="res://Treasure Hunters/The Crusty Crew/Sprites/Pink Star/11-Attack Effect/Attack Effect 02.png" id="45_457vh"]
+[ext_resource type="Texture2D" uid="uid://b7ih61dei67fi" path="res://Treasure Hunters/The Crusty Crew/Sprites/Pink Star/11-Attack Effect/Attack Effect 03.png" id="46_4neaw"]
+[ext_resource type="Texture2D" uid="uid://250yp1u3qrtb" path="res://Treasure Hunters/The Crusty Crew/Sprites/Pink Star/11-Attack Effect/Attack Effect 04.png" id="47_hsigw"]
 
 [sub_resource type="Animation" id="Animation_v24kd"]
 length = 0.001
@@ -38,6 +61,42 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [ExtResource("1_2yebh")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:_is_hit")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("..:_wants_to_attack")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../HitBox:monitoring")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_cuxd1"]
@@ -150,11 +209,146 @@ tracks/1/keys = {
 }]
 }
 
+[sub_resource type="Animation" id="Animation_2va1g"]
+resource_name = "hit"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("25_xo8y4"), ExtResource("26_6wyp3"), ExtResource("27_m4tfr"), ExtResource("28_wjosq")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:_is_hit")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_8ox0l"]
+resource_name = "dead_hit"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("29_18vdw"), ExtResource("30_8f06q"), ExtResource("31_y04wb"), ExtResource("32_6tp0y")]
+}
+
+[sub_resource type="Animation" id="Animation_4qb4d"]
+resource_name = "dead_ground"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("33_3shms"), ExtResource("34_457vh"), ExtResource("35_4neaw"), ExtResource("36_hsigw")]
+}
+
+[sub_resource type="Animation" id="Animation_d8ot1"]
+resource_name = "anticipation"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("37_jv24m"), ExtResource("38_yoya2"), ExtResource("39_d7if7")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:_wants_to_attack")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_3shms"]
+resource_name = "attack"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("40_18vdw"), ExtResource("41_8f06q"), ExtResource("42_y04wb"), ExtResource("43_6tp0y")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../HitBox:monitoring")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../HitBox/AnimatedSprite2D")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"", 1.0, false],
+"method": &"play"
+}]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1hol0"]
 _data = {
 &"RESET": SubResource("Animation_v24kd"),
+&"anticipation": SubResource("Animation_d8ot1"),
+&"attack": SubResource("Animation_3shms"),
+&"dead_ground": SubResource("Animation_4qb4d"),
+&"dead_hit": SubResource("Animation_8ox0l"),
 &"fall": SubResource("Animation_cuxd1"),
 &"ground": SubResource("Animation_xdcea"),
+&"hit": SubResource("Animation_2va1g"),
 &"idle": SubResource("Animation_5p2bs"),
 &"jump": SubResource("Animation_vvoyu"),
 &"run": SubResource("Animation_7nnoy")
@@ -229,21 +423,85 @@ states/jump/position = Vector2(337.042, -69.545)
 transitions = ["Start", "Locomotion", SubResource("AnimationNodeStateMachineTransition_j6gxu"), "Locomotion", "jump", SubResource("AnimationNodeStateMachineTransition_egv4q"), "jump", "fall", SubResource("AnimationNodeStateMachineTransition_mbwcf"), "fall", "ground", SubResource("AnimationNodeStateMachineTransition_7nnoy"), "ground", "Locomotion", SubResource("AnimationNodeStateMachineTransition_vvoyu"), "Locomotion", "fall", SubResource("AnimationNodeStateMachineTransition_cuxd1")]
 graph_offset = Vector2(-364.958, -286.545)
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6tp0y"]
+animation = &"anticipation"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3shms"]
+animation = &"attack"
+
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ifido"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_yoya2"]
+advance_mode = 2
+advance_expression = "_wants_to_attack"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_d7if7"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2va1g"]
+switch_mode = 2
 advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_6sjbb"]
 states/Movement/node = SubResource("AnimationNodeStateMachine_xdcea")
 states/Movement/position = Vector2(479, 100)
-transitions = ["Start", "Movement", SubResource("AnimationNodeStateMachineTransition_ifido")]
+states/anticipation/node = SubResource("AnimationNodeAnimation_6tp0y")
+states/anticipation/position = Vector2(341.031, -77.072)
+states/attack/node = SubResource("AnimationNodeAnimation_3shms")
+states/attack/position = Vector2(649.031, -77.072)
+transitions = ["Start", "Movement", SubResource("AnimationNodeStateMachineTransition_ifido"), "Movement", "anticipation", SubResource("AnimationNodeStateMachineTransition_yoya2"), "anticipation", "attack", SubResource("AnimationNodeStateMachineTransition_d7if7"), "attack", "Movement", SubResource("AnimationNodeStateMachineTransition_2va1g")]
+graph_offset = Vector2(-337.969, -218.072)
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_18vdw"]
+animation = &"dead_ground"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8f06q"]
+animation = &"dead_hit"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_y04wb"]
+animation = &"hit"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_pkk8q"]
 advance_mode = 2
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_6tp0y"]
+advance_mode = 2
+advance_expression = "not _is_hit"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3shms"]
+advance_mode = 2
+advance_expression = "_is_hit"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_457vh"]
+advance_mode = 2
+advance_expression = "_is_dead"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4neaw"]
+advance_mode = 2
+advance_expression = "not _is_dead"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_hsigw"]
+switch_mode = 2
+advance_mode = 2
+advance_expression = "is_on_floor()"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_jv24m"]
+advance_mode = 2
+advance_expression = "not _is_dead"
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_xo8y4"]
 states/Attack/node = SubResource("AnimationNodeStateMachine_6sjbb")
 states/Attack/position = Vector2(482, 100)
-transitions = ["Start", "Attack", SubResource("AnimationNodeStateMachineTransition_pkk8q")]
+states/dead_ground/node = SubResource("AnimationNodeAnimation_18vdw")
+states/dead_ground/position = Vector2(759.191, 252.619)
+states/dead_hit/node = SubResource("AnimationNodeAnimation_8f06q")
+states/dead_hit/position = Vector2(482, 252.619)
+states/hit/node = SubResource("AnimationNodeAnimation_y04wb")
+states/hit/position = Vector2(482, -76.3813)
+transitions = ["Start", "Attack", SubResource("AnimationNodeStateMachineTransition_pkk8q"), "hit", "Attack", SubResource("AnimationNodeStateMachineTransition_6tp0y"), "Attack", "hit", SubResource("AnimationNodeStateMachineTransition_3shms"), "Attack", "dead_hit", SubResource("AnimationNodeStateMachineTransition_457vh"), "dead_hit", "Attack", SubResource("AnimationNodeStateMachineTransition_4neaw"), "dead_hit", "dead_ground", SubResource("AnimationNodeStateMachineTransition_hsigw"), "dead_ground", "Attack", SubResource("AnimationNodeStateMachineTransition_jv24m")]
+graph_offset = Vector2(-332.809, -145.381)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eh6ij"]
 radius = 11.0
@@ -251,6 +509,32 @@ height = 22.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bu78a"]
 radius = 11.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_18vdw"]
+radius = 13.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jv24m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("44_3shms")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_457vh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_4neaw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_hsigw")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
 
 [node name="Pink Star" type="CharacterBody2D"]
 collision_layer = 65536
@@ -287,3 +571,21 @@ monitoring = false
 position = Vector2(0, -11)
 shape = SubResource("CircleShape2D_bu78a")
 debug_color = Color(0.198364, 0.634858, 0.265936, 0.42)
+
+[node name="HitBox" type="Area2D" parent="."]
+collision_layer = 262144
+collision_mask = 512
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(1, -11)
+shape = SubResource("CircleShape2D_18vdw")
+debug_color = Color(0.970512, 0.0944427, 0.36724, 0.42)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="HitBox"]
+position = Vector2(14, -6)
+sprite_frames = SubResource("SpriteFrames_jv24m")
+frame = 4
+
+[connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]

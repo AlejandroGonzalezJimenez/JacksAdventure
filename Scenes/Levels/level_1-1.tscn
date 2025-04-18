@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://b1hr8js8tsiro"]
+[gd_scene load_steps=32 format=3 uid="uid://b1hr8js8tsiro"]
 
 [ext_resource type="Texture2D" uid="uid://b216ljljooxbm" path="res://Treasure Hunters/Palm Tree Island/Sprites/Terrain/Terrain (32x32).png" id="1_booo5"]
 [ext_resource type="Script" uid="uid://br7o45rvjst03" path="res://Scripts/Environment/level.gd" id="1_w4kc1"]
@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://cgc7ji5lqb44m" path="res://Scenes/Decorations/spikes.tscn" id="22_2kucg"]
 [ext_resource type="PackedScene" uid="uid://cxmlm2gcik16x" path="res://Scenes/Treasure/red_potion.tscn" id="22_vo021"]
 [ext_resource type="PackedScene" uid="uid://cgdpqi6plraj7" path="res://Scenes/checkpoint.tscn" id="23_axncg"]
+[ext_resource type="PackedScene" uid="uid://d3yahvg5hdtqi" path="res://Scenes/sword.tscn" id="25_4yllm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kdu3h"]
 texture = ExtResource("1_booo5")
@@ -803,10 +804,15 @@ position = Vector2(1088, 416)
 position = Vector2(-504, -408)
 
 [node name="Crabby" parent="Enemies" instance=ExtResource("12_4yllm")]
-position = Vector2(888, 469)
+position = Vector2(657, 507)
+_is_facing_left = false
+
+[node name="Timer" type="Timer" parent="Enemies/Crabby"]
+wait_time = 2.0
+autostart = true
 
 [node name="Fierce Tooth" parent="Enemies" instance=ExtResource("13_2egns")]
-position = Vector2(435, 509)
+position = Vector2(566, 479)
 _sprites_face_left = true
 
 [node name="Timer" type="Timer" parent="Enemies/Fierce Tooth"]
@@ -814,7 +820,12 @@ wait_time = 2.0
 autostart = true
 
 [node name="Pink Star" parent="Enemies" instance=ExtResource("14_lg4kb")]
-position = Vector2(928, 469)
+position = Vector2(850, 476)
+_is_facing_left = false
+
+[node name="Timer" type="Timer" parent="Enemies/Pink Star"]
+wait_time = 2.0
+autostart = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1334, -64)
@@ -934,6 +945,11 @@ position = Vector2(1256, -56)
 [node name="End" parent="Checkpoints" instance=ExtResource("21_ebuj1")]
 position = Vector2(2824, 48)
 
+[node name="Sword" parent="." instance=ExtResource("25_4yllm")]
+position = Vector2(-46, 94)
+
 [connection signal="body_entered" from="Water" to="Water" method="_on_body_entered"]
 [connection signal="body_exited" from="Water" to="Water" method="_on_body_exited"]
+[connection signal="timeout" from="Enemies/Crabby/Timer" to="Enemies/Crabby" method="attack"]
 [connection signal="timeout" from="Enemies/Fierce Tooth/Timer" to="Enemies/Fierce Tooth" method="attack"]
+[connection signal="timeout" from="Enemies/Pink Star/Timer" to="Enemies/Pink Star" method="attack"]

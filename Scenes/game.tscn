@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://bey5tf3ss3lij"]
+[gd_scene load_steps=62 format=3 uid="uid://bey5tf3ss3lij"]
 
 [ext_resource type="Script" uid="uid://chk3emgj38dvd" path="res://Scripts/game_manager.gd" id="1_i6g32"]
 [ext_resource type="Script" uid="uid://dw6le4vg1houw" path="res://Scripts/Environment/camera.gd" id="1_wowpa"]
@@ -6,8 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bnebn015yw8l2" path="res://Scenes/Characters/jack.tscn" id="3_1l0tm"]
 [ext_resource type="AudioStream" uid="uid://dwjs23u656q6b" path="res://Sound Effects/Music/400664__dominictreis__scene-ending-music.mp3" id="3_cwurv"]
 [ext_resource type="AudioStream" uid="uid://qboilxq3dhq2" path="res://Sound Effects/Music/488963__dominictreis__sad-or-scary-scene-change-music.mp3" id="4_mucmn"]
-[ext_resource type="Script" uid="uid://bpg2jgjdgxkmp" path="res://Scripts/player.gd" id="4_v158k"]
-[ext_resource type="PackedScene" uid="uid://b1hr8js8tsiro" path="res://Scenes/Levels/level_1-1.tscn" id="5_h4fw4"]
+[ext_resource type="Script" uid="uid://bpg2jgjdgxkmp" path="res://Scripts/Characters/player.gd" id="4_v158k"]
 [ext_resource type="Texture2D" uid="uid://ccaop0gr4l4bw" path="res://Treasure Hunters/Pirate Treasure/Sprites/Gold Coin/01.png" id="8_h4fw4"]
 [ext_resource type="Script" uid="uid://ccrbr3cf7xy1g" path="res://Scripts/UI/counter.gd" id="8_ldgsr"]
 [ext_resource type="Texture2D" uid="uid://wfe4xke2rka1" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Small Text/Small Text/36.png" id="9_ldgsr"]
@@ -148,8 +147,6 @@ _deceleration = 20.0
 
 [node name="Player" type="Node" parent="Jack"]
 script = ExtResource("4_v158k")
-
-[node name="Level" parent="." instance=ExtResource("5_h4fw4")]
 
 [node name="UserInterface" type="CanvasLayer" parent="."]
 

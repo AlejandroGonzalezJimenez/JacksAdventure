@@ -35,6 +35,7 @@ var _is_below_surface : bool
 @export var _is_hit : bool
 @export var _is_dead : bool
 @export var _wants_to_attack : bool
+@export var _is_attacking : bool
 @onready var _current_health : int = _max_health
 @onready var _hurt_box : Area2D = $HurtBox
 @onready var _hit_box : Area2D = $HitBox
@@ -63,7 +64,8 @@ func _ready():
 	face_left() if _is_facing_left else face_right()
 	if _invincible_duration != 0:
 		_invincible_time = $HurtBox/Invincible
-	#_hit_box.monitoring = false
+	_hit_box.monitoring = false
+	_is_attacking = false
 
 #region Public Methods
 
@@ -104,7 +106,7 @@ func set_bounds(min_boundary : Vector2, max_boundary : Vector2):
 	_min.y += sprite_size.y
 
 func face_left():
-	if _is_dead:
+	if _is_dead || _is_attacking:
 		return
 	_is_facing_left = true
 	_sprite.flip_h = not _sprites_face_left
@@ -113,7 +115,7 @@ func face_left():
 	changed_direction.emit(_is_facing_left)
 	
 func face_right():
-	if _is_dead:
+	if _is_dead || _is_attacking:
 		return
 	_is_facing_left = false
 	_sprite.flip_h = _sprites_face_left
@@ -122,12 +124,13 @@ func face_right():
 	changed_direction.emit(_is_facing_left)
 	
 func run(direction : float):
-	if _is_dead:
-		return
-	_direction = direction
+	if _is_dead || _is_attacking:
+		_direction = 0
+	else:
+		_direction = direction
 
 func jump():
-	if _is_dead:
+	if _is_dead || _is_attacking:
 		return
 	if _is_in_water:
 		if _is_below_surface:
@@ -142,7 +145,7 @@ func jump():
 # If velocity.y is less than 0, the character is going go up. 
 # If the character is moving up, we set its velocity to 0 to stop it moving.
 func stop_jump():
-	if _is_dead:
+	if _is_dead || _is_attacking:
 		return
 	if velocity.y < 0 && not _is_in_water:
 		velocity.y = 0
@@ -237,5 +240,5 @@ func _die():
 	_direction = 0
 
 func _on_hit_box_area_entered(area: Area2D) -> void:
-	area.get_parent().take_damage(_attack_damage, (area.global_position - global_position).normalized())
-	pass # Replace with function body.
+	if not _is_dead && _is_attacking:
+		area.get_parent().take_damage(_attack_damage, (area.global_position - global_position).normalized())

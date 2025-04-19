@@ -1,7 +1,14 @@
 class_name Hero extends Character
 
 @export var _has_sword : bool
+@onready var _attack_input_buffer : Timer = $HitBox/InputBuffer
 var _sword : RigidBody2D
+
+func attack():
+	_wants_to_attack = true
+	_attack_input_buffer.start()
+	await _attack_input_buffer.timeout
+	_wants_to_attack = false
 
 func can_equip_sword() -> bool:
 	return not _has_sword && not _is_dead

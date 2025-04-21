@@ -98,6 +98,18 @@ tracks/3/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("..:_is_attacking")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_d8ot1"]
 resource_name = "anticipation"
@@ -167,6 +179,18 @@ tracks/2/keys = {
 "args": [&"", 1.0, false],
 "method": &"play"
 }]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("..:_is_attacking")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
 }
 
 [sub_resource type="Animation" id="Animation_4qb4d"]
@@ -541,8 +565,16 @@ animations = [{
 collision_layer = 65536
 collision_mask = 65793
 script = ExtResource("1_ov85h")
+_speed = 2.0
+_acceleration = 4.0
+_deceleration = 8.0
+_jump_height = 3.5
+_air_control = 1.0
 _jump_dust = ExtResource("2_b7ddn")
 _is_facing_left = true
+_sprites_face_left = true
+_density = 0.1
+_drag = 0.25
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -14)

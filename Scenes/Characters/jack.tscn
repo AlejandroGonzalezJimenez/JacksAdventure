@@ -1,4 +1,4 @@
-[gd_scene load_steps=169 format=3 uid="uid://bnebn015yw8l2"]
+[gd_scene load_steps=192 format=3 uid="uid://bnebn015yw8l2"]
 
 [ext_resource type="Texture2D" uid="uid://38m08waxuspw" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Idle 01.png" id="1_6ryh8"]
 [ext_resource type="Script" uid="uid://domeswwd5mwbs" path="res://Scripts/Characters/hero.gd" id="1_p16r8"]
@@ -80,6 +80,18 @@
 [ext_resource type="Texture2D" uid="uid://dqir4aufh58qt" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/17-Attack 3/Attack 3 03.png" id="70_cu6aa"]
 [ext_resource type="Texture2D" uid="uid://biexbtxbmmdwg" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Sword Effects/26-Attack 3/Attack 3 03.png" id="71_ayth1"]
 [ext_resource type="AudioStream" uid="uid://bp3rx32wsydb0" path="res://Sound Effects/Sword/Swipes/209125__lukesharples__sword-swipe3.wav" id="71_ivsh2"]
+[ext_resource type="Texture2D" uid="uid://tmpgolpane0x" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/18-Air Attack 1/Air Attack 1 01.png" id="72_sxptd"]
+[ext_resource type="Texture2D" uid="uid://omgwr6ebm3g4" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/18-Air Attack 1/Air Attack 1 02.png" id="73_a0cd6"]
+[ext_resource type="Texture2D" uid="uid://7ugbdhjf0nds" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/18-Air Attack 1/Air Attack 1 03.png" id="74_45xoi"]
+[ext_resource type="AudioStream" uid="uid://uf5cr44113yw" path="res://Sound Effects/Sword/Swipes/209124__lukesharples__sword-swipe4.wav" id="75_a0cd6"]
+[ext_resource type="Texture2D" uid="uid://d2istvc4f1j0p" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/19-Air Attack 2/Air Attack 2 01.png" id="76_i15ht"]
+[ext_resource type="Texture2D" uid="uid://disymly3ixvbw" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/19-Air Attack 2/Air Attack 2 02.png" id="77_albxt"]
+[ext_resource type="Texture2D" uid="uid://dfxtaoxn6pq04" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/19-Air Attack 2/Air Attack 2 03.png" id="78_i4pc8"]
+[ext_resource type="AudioStream" uid="uid://bpfkrq01b0xn1" path="res://Sound Effects/Sword/Swipes/209127__lukesharples__sword-swipe5.wav" id="79_albxt"]
+[ext_resource type="Texture2D" uid="uid://1yiwv2xw7k4u" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Sword Effects/27-Air Attack 1/Air Attack 1 01.png" id="85_ivsh2"]
+[ext_resource type="Texture2D" uid="uid://bf0cld8thk1j3" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Sword Effects/27-Air Attack 1/Air Attack 1 02.png" id="86_a1qwg"]
+[ext_resource type="Texture2D" uid="uid://bhjdp5u7x0o6b" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Sword Effects/28-Air Attack 2/Air Attack 2 01.png" id="87_fciyp"]
+[ext_resource type="Texture2D" uid="uid://cy5a2yk2g4lk3" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Sword Effects/28-Air Attack 2/Air Attack 2 02.png" id="88_i15ht"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rnvkm"]
 radius = 7.0
@@ -172,6 +184,251 @@ tracks/6/keys = {
 "values": [1.5708]
 }
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_45xoi"]
+height = 34.0
+
+[sub_resource type="Animation" id="Animation_g8iur"]
+resource_name = "air_attack_1"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("72_sxptd"), ExtResource("73_a0cd6"), ExtResource("74_45xoi")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:_is_attacking")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../HitBox:monitoring")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../HitBox/CollisionShape2D:shape")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("CapsuleShape2D_45xoi")]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../HitBox/CollisionShape2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3, -4)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../HitBox/CollisionShape2D:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.5708]
+}
+tracks/6/type = "audio"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../SFX")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("75_a0cd6")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/6/use_blend = true
+tracks/7/type = "method"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../HitBox/Air Attack Effects")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"air_attack_1", 1.0, false],
+"method": &"play"
+}]
+}
+tracks/8/type = "method"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../HitBox/Cooldown")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [-1],
+"method": &"start"
+}]
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i4pc8"]
+radius = 14.0
+height = 38.0
+
+[sub_resource type="Animation" id="Animation_tyqex"]
+resource_name = "air_attack_2"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("76_i15ht"), ExtResource("77_albxt"), ExtResource("78_i4pc8")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:_is_attacking")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../HitBox:monitoring")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../HitBox/CollisionShape2D:shape")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("CapsuleShape2D_i4pc8")]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../HitBox/CollisionShape2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(6, -6)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../HitBox/CollisionShape2D:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.5708]
+}
+tracks/6/type = "audio"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../SFX")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("79_albxt")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/6/use_blend = true
+tracks/7/type = "method"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../HitBox/Air Attack Effects")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"air_attack_2", 1.0, false],
+"method": &"play"
+}]
+}
+tracks/8/type = "method"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../HitBox/Cooldown")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [-1],
+"method": &"start"
+}]
+}
+
 [sub_resource type="Animation" id="Animation_ww5f4"]
 resource_name = "attack_1"
 length = 0.3
@@ -250,7 +507,7 @@ tracks/5/keys = {
 tracks/6/type = "method"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("../HitBox/AnimatedSprite2D")
+tracks/6/path = NodePath("../HitBox/Attack Effects")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -276,6 +533,20 @@ tracks/7/keys = {
 "times": PackedFloat32Array(0)
 }
 tracks/7/use_blend = true
+tracks/8/type = "method"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../HitBox/Cooldown")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [-1],
+"method": &"start"
+}]
+}
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6uly0"]
 radius = 6.0
@@ -359,7 +630,7 @@ tracks/5/keys = {
 tracks/6/type = "method"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("../HitBox/AnimatedSprite2D")
+tracks/6/path = NodePath("../HitBox/Attack Effects")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -385,6 +656,20 @@ tracks/7/keys = {
 "times": PackedFloat32Array(0)
 }
 tracks/7/use_blend = true
+tracks/8/type = "method"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../HitBox/Cooldown")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [-1],
+"method": &"start"
+}]
+}
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fciyp"]
 height = 26.0
@@ -467,7 +752,7 @@ tracks/5/keys = {
 tracks/6/type = "method"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("../HitBox/AnimatedSprite2D")
+tracks/6/path = NodePath("../HitBox/Attack Effects")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -493,6 +778,20 @@ tracks/7/keys = {
 "times": PackedFloat32Array(0)
 }
 tracks/7/use_blend = true
+tracks/8/type = "method"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../HitBox/Cooldown")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [-1],
+"method": &"start"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_1upaf"]
 resource_name = "dead_ground"
@@ -955,6 +1254,8 @@ tracks/2/use_blend = true
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4dsyn"]
 _data = {
 &"RESET": SubResource("Animation_ln5hx"),
+&"air_attack_1": SubResource("Animation_g8iur"),
+&"air_attack_2": SubResource("Animation_tyqex"),
 &"attack_1": SubResource("Animation_ww5f4"),
 &"attack_2": SubResource("Animation_a1qwg"),
 &"attack_3": SubResource("Animation_i15ht"),
@@ -1044,6 +1345,12 @@ states/jump_sword/position = Vector2(363.648, -15.1879)
 transitions = ["Start", "Locomotion", SubResource("AnimationNodeStateMachineTransition_8lhqu"), "Locomotion", "jump_sword", SubResource("AnimationNodeStateMachineTransition_6nj1j"), "jump_sword", "fall_sword", SubResource("AnimationNodeStateMachineTransition_34cia"), "fall_sword", "ground_sword", SubResource("AnimationNodeStateMachineTransition_jmxk8"), "ground_sword", "Locomotion", SubResource("AnimationNodeStateMachineTransition_b061g"), "Locomotion", "fall_sword", SubResource("AnimationNodeStateMachineTransition_h5ntn")]
 graph_offset = Vector2(-237.352, -157.188)
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tyqex"]
+animation = &"air_attack_1"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_m8x1y"]
+animation = &"air_attack_2"
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qlde2"]
 animation = &"attack_1"
 
@@ -1058,7 +1365,7 @@ advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_g8iur"]
 advance_mode = 2
-advance_expression = "_wants_to_attack && is_on_floor()"
+advance_expression = "_wants_to_attack && is_on_floor() && _cooldown.is_stopped()"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_cu6aa"]
 switch_mode = 2
@@ -1084,17 +1391,39 @@ advance_expression = "not _wants_to_attack || not is_on_floor()"
 switch_mode = 2
 advance_mode = 2
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qcl5i"]
+advance_mode = 2
+advance_expression = "_wants_to_attack && not is_on_floor() && _cooldown.is_stopped()"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5n533"]
+switch_mode = 2
+advance_mode = 2
+advance_expression = "_wants_to_attack && not is_on_floor()"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_xa6hs"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_b2x4g"]
+switch_mode = 2
+advance_mode = 2
+advance_expression = "not _wants_to_attack || is_on_floor()"
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_ayth1"]
 states/Movement/node = SubResource("AnimationNodeStateMachine_yu7bh")
 states/Movement/position = Vector2(528.648, 100)
+states/air_attack_1/node = SubResource("AnimationNodeAnimation_tyqex")
+states/air_attack_1/position = Vector2(408.648, -21.017)
+states/air_attack_2/node = SubResource("AnimationNodeAnimation_m8x1y")
+states/air_attack_2/position = Vector2(652.648, -21.017)
 states/attack_1/node = SubResource("AnimationNodeAnimation_qlde2")
 states/attack_1/position = Vector2(336.648, 208.983)
 states/attack_2/node = SubResource("AnimationNodeAnimation_84xit")
 states/attack_2/position = Vector2(528.648, 208.983)
 states/attack_3/node = SubResource("AnimationNodeAnimation_sxptd")
 states/attack_3/position = Vector2(719.648, 208.983)
-transitions = ["Start", "Movement", SubResource("AnimationNodeStateMachineTransition_2md12"), "Movement", "attack_1", SubResource("AnimationNodeStateMachineTransition_g8iur"), "attack_1", "attack_2", SubResource("AnimationNodeStateMachineTransition_cu6aa"), "attack_2", "attack_3", SubResource("AnimationNodeStateMachineTransition_ivsh2"), "attack_3", "Movement", SubResource("AnimationNodeStateMachineTransition_a1qwg"), "attack_1", "Movement", SubResource("AnimationNodeStateMachineTransition_6uly0"), "attack_2", "Movement", SubResource("AnimationNodeStateMachineTransition_fciyp")]
-graph_offset = Vector2(-234.352, -3.017)
+transitions = ["Start", "Movement", SubResource("AnimationNodeStateMachineTransition_2md12"), "Movement", "attack_1", SubResource("AnimationNodeStateMachineTransition_g8iur"), "attack_1", "attack_2", SubResource("AnimationNodeStateMachineTransition_cu6aa"), "attack_2", "attack_3", SubResource("AnimationNodeStateMachineTransition_ivsh2"), "attack_3", "Movement", SubResource("AnimationNodeStateMachineTransition_a1qwg"), "attack_1", "Movement", SubResource("AnimationNodeStateMachineTransition_6uly0"), "attack_2", "Movement", SubResource("AnimationNodeStateMachineTransition_fciyp"), "Movement", "air_attack_1", SubResource("AnimationNodeStateMachineTransition_qcl5i"), "air_attack_1", "air_attack_2", SubResource("AnimationNodeStateMachineTransition_5n533"), "air_attack_2", "Movement", SubResource("AnimationNodeStateMachineTransition_xa6hs"), "air_attack_1", "Movement", SubResource("AnimationNodeStateMachineTransition_b2x4g")]
+graph_offset = Vector2(-239.352, -93.017)
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6uly0"]
 animation = &"hit_sword"
@@ -1256,7 +1585,7 @@ advance_expression = "not _has_sword"
 "states/Without Sword/node" = SubResource("AnimationNodeStateMachine_t6ji2")
 "states/Without Sword/position" = Vector2(399, 100)
 transitions = ["Start", "Without Sword", SubResource("AnimationNodeStateMachineTransition_4g4ds"), "Without Sword", "With Sword", SubResource("AnimationNodeStateMachineTransition_a0cd6"), "With Sword", "Without Sword", SubResource("AnimationNodeStateMachineTransition_45xoi")]
-graph_offset = Vector2(-281.599, -111.006)
+graph_offset = Vector2(-349.599, -106.006)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_svv1t"]
 radius = 8.0
@@ -1320,10 +1649,44 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_albxt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("85_ivsh2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86_a1qwg")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"air_attack_1",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("87_fciyp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88_i15ht")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"air_attack_2",
+"speed": 10.0
+}]
+
 [node name="Jack" type="CharacterBody2D"]
 collision_layer = 256
 collision_mask = 65543
 script = ExtResource("1_p16r8")
+_speed = 5.0
+_acceleration = 10.0
+_deceleration = 20.0
 _jump_dust = ExtResource("2_5kux5")
 _invincible_duration = 1.0
 
@@ -1374,17 +1737,26 @@ monitorable = false
 wait_time = 0.5
 one_shot = true
 
+[node name="Cooldown" type="Timer" parent="HitBox"]
+one_shot = true
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 position = Vector2(20, -9)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_rnvkm")
 debug_color = Color(0.952061, 0.153469, 0.402488, 0.42)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="HitBox"]
+[node name="Attack Effects" type="AnimatedSprite2D" parent="HitBox"]
 position = Vector2(30, -10)
 sprite_frames = SubResource("SpriteFrames_6uly0")
 animation = &"attack_1"
 frame = 3
 frame_progress = 1.0
+
+[node name="Air Attack Effects" type="AnimatedSprite2D" parent="HitBox"]
+position = Vector2(18, 3)
+sprite_frames = SubResource("SpriteFrames_albxt")
+animation = &"air_attack_2"
+frame = 2
 
 [connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]

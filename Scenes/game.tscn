@@ -141,9 +141,6 @@ _scroll_speed = -32.0
 
 [node name="Jack" parent="." instance=ExtResource("3_1l0tm")]
 position = Vector2(-102, 79)
-_speed = 5.0
-_acceleration = 10.0
-_deceleration = 20.0
 
 [node name="Player" type="Node" parent="Jack"]
 script = ExtResource("4_v158k")

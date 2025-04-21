@@ -79,6 +79,8 @@ func take_damage(amount : int, direction : Vector2):
 	_current_health = max(_current_health - amount, 0)
 	health_changed.emit(float(_current_health) / _max_health)
 	velocity = direction * Global.ppt * 5
+	if _is_attacking:
+		_attack_interrupted()
 	if _current_health == 0:
 		_die()
 	else:
@@ -174,6 +176,10 @@ func revive():
 	health_changed.emit(float(_current_health) / _max_health)
 
 #endregion
+
+func _attack_interrupted():
+	_is_attacking = false
+	_hit_box.monitoring = false
 
 func _physics_process(delta : float):
 	if not _is_facing_left && sign(_direction) == -1:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://b1hr8js8tsiro"]
+[gd_scene load_steps=33 format=3 uid="uid://b1hr8js8tsiro"]
 
 [ext_resource type="Texture2D" uid="uid://b216ljljooxbm" path="res://Treasure Hunters/Palm Tree Island/Sprites/Terrain/Terrain (32x32).png" id="1_booo5"]
 [ext_resource type="Script" uid="uid://br7o45rvjst03" path="res://Scripts/Environment/level.gd" id="1_w4kc1"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bjd817scf5vqg" path="res://Scenes/Decorations/palm_tree.tscn" id="11_axncg"]
 [ext_resource type="PackedScene" uid="uid://dgs2pwg3ovd1c" path="res://Scenes/Characters/crabby.tscn" id="12_4yllm"]
 [ext_resource type="PackedScene" uid="uid://bgyxw0r2v2c3e" path="res://Scenes/Characters/fierce_tooth.tscn" id="13_2egns"]
+[ext_resource type="PackedScene" uid="uid://diui0mhbeoyv" path="res://Scenes/Characters/patrol.tscn" id="14_2egns"]
 [ext_resource type="PackedScene" uid="uid://tn1eqikm0kdm" path="res://Scenes/Characters/pink_star.tscn" id="14_lg4kb"]
 [ext_resource type="PackedScene" uid="uid://dg8h5qgleqx8x" path="res://Scenes/Treasure/silver_coin.tscn" id="16_3rrt1"]
 [ext_resource type="PackedScene" uid="uid://bry83v11glxba" path="res://Scenes/Treasure/gold_coin.tscn" id="17_bcykt"]
@@ -804,20 +805,23 @@ position = Vector2(1088, 416)
 position = Vector2(-504, -408)
 
 [node name="Crabby" parent="Enemies" instance=ExtResource("12_4yllm")]
-position = Vector2(657, 507)
+position = Vector2(915, 476)
 _is_facing_left = false
 
 [node name="Timer" type="Timer" parent="Enemies/Crabby"]
 wait_time = 2.0
 autostart = true
 
+[node name="Patrol" parent="Enemies/Crabby" instance=ExtResource("14_2egns")]
+position = Vector2(0, 1)
+
 [node name="Fierce Tooth" parent="Enemies" instance=ExtResource("13_2egns")]
-position = Vector2(566, 479)
-_sprites_face_left = true
+position = Vector2(704, 512)
 
 [node name="Timer" type="Timer" parent="Enemies/Fierce Tooth"]
 wait_time = 2.0
-autostart = true
+
+[node name="Patrol" parent="Enemies/Fierce Tooth" instance=ExtResource("14_2egns")]
 
 [node name="Pink Star" parent="Enemies" instance=ExtResource("14_lg4kb")]
 position = Vector2(850, 476)
@@ -827,8 +831,10 @@ _is_facing_left = false
 wait_time = 2.0
 autostart = true
 
+[node name="Patrol" parent="Enemies/Pink Star" instance=ExtResource("14_2egns")]
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1334, -64)
+position = Vector2(1328, -64)
 shape = SubResource("RectangleShape2D_booo5")
 debug_color = Color(0, 0.6, 0.701961, 0)
 

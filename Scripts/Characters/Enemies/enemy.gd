@@ -1,4 +1,4 @@
-extends Character
+class_name Enemy extends Character
 
 @onready var _vision : Area2D = $Vision
 @onready var _line_of_sight : RayCast2D = $Vision/LineOfSight
@@ -36,11 +36,13 @@ func _see_hero(can_now_see_hero : bool):
 
 func face_left():
 	super.face_left()
-	_vision.scale.x = 1
+	if _vision:
+		_vision.scale.x = 1
 
 func face_right():
 	super.face_right()
-	_vision.scale.x = -1
+	if _vision:
+		_vision.scale.x = -1
 
 func _on_vision_body_entered(body: Node2D) -> void:
 	if body is Hero:

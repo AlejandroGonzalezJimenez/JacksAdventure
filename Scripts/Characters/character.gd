@@ -32,6 +32,7 @@ var _is_below_surface : bool
 @export_range(1, 100) var _max_health : int = 5
 @export_range(0, 5) var _invincible_duration : float = 0
 @export_range(0, 5) var _attack_damage : int = 1
+@export_range(0, 10) var _stagger : float = 5
 @export var _is_hit : bool
 @export var _is_dead : bool
 @export var _wants_to_attack : bool
@@ -64,7 +65,8 @@ func _ready():
 	face_left() if _is_facing_left else face_right()
 	if _invincible_duration != 0:
 		_invincible_time = $HurtBox/Invincible
-	_hit_box.monitoring = false
+	if _hit_box:
+		_hit_box.monitoring = false
 	_is_attacking = false
 
 #region Public Methods
@@ -78,7 +80,7 @@ func attack():
 func take_damage(amount : int, direction : Vector2):
 	_current_health = max(_current_health - amount, 0)
 	health_changed.emit(float(_current_health) / _max_health)
-	velocity = direction * Global.ppt * 5
+	velocity = direction * Global.ppt * _stagger
 	if _is_attacking:
 		_attack_interrupted()
 	if _current_health == 0:

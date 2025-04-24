@@ -1,8 +1,8 @@
-[gd_scene load_steps=98 format=3 uid="uid://dgs2pwg3ovd1c"]
+[gd_scene load_steps=100 format=3 uid="uid://dgs2pwg3ovd1c"]
 
-[ext_resource type="Script" uid="uid://4dlfjfbomllq" path="res://Scripts/Characters/character.gd" id="1_iqjo2"]
+[ext_resource type="Script" uid="uid://bulmgws7istgd" path="res://Scripts/Characters/Enemies/enemy.gd" id="1_bf7rw"]
 [ext_resource type="Texture2D" uid="uid://c4umgyl2u4bs2" path="res://Treasure Hunters/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 01.png" id="1_tq08e"]
-[ext_resource type="PackedScene" uid="uid://nos2u3bbioqk" path="res://Scenes/Dust/jump_dust.tscn" id="2_ewrh8"]
+[ext_resource type="PackedScene" uid="uid://nos2u3bbioqk" path="res://Scenes/Dust/jump_dust.tscn" id="2_34ifd"]
 [ext_resource type="Texture2D" uid="uid://wgc4lxtuwkfa" path="res://Treasure Hunters/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 02.png" id="2_ivkh4"]
 [ext_resource type="Texture2D" uid="uid://dy4jgo1sy3fyq" path="res://Treasure Hunters/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 03.png" id="3_iqjo2"]
 [ext_resource type="Texture2D" uid="uid://dlv1qc6sbmdfb" path="res://Treasure Hunters/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 04.png" id="4_ewrh8"]
@@ -560,16 +560,24 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_34ifd"]
+radius = 8.0
+height = 72.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t0je0"]
+radius = 8.0
+height = 128.0
+
 [node name="Crabby" type="CharacterBody2D"]
 collision_layer = 65536
 collision_mask = 65793
-script = ExtResource("1_iqjo2")
+script = ExtResource("1_bf7rw")
 _speed = 4.0
 _acceleration = 8.0
 _deceleration = 16.0
 _jump_height = 1.5
 _air_control = 0.25
-_jump_dust = ExtResource("2_ewrh8")
+_jump_dust = ExtResource("2_34ifd")
 _is_facing_left = true
 _sprites_face_left = true
 _density = 0.25
@@ -629,4 +637,33 @@ sprite_frames = SubResource("SpriteFrames_ulyjx")
 frame = 3
 frame_progress = 1.0
 
+[node name="Target" type="Area2D" parent="HitBox"]
+collision_layer = 0
+collision_mask = 512
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox/Target"]
+position = Vector2(0, -10)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_34ifd")
+debug_color = Color(0.621701, 0.533695, 0, 0.42)
+
+[node name="Vision" type="Area2D" parent="."]
+collision_layer = 524288
+collision_mask = 256
+
+[node name="FieldOfVision" type="CollisionShape2D" parent="Vision"]
+position = Vector2(0, -10)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_t0je0")
+debug_color = Color(1, 1, 1, 0.42)
+
+[node name="LineOfSight" type="RayCast2D" parent="Vision"]
+position = Vector2(0, -21)
+target_position = Vector2(-25, 13)
+collision_mask = 256
+
 [connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
+[connection signal="area_entered" from="HitBox/Target" to="." method="_on_target_area_entered"]
+[connection signal="body_entered" from="Vision" to="." method="_on_vision_body_entered"]
+[connection signal="body_exited" from="Vision" to="." method="_on_vision_body_exited"]

@@ -1,0 +1,380 @@
+[gd_scene load_steps=45 format=3 uid="uid://bpjgaojuearfd"]
+
+[ext_resource type="Script" uid="uid://b8ytcbfekm7qw" path="res://Scripts/Characters/Enemies/shooter.gd" id="1_onytk"]
+[ext_resource type="PackedScene" uid="uid://c55hrlv0i6uhq" path="res://Scenes/Projectiles/wood_spike.tscn" id="2_onytk"]
+[ext_resource type="PackedScene" uid="uid://nos2u3bbioqk" path="res://Scenes/Dust/jump_dust.tscn" id="3_qydlk"]
+[ext_resource type="Texture2D" uid="uid://cif2iueos2eia" path="res://Treasure Hunters/Shooter Traps/Sprites/Seashell/Seashell Idle/1.png" id="4_c25ql"]
+[ext_resource type="Texture2D" uid="uid://bwdgx1mof6qy4" path="res://Treasure Hunters/Shooter Traps/Sprites/Totems/Head 1/Destroyed/1.png" id="5_onytk"]
+[ext_resource type="Texture2D" uid="uid://ctej8hlkh6bml" path="res://Treasure Hunters/Shooter Traps/Sprites/Totems/Head 1/Attack 1/1.png" id="6_5tltf"]
+[ext_resource type="Texture2D" uid="uid://hw41qdwihn6p" path="res://Treasure Hunters/Shooter Traps/Sprites/Totems/Head 1/Attack 1/2.png" id="7_qydlk"]
+[ext_resource type="Texture2D" uid="uid://bkfh73u5iaf0t" path="res://Treasure Hunters/Shooter Traps/Sprites/Totems/Head 1/Attack 1/3.png" id="8_c25ql"]
+[ext_resource type="Texture2D" uid="uid://bqoukn6878858" path="res://Treasure Hunters/Shooter Traps/Sprites/Totems/Head 1/Attack 1/4.png" id="9_1bc8p"]
+[ext_resource type="Texture2D" uid="uid://c82soxj5c2nym" path="res://Treasure Hunters/Shooter Traps/Sprites/Totems/Head 1/Attack 1/5.png" id="10_cjsaf"]
+[ext_resource type="Texture2D" uid="uid://dt4gsblv5jshf" path="res://Treasure Hunters/Shooter Traps/Sprites/Totems/Head 1/Attack 1/6.png" id="11_2qiku"]
+[ext_resource type="Texture2D" uid="uid://1jp405t4d1pu" path="res://Treasure Hunters/Shooter Traps/Sprites/Totems/Head 1/Hit 1/1.png" id="12_x2f8v"]
+[ext_resource type="Texture2D" uid="uid://dqsv6odfkjxpn" path="res://Treasure Hunters/Shooter Traps/Sprites/Totems/Head 1/Hit 1/2.png" id="13_m35l3"]
+[ext_resource type="Texture2D" uid="uid://crh0248vkvxb1" path="res://Treasure Hunters/Shooter Traps/Sprites/Totems/Head 1/Hit 1/3.png" id="14_2cy56"]
+[ext_resource type="Texture2D" uid="uid://uhfoa3wgm161" path="res://Treasure Hunters/Shooter Traps/Sprites/Totems/Head 1/Hit 1/4.png" id="15_387ya"]
+[ext_resource type="Texture2D" uid="uid://0cq1ot8ea28i" path="res://Treasure Hunters/Shooter Traps/Sprites/Totems/Head 1/Idle 1/1.png" id="16_03a43"]
+[ext_resource type="Script" uid="uid://cdbsgsdss6hr" path="res://Scripts/Environment/debris.gd" id="17_0qve0"]
+[ext_resource type="Texture2D" uid="uid://nj86yh02tjrw" path="res://Treasure Hunters/Shooter Traps/Sprites/Totems/Head 1/Destroyed/3.png" id="18_y8yi7"]
+[ext_resource type="Texture2D" uid="uid://c7o4fi6yfu0dv" path="res://Treasure Hunters/Shooter Traps/Sprites/Totems/Head 1/Destroyed/5.png" id="19_0ba2a"]
+[ext_resource type="Texture2D" uid="uid://bxmxi8iw7bcpp" path="res://Treasure Hunters/Shooter Traps/Sprites/Totems/Head 1/Destroyed/6.png" id="20_34y4i"]
+
+[sub_resource type="Animation" id="Animation_nmgnm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_c25ql")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:_is_hit")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("..:_wants_to_fire")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_c21sh"]
+resource_name = "destroyed"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_onytk")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Debris")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"scatter"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_6n68w"]
+resource_name = "fire"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("6_5tltf"), ExtResource("7_qydlk"), ExtResource("8_c25ql"), ExtResource("9_1bc8p"), ExtResource("10_cjsaf"), ExtResource("11_2qiku")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:_wants_to_fire")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_spawn_projectile"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_lom6l"]
+resource_name = "hit"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("12_x2f8v"), ExtResource("13_m35l3"), ExtResource("14_2cy56"), ExtResource("15_387ya")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:_is_hit")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_gwerf"]
+resource_name = "idle"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("16_03a43")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nhksx"]
+_data = {
+&"RESET": SubResource("Animation_nmgnm"),
+&"destroyed": SubResource("Animation_c21sh"),
+&"fire": SubResource("Animation_6n68w"),
+&"hit": SubResource("Animation_lom6l"),
+&"idle": SubResource("Animation_gwerf")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2r61d"]
+animation = &"fire"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_irpgx"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_fjae7"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0d0ke"]
+advance_mode = 2
+advance_expression = "_wants_to_fire"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_or52t"]
+switch_mode = 2
+advance_mode = 2
+advance_expression = "not _wants_to_fire"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_y6g7x"]
+states/fire/node = SubResource("AnimationNodeAnimation_2r61d")
+states/fire/position = Vector2(517, -25)
+states/idle/node = SubResource("AnimationNodeAnimation_irpgx")
+states/idle/position = Vector2(517, 102)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_fjae7"), "idle", "fire", SubResource("AnimationNodeStateMachineTransition_0d0ke"), "fire", "idle", SubResource("AnimationNodeStateMachineTransition_or52t")]
+graph_offset = Vector2(-355, -70)
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2lorv"]
+animation = &"destroyed"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ifltc"]
+animation = &"hit"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_s2j07"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_62e1b"]
+advance_mode = 2
+advance_expression = "_is_hit"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_rowok"]
+switch_mode = 2
+advance_mode = 2
+advance_expression = "not _is_hit"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_6pivl"]
+advance_mode = 2
+advance_expression = "not _is_dead"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_gwerf"]
+advance_mode = 2
+advance_expression = "_is_dead"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_nmgnm"]
+states/Attack/node = SubResource("AnimationNodeStateMachine_y6g7x")
+states/Attack/position = Vector2(516, 100)
+states/destroyed/node = SubResource("AnimationNodeAnimation_2lorv")
+states/destroyed/position = Vector2(516, 210)
+states/hit/node = SubResource("AnimationNodeAnimation_ifltc")
+states/hit/position = Vector2(516, -22)
+transitions = ["Start", "Attack", SubResource("AnimationNodeStateMachineTransition_s2j07"), "Attack", "hit", SubResource("AnimationNodeStateMachineTransition_62e1b"), "hit", "Attack", SubResource("AnimationNodeStateMachineTransition_rowok"), "destroyed", "Attack", SubResource("AnimationNodeStateMachineTransition_6pivl"), "Attack", "destroyed", SubResource("AnimationNodeStateMachineTransition_gwerf")]
+graph_offset = Vector2(-207, -63)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a56w2"]
+size = Vector2(18, 19.625)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0qve0"]
+size = Vector2(14.75, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wdnvp"]
+size = Vector2(19, 30.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1n0j1"]
+size = Vector2(18, 37)
+
+[node name="Blue Totem" type="CharacterBody2D"]
+collision_layer = 65536
+collision_mask = 65537
+script = ExtResource("1_onytk")
+_projectile = ExtResource("2_onytk")
+_jump_dust = ExtResource("3_qydlk")
+_is_facing_left = true
+_sprites_face_left = true
+_stagger = 0.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -15)
+texture = ExtResource("4_c25ql")
+offset = Vector2(4, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
+libraries = {
+&"": SubResource("AnimationLibrary_nhksx")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="Sprite2D/AnimationPlayer"]
+root_node = NodePath("../..")
+tree_root = SubResource("AnimationNodeStateMachine_nmgnm")
+advance_expression_base_node = NodePath("../../..")
+anim_player = NodePath("..")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-9, -1, 0, -27, 9, -1)
+
+[node name="HurtBox" type="Area2D" parent="."]
+collision_layer = 131072
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(0, -10.187)
+shape = SubResource("RectangleShape2D_a56w2")
+debug_color = Color(0, 0.637527, 0.3909, 0.42)
+
+[node name="ProjectileOrigin" type="Node2D" parent="."]
+position = Vector2(0, -5)
+
+[node name="Debris" type="Node2D" parent="."]
+script = ExtResource("17_0qve0")
+
+[node name="Top" type="RigidBody2D" parent="Debris"]
+visible = false
+position = Vector2(0, -2)
+collision_layer = 8
+lock_rotation = true
+freeze = true
+freeze_mode = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="Debris/Top"]
+position = Vector2(0, -20)
+texture = ExtResource("18_y8yi7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Debris/Top"]
+position = Vector2(-1.3575e-06, -21.625)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_0qve0")
+
+[node name="Left" type="RigidBody2D" parent="Debris"]
+visible = false
+position = Vector2(6, -5)
+collision_layer = 8
+lock_rotation = true
+freeze = true
+freeze_mode = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="Debris/Left"]
+position = Vector2(-15, -6)
+texture = ExtResource("19_0ba2a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Debris/Left"]
+position = Vector2(-15, -6)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_wdnvp")
+
+[node name="Right" type="RigidBody2D" parent="Debris"]
+visible = false
+position = Vector2(-7, 7)
+collision_layer = 8
+lock_rotation = true
+freeze = true
+freeze_mode = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="Debris/Right"]
+position = Vector2(19, -18)
+texture = ExtResource("20_34y4i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Debris/Right"]
+position = Vector2(21.5, -18)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_1n0j1")

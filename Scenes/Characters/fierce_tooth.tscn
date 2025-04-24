@@ -1,7 +1,7 @@
 [gd_scene load_steps=100 format=3 uid="uid://bgyxw0r2v2c3e"]
 
 [ext_resource type="Texture2D" uid="uid://cg0thdxw3sbl" path="res://Treasure Hunters/The Crusty Crew/Sprites/Fierce Tooth/01-Idle/Idle 01.png" id="1_86f21"]
-[ext_resource type="Script" uid="uid://bulmgws7istgd" path="res://Scripts/Characters/enemy.gd" id="1_uabia"]
+[ext_resource type="Script" uid="uid://bulmgws7istgd" path="res://Scripts/Characters/Enemies/enemy.gd" id="1_uabia"]
 [ext_resource type="Texture2D" uid="uid://8i6yrobqc3fb" path="res://Treasure Hunters/The Crusty Crew/Sprites/Fierce Tooth/01-Idle/Idle 02.png" id="2_auu7p"]
 [ext_resource type="PackedScene" uid="uid://nos2u3bbioqk" path="res://Scenes/Dust/jump_dust.tscn" id="2_qa4du"]
 [ext_resource type="Texture2D" uid="uid://dsq0q6yjfgstp" path="res://Treasure Hunters/The Crusty Crew/Sprites/Fierce Tooth/01-Idle/Idle 03.png" id="3_dufwr"]

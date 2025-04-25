@@ -10,6 +10,7 @@ extends Node2D
 @onready var _lives_counter : Control = $UserInterface/LivesCounter
 @onready var _key_icon : Control = $UserInterface/KeyIcon
 @onready var _game_over_menu : Control = $UserInterface/GameOverMenu
+@onready var _pause_menu : Control = $UserInterface/PauseMenu
 @onready var _fade : ColorRect = $UserInterface/Fade
 @onready var _fanfare : AudioStreamPlayer = $Fanfare
 var _level : Area2D
@@ -27,6 +28,7 @@ func _load_level():
 	add_child(_level)
 	_init_boundaries()
 	_init_ui()
+	_pause(false)
 
 func _init_boundaries():
 	# get the level boundaries from the level
@@ -46,6 +48,14 @@ func _init_ui():
 func _spawn_player():
 	_player_character.global_position = _level.get_checkpoint_position(File.data.checkpoint)
 	_player_character.velocity = Vector2.ZERO
+
+func _input(event : InputEvent):
+	if event.is_action_pressed("pause"):
+		_pause(!get_tree().paused)
+
+func _pause(should_be_paused : bool):
+	get_tree().paused = should_be_paused
+	_pause_menu.visible = should_be_paused
 
 func collect_map():
 	_player.set_enabled(false)
@@ -75,7 +85,6 @@ func use_key():
 	File.data.has_key = false
 	_key_icon.visible = false
 
-
 func _on_player_died() -> void:
 	if File.data.lives == 0:
 		_game_over()
@@ -99,10 +108,10 @@ func _game_over():
 	_fanfare.play()
 	_game_over_menu.visible = true
 
-func _on_retry_pressed() -> void:
+func _restart(game_over : bool = false) -> void:
 	_game_over_menu.visible = false
 	await _fade.fade_to_black()
-	File.data.retry()
+	File.data.reset(game_over)
 	_level.queue_free()
 	_load_level()
 	_spawn_player()

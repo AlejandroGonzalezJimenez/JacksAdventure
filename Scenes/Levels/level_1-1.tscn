@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dhx14051ecc2"]
+[gd_scene load_steps=34 format=3 uid="uid://b1hr8js8tsiro"]
 
 [ext_resource type="Texture2D" uid="uid://b216ljljooxbm" path="res://Treasure Hunters/Palm Tree Island/Sprites/Terrain/Terrain (32x32).png" id="1_booo5"]
 [ext_resource type="Script" uid="uid://br7o45rvjst03" path="res://Scripts/Environment/level.gd" id="1_w4kc1"]
@@ -11,17 +11,21 @@
 [ext_resource type="Texture2D" uid="uid://difwf4ngfcvip" path="res://Treasure Hunters/Merchant Ship/Sprites/Water/Water/Top/3.png" id="8_ebuj1"]
 [ext_resource type="Texture2D" uid="uid://bapenjta3yg2o" path="res://Treasure Hunters/Merchant Ship/Sprites/Water/Water/Top/4.png" id="9_2kucg"]
 [ext_resource type="AudioStream" uid="uid://cj2xp744kh4gn" path="res://Sound Effects/Impacts/406087__yin_yang_jake007__water-splash.mp3" id="10_vo021"]
-[ext_resource type="PackedScene" uid="uid://bpjgaojuearfd" path="res://Scenes/Characters/blue_totem.tscn" id="14_ox03y"]
-[ext_resource type="PackedScene" uid="uid://dhp0jpuprnwh3" path="res://Scenes/Characters/green_totem.tscn" id="15_3rrt1"]
-[ext_resource type="PackedScene" uid="uid://lb27rof3af5e" path="res://Scenes/Characters/red_totem.tscn" id="16_bcykt"]
-[ext_resource type="Script" uid="uid://ddl6gueyfiaeq" path="res://Scripts/UI/gauge.gd" id="17_ebuj1"]
-[ext_resource type="Texture2D" uid="uid://wwq2pnrxpb1v" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Life Bars/Big Bars/2.png" id="18_ebuj1"]
-[ext_resource type="Script" uid="uid://dcxyu5awkbprl" path="res://Scripts/Characters/Enemies/totem_pole.gd" id="18_vo021"]
-[ext_resource type="Texture2D" uid="uid://ct7anubq007hd" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Life Bars/Big Bars/3.png" id="19_vo021"]
-[ext_resource type="Texture2D" uid="uid://bn0ne6dn3r6g3" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Life Bars/Big Bars/4.png" id="20_axncg"]
-[ext_resource type="Texture2D" uid="uid://cqvcgk46cl55y" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Life Bars/Colors/1.png" id="21_4yllm"]
+[ext_resource type="PackedScene" uid="uid://bjd817scf5vqg" path="res://Scenes/Decorations/palm_tree.tscn" id="12_lg4kb"]
+[ext_resource type="PackedScene" uid="uid://dgs2pwg3ovd1c" path="res://Scenes/Characters/crabby.tscn" id="13_fbvfs"]
+[ext_resource type="PackedScene" uid="uid://diui0mhbeoyv" path="res://Scenes/Characters/patrol.tscn" id="14_gv0h3"]
+[ext_resource type="PackedScene" uid="uid://bgyxw0r2v2c3e" path="res://Scenes/Characters/fierce_tooth.tscn" id="15_pprxb"]
+[ext_resource type="PackedScene" uid="uid://tn1eqikm0kdm" path="res://Scenes/Characters/pink_star.tscn" id="16_dgb6h"]
+[ext_resource type="PackedScene" uid="uid://4qhjjsr1nskk" path="res://Scenes/Characters/seashell.tscn" id="17_sfpdu"]
+[ext_resource type="PackedScene" uid="uid://xdikldfbmc2g" path="res://Scenes/Treasure/golden_skull.tscn" id="18_4hscc"]
+[ext_resource type="PackedScene" uid="uid://c2hbxwo3mv6d7" path="res://Scenes/Treasure/chest.tscn" id="19_5874f"]
+[ext_resource type="PackedScene" uid="uid://ck34652ieymj" path="res://Scenes/Treasure/key.tscn" id="20_2yn8o"]
 [ext_resource type="PackedScene" uid="uid://b75hguuvv66ly" path="res://Scenes/Treasure/small_map_2.tscn" id="21_ebuj1"]
+[ext_resource type="PackedScene" uid="uid://dg8h5qgleqx8x" path="res://Scenes/Treasure/silver_coin.tscn" id="21_jggnq"]
+[ext_resource type="PackedScene" uid="uid://bry83v11glxba" path="res://Scenes/Treasure/gold_coin.tscn" id="22_yxhgx"]
 [ext_resource type="PackedScene" uid="uid://cgdpqi6plraj7" path="res://Scenes/checkpoint.tscn" id="23_axncg"]
+[ext_resource type="PackedScene" uid="uid://cxmlm2gcik16x" path="res://Scenes/Treasure/red_potion.tscn" id="23_csb8p"]
+[ext_resource type="PackedScene" uid="uid://cgc7ji5lqb44m" path="res://Scenes/Decorations/spikes.tscn" id="24_xupm3"]
 [ext_resource type="PackedScene" uid="uid://d3yahvg5hdtqi" path="res://Scenes/sword.tscn" id="25_4yllm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kdu3h"]
@@ -447,15 +451,13 @@ animations = [{
 }]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_4y01o"]
-b = Vector2(1360, 2)
+b = Vector2(3472, 2)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_booo5"]
-size = Vector2(1287.5, 690)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ox03y"]
-size = Vector2(384, 160)
+size = Vector2(3375, 690)
 
 [node name="Level" type="Area2D"]
+process_mode = 1
 script = ExtResource("1_w4kc1")
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -463,9 +465,10 @@ position = Vector2(-504, -408)
 tile_set = SubResource("TileSet_pu0qw")
 format = 2
 layer_0/name = "Terrain"
-layer_0/tile_data = PackedInt32Array(1048589, 65536, 0, 1048590, 65536, 0, 1048591, 65536, 0, 1048592, 458752, 1, 1048593, 65536, 1, 1048594, 65536, 1, 1048595, 65536, 1, 1048596, 65536, 1, 1048597, 393216, 1, 1048598, 65536, 0, 1048588, 65536, 0, 1048587, 0, 0, 1048599, 65536, 0, 1048600, 65536, 0, 1048601, 65536, 0, 1048602, 65536, 0, 1048603, 65536, 0, 1048604, 65536, 0, 1048605, 65536, 0, 1048607, 65536, 0, 1048606, 65536, 0, 1048608, 65536, 0, 1048609, 65536, 0, 1048610, 458752, 1, 1048611, 131072, 1, 1245218, 131072, 2, 1245217, 65536, 2, 1245216, 65536, 2, 1245215, 65536, 2, 1245214, 65536, 2, 1245213, 65536, 2, 1245212, 65536, 2, 1245211, 65536, 2, 1245210, 65536, 2, 1245209, 65536, 2, 1245208, 65536, 2, 1245207, 65536, 2, 1245206, 65536, 2, 1245205, 65536, 2, 1245204, 65536, 2, 1245203, 65536, 2, 1245202, 65536, 2, 1245201, 65536, 2, 1245200, 65536, 2, 1245199, 65536, 2, 1245198, 65536, 2, 1245197, 65536, 2, 1245196, 0, 2, 1179659, 0, 2, 1114123, 0, 1, 1179660, 458752, 0, 1179661, 65536, 1, 1179662, 65536, 1, 1179663, 65536, 1, 1179664, 65536, 1, 1179665, 65536, 1, 1179666, 65536, 1, 1179667, 65536, 1, 1179668, 65536, 1, 1179669, 65536, 1, 1179670, 65536, 1, 1179671, 65536, 1, 1179672, 65536, 1, 1179673, 65536, 1, 1179674, 65536, 1, 1179675, 65536, 1, 1179676, 65536, 1, 1179677, 65536, 1, 1179678, 65536, 1, 1179679, 65536, 1, 1179680, 65536, 1, 1179681, 65536, 1, 1179682, 393216, 0, 1179683, 131072, 2, 1114147, 131072, 1, 1114146, 65536, 1, 1114145, 65536, 1, 1114144, 65536, 1, 1114143, 65536, 1, 1114142, 65536, 1, 1114141, 65536, 1, 1114140, 65536, 1, 1114139, 65536, 1, 1114138, 65536, 1, 1114137, 65536, 1, 1114136, 65536, 1, 1114135, 65536, 1, 1114134, 65536, 1, 1114133, 65536, 1, 1114132, 65536, 1, 1114131, 65536, 1, 1114130, 65536, 1, 1114129, 65536, 1, 1114128, 65536, 1, 1114127, 65536, 1, 1114126, 65536, 1, 1114125, 65536, 1, 1114124, 65536, 1, 983056, 0, 1, 917520, 0, 0, 917521, 65536, 0, 983057, 65536, 1, 851986, 0, 1, 786450, 0, 0, 786451, 65536, 0, 851987, 65536, 1, 917523, 65536, 1, 983059, 65536, 1, 983058, 65536, 1, 917522, 458752, 1, 655380, 0, 0, 720916, 0, 1, 786452, 458752, 1, 851988, 65536, 1, 917524, 65536, 1, 983060, 65536, 1, 983061, 131072, 1, 917525, 131072, 1, 851989, 131072, 1, 786453, 131072, 1, 720917, 131072, 1, 655381, 131072, 0, 983074, 0, 1, 917538, 0, 1, 852002, 0, 1, 786466, 0, 1, 720930, 0, 1, 655394, 0, 1, 589858, 0, 1, 524322, 0, 0, 524323, 131072, 0, 589859, 131072, 1, 655395, 131072, 1, 720931, 131072, 1, 786467, 131072, 1, 852003, 131072, 1, 917539, 131072, 1, 983075, 131072, 1)
+layer_0/tile_data = PackedInt32Array(1048589, 65536, 0, 1048590, 65536, 0, 1048591, 65536, 0, 1048592, 458752, 1, 1048593, 393216, 1, 1048594, 65536, 0, 1048595, 65536, 0, 1048596, 65536, 0, 1048597, 65536, 0, 1048598, 65536, 0, 1048588, 65536, 0, 1048587, 0, 0, 983056, 0, 0, 983057, 131072, 0, 983063, 0, 1, 917527, 0, 0, 1048599, 458752, 1, 917528, 131072, 0, 983064, 393216, 1, 1048600, 65536, 1, 983065, 65536, 0, 983066, 65536, 0, 983067, 65536, 0, 983068, 65536, 0, 983069, 65536, 0, 1048601, 65536, 1, 1048602, 65536, 1, 1048603, 65536, 1, 1048604, 65536, 1, 1048605, 65536, 1, 917534, 0, 1, 851998, 0, 1, 786462, 0, 0, 786463, 131072, 0, 851999, 131072, 1, 917535, 393216, 1, 983070, 458752, 1, 983071, 65536, 1, 1048607, 65536, 1, 1048606, 65536, 1, 917536, 131072, 0, 983072, 131072, 1, 1048608, 393216, 1, 1048609, 65536, 0, 1048610, 65536, 0, 1048611, 65536, 0, 983076, 262144, 0, 1048612, 458752, 4, 1114148, 131072, 1, 1179684, 131072, 1, 1245220, 589824, 4, 1245221, 65536, 4, 1245222, 65536, 4, 1245223, 65536, 4, 1245224, 65536, 4, 1245225, 65536, 4, 1245226, 65536, 4, 1245227, 65536, 4, 1179692, 0, 0, 1245228, 655360, 4, 1048621, 0, 0, 1114157, 0, 1, 1179693, 458752, 1, 1245229, 65536, 2, 1048622, 65536, 0, 983087, 0, 1, 917551, 0, 1, 852014, 983040, 4, 786477, 65536, 4, 786476, 65536, 4, 786475, 983040, 3, 852011, 262144, 1, 917547, 1048576, 4, 917546, 983040, 3, 983082, 262144, 1, 1048618, 1048576, 4, 1048615, 0, 4, 1048616, 65536, 4, 1048617, 65536, 4, 917544, 262144, 2, 852008, 262144, 1, 786472, 262144, 1, 720936, 262144, 1, 655400, 983040, 3, 655401, 1048576, 4, 589865, 983040, 3, 589866, 65536, 4, 589867, 131072, 4, 786478, 1048576, 3, 852015, 655360, 3, 852016, 131072, 0, 917552, 393216, 1, 917553, 131072, 0, 983089, 131072, 1, 1048626, 65536, 0, 1048627, 65536, 0, 1048625, 393216, 1, 983088, 65536, 1, 1048624, 65536, 1, 1048623, 458752, 1, 983092, 0, 0, 1048628, 458752, 1, 917557, 262144, 1, 852021, 262144, 1, 786485, 983040, 3, 983093, 458752, 4, 1048629, 131072, 1, 720950, 0, 0, 720951, 131072, 0, 786486, 655360, 4, 786487, 589824, 4, 786488, 1048576, 3, 852024, 262144, 1, 917560, 262144, 1, 983096, 262144, 1, 1048632, 262144, 2, 1245240, 65536, 4, 1245239, 65536, 4, 1245238, 65536, 4, 1245237, 589824, 4, 1179701, 131072, 1, 1114165, 131072, 1, 1048636, 0, 0, 1114172, 0, 1, 1179708, 0, 1, 1245244, 655360, 4, 1245243, 65536, 4, 1245242, 65536, 4, 1245241, 65536, 4, 1048637, 65536, 0, 1048638, 65536, 0, 1048639, 65536, 0, 1048640, 65536, 0, 983105, 0, 0, 983106, 131072, 0, 1048641, 458752, 1, 1048642, 393216, 1, 1048643, 65536, 0, 1048644, 65536, 0, 1048645, 65536, 0, 1048646, 65536, 0, 1048647, 65536, 0, 1048648, 65536, 0, 1048649, 65536, 0, 983114, 0, 0, 917579, 0, 1, 852043, 0, 1, 786507, 0, 0, 786508, 131072, 0, 852044, 131072, 1, 917580, 131072, 1, 983116, 131072, 1, 983115, 458752, 1, 1048650, 458752, 1, 1048651, 65536, 1, 1048652, 131072, 1, 1048655, 0, 4, 1048656, 65536, 4, 1245263, 65536, 4, 1245264, 65536, 4, 1114188, 131072, 1, 1179724, 131072, 1, 1245260, 589824, 4, 1245259, 65536, 2, 1245258, 65536, 2, 1245257, 65536, 2, 1245256, 65536, 2, 1245255, 65536, 2, 1245254, 65536, 2, 1245253, 65536, 2, 1245252, 65536, 2, 1245251, 65536, 2, 1245250, 65536, 2, 1245249, 65536, 2, 1245248, 65536, 2, 1245247, 65536, 2, 1245246, 65536, 2, 1245245, 65536, 2, 1179709, 65536, 1, 1179710, 65536, 1, 1179711, 65536, 1, 1179712, 65536, 1, 1179713, 65536, 1, 1179714, 65536, 1, 1179715, 65536, 1, 1179716, 65536, 1, 1179717, 65536, 1, 1179718, 65536, 1, 1179719, 65536, 1, 1179720, 65536, 1, 1179721, 65536, 1, 1179722, 65536, 1, 1179723, 65536, 1, 1114187, 65536, 1, 1114186, 65536, 1, 1114185, 65536, 1, 1114184, 65536, 1, 1114183, 65536, 1, 1114182, 65536, 1, 1114181, 65536, 1, 1114180, 65536, 1, 1114179, 65536, 1, 1114178, 65536, 1, 1114177, 65536, 1, 1114176, 65536, 1, 1114175, 65536, 1, 1114174, 65536, 1, 1114173, 65536, 1, 1245261, 65536, 4, 1245262, 65536, 4, 1245265, 65536, 4, 1245266, 65536, 4, 1245267, 65536, 4, 1245268, 65536, 4, 1245269, 65536, 4, 1245270, 65536, 4, 1245271, 65536, 4, 1245272, 65536, 4, 1245273, 65536, 4, 1245274, 65536, 4, 1245275, 65536, 4, 1245276, 65536, 4, 1245277, 65536, 4, 1245278, 65536, 4, 1179743, 0, 1, 1114207, 0, 1, 1048671, 0, 0, 1245279, 655360, 4, 1245280, 65536, 2, 1048672, 65536, 0, 1114208, 65536, 1, 1179744, 65536, 1, 983137, 0, 1, 917601, 0, 1, 852065, 0, 1, 786529, 0, 1, 1048673, 458752, 1, 1114209, 65536, 1, 1179745, 65536, 1, 1245281, 65536, 2, 720992, 655360, 4, 720991, 65536, 4, 720990, 65536, 4, 720989, 589824, 4, 786524, 131072, 1, 852060, 131072, 1, 917596, 131072, 1, 983132, 131072, 1, 720988, 393216, 0, 720993, 1048576, 1, 1048668, 131072, 2, 1048667, 65536, 2, 1048666, 65536, 2, 1048665, 65536, 2, 1048664, 65536, 2, 1048663, 65536, 2, 1048662, 65536, 2, 1048661, 65536, 2, 1048660, 65536, 2, 1048659, 655360, 4, 1048658, 65536, 4, 1048657, 65536, 4, 983123, 0, 0, 917588, 0, 0, 983124, 458752, 1, 786517, 0, 0, 852053, 0, 1, 917589, 458752, 1, 983125, 65536, 1, 655446, 0, 0, 720982, 0, 1, 786518, 458752, 1, 852054, 65536, 1, 917590, 65536, 1, 983126, 65536, 1, 524375, 0, 0, 589911, 0, 1, 655447, 458752, 1, 720983, 65536, 1, 786519, 65536, 1, 852055, 65536, 1, 917591, 65536, 1, 983127, 65536, 1, 852049, 262144, 2, 786513, 393216, 3, 720977, 0, 0, 720978, 983040, 1, 655442, 0, 1, 589906, 0, 1, 524370, 0, 0, 786514, 131072, 2, 524371, 131072, 0, 589907, 131072, 1, 655443, 131072, 1, 720979, 131072, 2, 524376, 65536, 0, 524377, 65536, 0, 524378, 65536, 0, 524379, 65536, 0, 524380, 65536, 0, 524381, 131072, 0, 589917, 131072, 1, 655453, 131072, 1, 589916, 65536, 1, 589915, 65536, 1, 589914, 65536, 1, 589913, 65536, 1, 589912, 65536, 1, 655448, 65536, 1, 655449, 65536, 1, 655450, 65536, 1, 655451, 65536, 1, 655452, 65536, 1, 720987, 65536, 1, 720986, 65536, 1, 720985, 65536, 1, 720984, 65536, 1, 786520, 65536, 1, 852056, 65536, 1, 917592, 65536, 1, 983128, 65536, 1, 983129, 65536, 1, 917593, 65536, 1, 852057, 65536, 1, 786521, 65536, 1, 786522, 65536, 1, 852058, 65536, 1, 917594, 65536, 1, 983130, 65536, 1, 983131, 65536, 1, 917595, 65536, 1, 852059, 65536, 1, 786523, 65536, 1, 589920, 0, 0, 655456, 0, 1, 589921, 131072, 0, 655457, 131072, 1, 720994, 65536, 0, 720995, 131072, 0, 786531, 131072, 1, 852067, 131072, 1, 917603, 393216, 1, 917604, 131072, 0, 983140, 131072, 1, 1048676, 393216, 1, 1048677, 65536, 0, 1048678, 65536, 0, 983143, 0, 0, 983144, 131072, 0, 1048679, 458752, 1, 1048680, 393216, 1, 1048681, 65536, 0, 1048682, 131072, 0, 786530, 65536, 1, 852066, 65536, 1, 917602, 65536, 1, 983138, 65536, 1, 1048674, 65536, 1, 1114210, 65536, 1, 1179746, 65536, 1, 1245282, 65536, 2, 1245283, 65536, 2, 1179747, 65536, 1, 1114211, 65536, 1, 1048675, 65536, 1, 983139, 65536, 1, 1114212, 65536, 1, 1114213, 65536, 1, 1114214, 65536, 1, 1114215, 65536, 1, 1114216, 65536, 1, 1114217, 65536, 1, 1114218, 131072, 1, 1179754, 131072, 1, 1179753, 65536, 1, 1179752, 65536, 1, 1179751, 65536, 1, 1179750, 65536, 1, 1179749, 65536, 1, 1179748, 65536, 1, 1245284, 65536, 2, 1245285, 65536, 2, 1245286, 65536, 2, 1245287, 65536, 2, 1245288, 65536, 2, 1245289, 65536, 2, 1245290, 131072, 2, 1114158, 65536, 1, 1114159, 65536, 1, 1114160, 65536, 1, 1114161, 65536, 1, 1114162, 65536, 1, 1114163, 65536, 1, 1114164, 65536, 1, 1179700, 65536, 1, 1179699, 65536, 1, 1179698, 65536, 1, 1179697, 65536, 1, 1179696, 65536, 1, 1179695, 65536, 1, 1179694, 65536, 1, 1245230, 65536, 2, 1245231, 65536, 2, 1245232, 65536, 2, 1245233, 65536, 2, 1245234, 65536, 2, 1245235, 65536, 2, 1245236, 65536, 2, 1245219, 65536, 2, 1245218, 65536, 2, 1245217, 65536, 2, 1245216, 65536, 2, 1245215, 65536, 2, 1245214, 65536, 2, 1245213, 65536, 2, 1245212, 65536, 2, 1245211, 65536, 2, 1245210, 65536, 2, 1245209, 65536, 2, 1245208, 65536, 2, 1245207, 65536, 2, 1245206, 65536, 2, 1245205, 65536, 2, 1245204, 65536, 2, 1245203, 65536, 2, 1245202, 65536, 2, 1245201, 65536, 2, 1245200, 65536, 2, 1245199, 65536, 2, 1245198, 65536, 2, 1245197, 65536, 2, 1245196, 65536, 2, 1245195, 0, 2, 1179659, 0, 1, 1114123, 0, 1, 1179660, 65536, 1, 1179661, 65536, 1, 1179662, 65536, 1, 1179663, 65536, 1, 1179664, 65536, 1, 1179665, 65536, 1, 1179666, 65536, 1, 1179667, 65536, 1, 1179668, 65536, 1, 1179669, 65536, 1, 1179670, 65536, 1, 1179671, 65536, 1, 1179672, 65536, 1, 1179673, 65536, 1, 1179674, 65536, 1, 1179675, 65536, 1, 1179676, 65536, 1, 1179677, 65536, 1, 1179678, 65536, 1, 1179679, 65536, 1, 1179680, 65536, 1, 1179681, 65536, 1, 1179682, 65536, 1, 1179683, 65536, 1, 1114147, 65536, 1, 1114146, 65536, 1, 1114145, 65536, 1, 1114144, 65536, 1, 1114143, 65536, 1, 1114142, 65536, 1, 1114141, 65536, 1, 1114140, 65536, 1, 1114139, 65536, 1, 1114138, 65536, 1, 1114137, 65536, 1, 1114136, 65536, 1, 1114135, 65536, 1, 1114134, 65536, 1, 1114133, 65536, 1, 1114132, 65536, 1, 1114131, 65536, 1, 1114130, 65536, 1, 1114129, 65536, 1, 1114128, 65536, 1, 1114127, 65536, 1, 1114126, 65536, 1, 1114125, 65536, 1, 1114124, 65536, 1)
 layer_1/name = "Roots"
 layer_1/z_index = 1
+layer_1/tile_data = PackedInt32Array(917532, 1, 0, 983068, 1, 1, 983074, 1, 0, 1048610, 1, 1, 917538, 1, 0, 917540, 1, 0, 983076, 1, 1, 852004, 1, 0, 786472, 131073, 0, 786471, 1, 2, 786470, 65537, 0, 786479, 1, 0, 852015, 1, 1, 917553, 65537, 1, 917554, 1, 2, 917555, 131073, 1, 917560, 65537, 1, 917561, 1, 2, 917562, 131073, 1, 1048644, 1, 1, 983108, 1, 0, 917572, 1, 0, 917579, 131073, 0, 917578, 1, 2, 917577, 65537, 0, 589907, 65537, 1, 589908, 1, 2, 589909, 131073, 1, 524377, 1, 1, 458841, 1, 0, 393305, 1, 0, 327769, 1, 0, 262233, 1, 0, 524379, 1, 1, 458843, 1, 0, 393307, 1, 0)
 
 [node name="Water" type="Area2D" parent="."]
 z_index = 9
@@ -476,8 +479,8 @@ script = ExtResource("3_ox03y")
 _splash = ExtResource("4_3rrt1")
 
 [node name="Bottom" type="Sprite2D" parent="Water"]
-position = Vector2(691.792, 264)
-scale = Vector2(14.7543, 15)
+position = Vector2(1728, 264)
+scale = Vector2(36.342, 15)
 texture = ExtResource("5_bcykt")
 
 [node name="Surface" type="Node2D" parent="Water"]
@@ -593,6 +596,164 @@ autoplay = "default"
 frame_progress = 0.882114
 offset = Vector2(48, 8)
 
+[node name="AnimatedSprite2D16" type="AnimatedSprite2D" parent="Water/Surface"]
+position = Vector2(1440, 0)
+sprite_frames = SubResource("SpriteFrames_ijuxo")
+autoplay = "default"
+frame = 2
+frame_progress = 0.37594
+offset = Vector2(48, 8)
+
+[node name="AnimatedSprite2D17" type="AnimatedSprite2D" parent="Water/Surface"]
+position = Vector2(1536, 0)
+sprite_frames = SubResource("SpriteFrames_ijuxo")
+autoplay = "default"
+frame_progress = 0.882114
+offset = Vector2(48, 8)
+
+[node name="AnimatedSprite2D18" type="AnimatedSprite2D" parent="Water/Surface"]
+position = Vector2(1632, 0)
+sprite_frames = SubResource("SpriteFrames_ijuxo")
+autoplay = "default"
+frame = 2
+frame_progress = 0.37594
+offset = Vector2(48, 8)
+
+[node name="AnimatedSprite2D19" type="AnimatedSprite2D" parent="Water/Surface"]
+position = Vector2(1728, 0)
+sprite_frames = SubResource("SpriteFrames_ijuxo")
+autoplay = "default"
+frame_progress = 0.882114
+offset = Vector2(48, 8)
+
+[node name="AnimatedSprite2D20" type="AnimatedSprite2D" parent="Water/Surface"]
+position = Vector2(1824, 0)
+sprite_frames = SubResource("SpriteFrames_ijuxo")
+autoplay = "default"
+frame = 2
+frame_progress = 0.37594
+offset = Vector2(48, 8)
+
+[node name="AnimatedSprite2D21" type="AnimatedSprite2D" parent="Water/Surface"]
+position = Vector2(1920, 0)
+sprite_frames = SubResource("SpriteFrames_ijuxo")
+autoplay = "default"
+frame_progress = 0.882114
+offset = Vector2(48, 8)
+
+[node name="AnimatedSprite2D22" type="AnimatedSprite2D" parent="Water/Surface"]
+position = Vector2(2016, 0)
+sprite_frames = SubResource("SpriteFrames_ijuxo")
+autoplay = "default"
+frame = 2
+frame_progress = 0.37594
+offset = Vector2(48, 8)
+
+[node name="AnimatedSprite2D23" type="AnimatedSprite2D" parent="Water/Surface"]
+position = Vector2(2112, 0)
+sprite_frames = SubResource("SpriteFrames_ijuxo")
+autoplay = "default"
+frame_progress = 0.882114
+offset = Vector2(48, 8)
+
+[node name="AnimatedSprite2D24" type="AnimatedSprite2D" parent="Water/Surface"]
+position = Vector2(2208, 0)
+sprite_frames = SubResource("SpriteFrames_ijuxo")
+autoplay = "default"
+frame = 2
+frame_progress = 0.37594
+offset = Vector2(48, 8)
+
+[node name="AnimatedSprite2D25" type="AnimatedSprite2D" parent="Water/Surface"]
+position = Vector2(2304, 0)
+sprite_frames = SubResource("SpriteFrames_ijuxo")
+autoplay = "default"
+frame_progress = 0.882114
+offset = Vector2(48, 8)
+
+[node name="AnimatedSprite2D26" type="AnimatedSprite2D" parent="Water/Surface"]
+position = Vector2(2400, 0)
+sprite_frames = SubResource("SpriteFrames_ijuxo")
+autoplay = "default"
+frame = 2
+frame_progress = 0.37594
+offset = Vector2(48, 8)
+
+[node name="AnimatedSprite2D27" type="AnimatedSprite2D" parent="Water/Surface"]
+position = Vector2(2496, 0)
+sprite_frames = SubResource("SpriteFrames_ijuxo")
+autoplay = "default"
+frame_progress = 0.882114
+offset = Vector2(48, 8)
+
+[node name="AnimatedSprite2D28" type="AnimatedSprite2D" parent="Water/Surface"]
+position = Vector2(2592, 0)
+sprite_frames = SubResource("SpriteFrames_ijuxo")
+autoplay = "default"
+frame = 2
+frame_progress = 0.37594
+offset = Vector2(48, 8)
+
+[node name="AnimatedSprite2D29" type="AnimatedSprite2D" parent="Water/Surface"]
+position = Vector2(2688, 0)
+sprite_frames = SubResource("SpriteFrames_ijuxo")
+autoplay = "default"
+frame_progress = 0.882114
+offset = Vector2(48, 8)
+
+[node name="AnimatedSprite2D30" type="AnimatedSprite2D" parent="Water/Surface"]
+position = Vector2(2784, 0)
+sprite_frames = SubResource("SpriteFrames_ijuxo")
+autoplay = "default"
+frame = 2
+frame_progress = 0.37594
+offset = Vector2(48, 8)
+
+[node name="AnimatedSprite2D31" type="AnimatedSprite2D" parent="Water/Surface"]
+position = Vector2(2880, 0)
+sprite_frames = SubResource("SpriteFrames_ijuxo")
+autoplay = "default"
+frame_progress = 0.882114
+offset = Vector2(48, 8)
+
+[node name="AnimatedSprite2D32" type="AnimatedSprite2D" parent="Water/Surface"]
+position = Vector2(2976, 0)
+sprite_frames = SubResource("SpriteFrames_ijuxo")
+autoplay = "default"
+frame = 2
+frame_progress = 0.37594
+offset = Vector2(48, 8)
+
+[node name="AnimatedSprite2D33" type="AnimatedSprite2D" parent="Water/Surface"]
+position = Vector2(3072, 0)
+sprite_frames = SubResource("SpriteFrames_ijuxo")
+autoplay = "default"
+frame_progress = 0.882114
+offset = Vector2(48, 8)
+
+[node name="AnimatedSprite2D34" type="AnimatedSprite2D" parent="Water/Surface"]
+position = Vector2(3168, 0)
+sprite_frames = SubResource("SpriteFrames_ijuxo")
+autoplay = "default"
+frame = 2
+frame_progress = 0.37594
+offset = Vector2(48, 8)
+
+[node name="AnimatedSprite2D35" type="AnimatedSprite2D" parent="Water/Surface"]
+position = Vector2(3264, 0)
+sprite_frames = SubResource("SpriteFrames_ijuxo")
+autoplay = "default"
+frame_progress = 0.882114
+offset = Vector2(48, 8)
+
+[node name="AnimatedSprite2D36" type="AnimatedSprite2D" parent="Water/Surface"]
+position = Vector2(3360, 0)
+sprite_frames = SubResource("SpriteFrames_ijuxo")
+autoplay = "default"
+frame = 2
+frame_progress = 0.37594
+offset = Vector2(48, 8)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Water"]
 position = Vector2(0, -2)
 shape = SubResource("SegmentShape2D_4y01o")
@@ -600,10 +761,185 @@ shape = SubResource("SegmentShape2D_4y01o")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Water"]
 stream = ExtResource("10_vo021")
 
+[node name="Decorations" type="Node2D" parent="."]
+position = Vector2(-504, -408)
+
+[node name="Palm Tree" parent="Decorations" instance=ExtResource("12_lg4kb")]
+position = Vector2(896, 416)
+
+[node name="Palm Tree4" parent="Decorations" instance=ExtResource("12_lg4kb")]
+position = Vector2(1216, 352)
+
+[node name="Palm Tree5" parent="Decorations" instance=ExtResource("12_lg4kb")]
+position = Vector2(1504, 352)
+
+[node name="Palm Tree6" parent="Decorations" instance=ExtResource("12_lg4kb")]
+position = Vector2(1632, 416)
+
+[node name="Palm Tree7" parent="Decorations" instance=ExtResource("12_lg4kb")]
+position = Vector2(1856, 416)
+
+[node name="Palm Tree8" parent="Decorations" instance=ExtResource("12_lg4kb")]
+position = Vector2(2176, 416)
+
+[node name="Palm Tree9" parent="Decorations" instance=ExtResource("12_lg4kb")]
+position = Vector2(2336, 416)
+
+[node name="Palm Tree10" parent="Decorations" instance=ExtResource("12_lg4kb")]
+position = Vector2(2720, 256)
+
+[node name="Palm Tree11" parent="Decorations" instance=ExtResource("12_lg4kb")]
+position = Vector2(2848, 96)
+
+[node name="Palm Tree12" parent="Decorations" instance=ExtResource("12_lg4kb")]
+position = Vector2(2912, 160)
+
+[node name="Palm Tree13" parent="Decorations" instance=ExtResource("12_lg4kb")]
+position = Vector2(2816, 224)
+
+[node name="Palm Tree3" parent="Decorations" instance=ExtResource("12_lg4kb")]
+position = Vector2(1152, 384)
+
+[node name="Palm Tree2" parent="Decorations" instance=ExtResource("12_lg4kb")]
+position = Vector2(1088, 416)
+
+[node name="Enemies" type="Node2D" parent="."]
+position = Vector2(-504, -408)
+
+[node name="Crabby" parent="Enemies" instance=ExtResource("13_fbvfs")]
+position = Vector2(2275, 509)
+_is_facing_left = false
+
+[node name="Patrol" parent="Enemies/Crabby" instance=ExtResource("14_gv0h3")]
+position = Vector2(0, 1)
+
+[node name="Fierce Tooth" parent="Enemies" instance=ExtResource("15_pprxb")]
+position = Vector2(704, 512)
+
+[node name="Timer" type="Timer" parent="Enemies/Fierce Tooth"]
+wait_time = 2.0
+
+[node name="Patrol" parent="Enemies/Fierce Tooth" instance=ExtResource("14_gv0h3")]
+
+[node name="Pink Star" parent="Enemies" instance=ExtResource("16_dgb6h")]
+position = Vector2(2608, 504)
+_is_facing_left = false
+
+[node name="Timer" type="Timer" parent="Enemies/Pink Star"]
+wait_time = 2.0
+autostart = true
+
+[node name="Patrol" parent="Enemies/Pink Star" instance=ExtResource("14_gv0h3")]
+
+[node name="Seashell" parent="Enemies" instance=ExtResource("17_sfpdu")]
+position = Vector2(889, 477)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(284.25, -64)
+position = Vector2(1328, -64)
 shape = SubResource("RectangleShape2D_booo5")
 debug_color = Color(0, 0.6, 0.701961, 0)
+
+[node name="Treasure" type="Node2D" parent="."]
+
+[node name="Golden Skull" parent="Treasure" instance=ExtResource("18_4hscc")]
+position = Vector2(968, 72)
+
+[node name="Chest" parent="Treasure" instance=ExtResource("19_5874f")]
+position = Vector2(2568, 104)
+_is_locked = true
+_total_value = 19
+
+[node name="Key" parent="Treasure" instance=ExtResource("20_2yn8o")]
+position = Vector2(2104, -88)
+
+[node name="Coins" type="Node2D" parent="Treasure"]
+
+[node name="Silver Coin" parent="Treasure/Coins" instance=ExtResource("21_jggnq")]
+position = Vector2(38, 47)
+
+[node name="Silver Coin2" parent="Treasure/Coins" instance=ExtResource("21_jggnq")]
+position = Vector2(408, -16)
+
+[node name="Silver Coin3" parent="Treasure/Coins" instance=ExtResource("21_jggnq")]
+position = Vector2(488, -48)
+
+[node name="Silver Coin4" parent="Treasure/Coins" instance=ExtResource("21_jggnq")]
+position = Vector2(600, -16)
+
+[node name="Silver Coin5" parent="Treasure/Coins" instance=ExtResource("21_jggnq")]
+position = Vector2(664, -48)
+
+[node name="Silver Coin6" parent="Treasure/Coins" instance=ExtResource("21_jggnq")]
+position = Vector2(728, -80)
+
+[node name="Silver Coin7" parent="Treasure/Coins" instance=ExtResource("21_jggnq")]
+position = Vector2(1016, -80)
+
+[node name="Silver Coin8" parent="Treasure/Coins" instance=ExtResource("21_jggnq")]
+position = Vector2(1144, -16)
+
+[node name="Silver Coin9" parent="Treasure/Coins" instance=ExtResource("21_jggnq")]
+position = Vector2(712, 96)
+
+[node name="Silver Coin11" parent="Treasure/Coins" instance=ExtResource("21_jggnq")]
+position = Vector2(1368, -16)
+
+[node name="Silver Coin12" parent="Treasure/Coins" instance=ExtResource("21_jggnq")]
+position = Vector2(1256, 96)
+
+[node name="Silver Coin13" parent="Treasure/Coins" instance=ExtResource("21_jggnq")]
+position = Vector2(1256, 64)
+
+[node name="Silver Coin14" parent="Treasure/Coins" instance=ExtResource("21_jggnq")]
+position = Vector2(1688, -16)
+
+[node name="Silver Coin15" parent="Treasure/Coins" instance=ExtResource("21_jggnq")]
+position = Vector2(1848, -16)
+
+[node name="Silver Coin16" parent="Treasure/Coins" instance=ExtResource("21_jggnq")]
+position = Vector2(1736, -56)
+
+[node name="Silver Coin17" parent="Treasure/Coins" instance=ExtResource("21_jggnq")]
+position = Vector2(1800, -56)
+
+[node name="Silver Coin18" parent="Treasure/Coins" instance=ExtResource("21_jggnq")]
+position = Vector2(1768, 8)
+
+[node name="Silver Coin19" parent="Treasure/Coins" instance=ExtResource("21_jggnq")]
+position = Vector2(1992, 96)
+
+[node name="Silver Coin20" parent="Treasure/Coins" instance=ExtResource("21_jggnq")]
+position = Vector2(2152, -176)
+
+[node name="Silver Coin21" parent="Treasure/Coins" instance=ExtResource("21_jggnq")]
+position = Vector2(2328, -208)
+
+[node name="Silver Coin22" parent="Treasure/Coins" instance=ExtResource("21_jggnq")]
+position = Vector2(2424, -272)
+
+[node name="Silver Coin23" parent="Treasure/Coins" instance=ExtResource("21_jggnq")]
+position = Vector2(2360, -336)
+
+[node name="Silver Coin24" parent="Treasure/Coins" instance=ExtResource("21_jggnq")]
+position = Vector2(2536, -88)
+
+[node name="Gold Coin" parent="Treasure/Coins" instance=ExtResource("22_yxhgx")]
+position = Vector2(264, 16)
+
+[node name="Gold Coin2" parent="Treasure/Coins" instance=ExtResource("22_yxhgx")]
+position = Vector2(792, -112)
+
+[node name="Gold Coin3" parent="Treasure/Coins" instance=ExtResource("22_yxhgx")]
+position = Vector2(1256, 32)
+
+[node name="Gold Coin4" parent="Treasure/Coins" instance=ExtResource("22_yxhgx")]
+position = Vector2(2360, -368)
+
+[node name="Red Potion" parent="Treasure" instance=ExtResource("23_csb8p")]
+position = Vector2(38, 13)
+
+[node name="Spikes" parent="." instance=ExtResource("24_xupm3")]
+position = Vector2(-8, 104)
 
 [node name="Checkpoints" type="Node2D" parent="."]
 
@@ -611,93 +947,15 @@ debug_color = Color(0, 0.6, 0.701961, 0)
 position = Vector2(-120, 91)
 
 [node name="Middle" parent="Checkpoints" instance=ExtResource("23_axncg")]
-position = Vector2(168, -88)
+position = Vector2(1256, -56)
 
 [node name="End" parent="Checkpoints" instance=ExtResource("21_ebuj1")]
-visible = false
-position = Vector2(616, -184)
+position = Vector2(2824, 48)
 
 [node name="Sword" parent="." instance=ExtResource("25_4yllm")]
-position = Vector2(184, -96)
-
-[node name="Enemies" type="Node2D" parent="."]
-
-[node name="Totem Pole" type="Node2D" parent="Enemies"]
-position = Vector2(-24, 0)
-
-[node name="Blue Totem" parent="Enemies/Totem Pole" instance=ExtResource("14_ox03y")]
-position = Vector2(416, 56)
-
-[node name="Green Totem" parent="Enemies/Totem Pole" instance=ExtResource("15_3rrt1")]
-position = Vector2(416, 80)
-
-[node name="Red Totem" parent="Enemies/Totem Pole" instance=ExtResource("16_bcykt")]
-position = Vector2(416, 104)
-
-[node name="Boss Encounter" type="Area2D" parent="." node_paths=PackedStringArray("_bosses")]
-collision_layer = 0
-collision_mask = 256
-monitorable = false
-script = ExtResource("18_vo021")
-_bosses = [NodePath("../Enemies/Totem Pole/Blue Totem"), NodePath("../Enemies/Totem Pole/Green Totem"), NodePath("../Enemies/Totem Pole/Red Totem")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Boss Encounter"]
-position = Vector2(392, 24)
-shape = SubResource("RectangleShape2D_ox03y")
-debug_color = Color(0, 0.6, 0.701961, 0)
-
-[node name="CameraMarker" type="Marker2D" parent="Boss Encounter"]
-position = Vector2(392, 0)
-
-[node name="CanvasLayer" type="CanvasLayer" parent="Boss Encounter"]
-
-[node name="HealthGauge" type="Control" parent="Boss Encounter/CanvasLayer"]
-visible = false
-layout_mode = 3
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-grow_horizontal = 2
-scale = Vector2(4, 4)
-script = ExtResource("17_ebuj1")
-
-[node name="Background" type="HBoxContainer" parent="Boss Encounter/CanvasLayer/HealthGauge"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -48.0
-offset_right = 48.0
-offset_bottom = 40.0
-grow_horizontal = 2
-theme_override_constants/separation = 0
-alignment = 1
-
-[node name="TextureRect" type="TextureRect" parent="Boss Encounter/CanvasLayer/HealthGauge/Background"]
-layout_mode = 2
-texture = ExtResource("18_ebuj1")
-
-[node name="TextureRect2" type="TextureRect" parent="Boss Encounter/CanvasLayer/HealthGauge/Background"]
-layout_mode = 2
-texture = ExtResource("19_vo021")
-
-[node name="TextureRect3" type="TextureRect" parent="Boss Encounter/CanvasLayer/HealthGauge/Background"]
-layout_mode = 2
-texture = ExtResource("20_axncg")
-
-[node name="Fill" type="TextureRect" parent="Boss Encounter/CanvasLayer/HealthGauge"]
-layout_mode = 0
-offset_left = -31.0
-offset_top = 18.0
-offset_right = 44.0
-offset_bottom = 20.0
-texture = ExtResource("21_4yllm")
-expand_mode = 1
-
-[node name="Timer" type="Timer" parent="Boss Encounter"]
+position = Vector2(-46, 94)
 
 [connection signal="body_entered" from="Water" to="Water" method="_on_body_entered"]
 [connection signal="body_exited" from="Water" to="Water" method="_on_body_exited"]
-[connection signal="body_entered" from="Boss Encounter" to="Boss Encounter" method="_on_body_entered"]
-[connection signal="body_exited" from="Boss Encounter" to="Boss Encounter" method="_on_body_exited"]
-[connection signal="timeout" from="Boss Encounter/Timer" to="Boss Encounter" method="_decide_next_attack"]
+[connection signal="timeout" from="Enemies/Fierce Tooth/Timer" to="Enemies/Fierce Tooth" method="attack"]
+[connection signal="timeout" from="Enemies/Pink Star/Timer" to="Enemies/Pink Star" method="attack"]

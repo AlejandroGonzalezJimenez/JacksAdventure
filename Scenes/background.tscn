@@ -86,8 +86,8 @@ z_index = -10
 script = ExtResource("1_yfwmw")
 
 [node name="AdditionalSky" type="Sprite2D" parent="."]
-position = Vector2(-3.5, -94)
-scale = Vector2(13.8438, 1.875)
+position = Vector2(-3.5, -125)
+scale = Vector2(13.8438, 3.8125)
 texture = ExtResource("1_4aqey")
 
 [node name="AdditionalWater" type="Sprite2D" parent="."]

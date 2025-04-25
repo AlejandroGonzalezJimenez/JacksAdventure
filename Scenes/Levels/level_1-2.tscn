@@ -1209,6 +1209,7 @@ sources/4 = SubResource("TileSetAtlasSource_iivbl")
 size = Vector2(1800, 1431.13)
 
 [node name="Level" type="Area2D"]
+process_mode = 1
 script = ExtResource("1_b0uwu")
 
 [node name="TileMap" type="TileMap" parent="."]

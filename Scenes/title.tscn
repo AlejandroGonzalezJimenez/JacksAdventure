@@ -1,0 +1,433 @@
+[gd_scene load_steps=57 format=3 uid="uid://dk2gqsbjh5are"]
+
+[ext_resource type="Script" uid="uid://bkc87ofd4ljy" path="res://Scripts/title_manager.gd" id="1_3rlhy"]
+[ext_resource type="PackedScene" uid="uid://cre4dalncoglv" path="res://Scenes/background.tscn" id="1_w31pl"]
+[ext_resource type="Texture2D" uid="uid://cpgksed4mvkf7" path="res://Treasure Hunters/Merchant Ship/Sprites/Ship/Ship/Idle/1.png" id="2_cwqts"]
+[ext_resource type="Texture2D" uid="uid://c3ef6kof2guvr" path="res://Treasure Hunters/Merchant Ship/Sprites/Water/Water/Top/1.png" id="2_yosvi"]
+[ext_resource type="Texture2D" uid="uid://ckkjgjnlimp71" path="res://Treasure Hunters/Merchant Ship/Sprites/Water/Water/Top/2.png" id="3_2qdx2"]
+[ext_resource type="Texture2D" uid="uid://p5ljt7mduqff" path="res://Treasure Hunters/Merchant Ship/Sprites/Ship/Ship/Idle/2.png" id="3_th2ad"]
+[ext_resource type="Texture2D" uid="uid://difwf4ngfcvip" path="res://Treasure Hunters/Merchant Ship/Sprites/Water/Water/Top/3.png" id="4_3eqdi"]
+[ext_resource type="Texture2D" uid="uid://q7yokmj6fqdw" path="res://Treasure Hunters/Merchant Ship/Sprites/Ship/Ship/Idle/3.png" id="4_qh4d7"]
+[ext_resource type="Texture2D" uid="uid://dfxuuwq7bjpbe" path="res://Treasure Hunters/Merchant Ship/Sprites/Ship/Ship/Idle/4.png" id="5_lv7gn"]
+[ext_resource type="Texture2D" uid="uid://bapenjta3yg2o" path="res://Treasure Hunters/Merchant Ship/Sprites/Water/Water/Top/4.png" id="5_yu0ss"]
+[ext_resource type="Texture2D" uid="uid://d3n4hk53m22k7" path="res://Treasure Hunters/Merchant Ship/Sprites/Ship/Ship/Idle/5.png" id="6_5vuho"]
+[ext_resource type="Texture2D" uid="uid://3qysexwucv71" path="res://Treasure Hunters/Merchant Ship/Sprites/Ship/Ship/Idle/6.png" id="7_ohkfa"]
+[ext_resource type="Texture2D" uid="uid://dmjw1wj4m5vgt" path="res://Treasure Hunters/Merchant Ship/Sprites/Ship/Sail/No Wind/1.png" id="8_34adv"]
+[ext_resource type="Texture2D" uid="uid://d3wv7phc6jlff" path="res://Treasure Hunters/Merchant Ship/Sprites/Ship/Sail/No Wind/2.png" id="9_8fpq2"]
+[ext_resource type="Texture2D" uid="uid://47lhiisuj2xr" path="res://Treasure Hunters/Merchant Ship/Sprites/Ship/Sail/No Wind/3.png" id="10_yrftc"]
+[ext_resource type="Texture2D" uid="uid://8k8lvwq5s6lo" path="res://Treasure Hunters/Merchant Ship/Sprites/Ship/Sail/No Wind/4.png" id="11_v636t"]
+[ext_resource type="Texture2D" uid="uid://cl71ov1jh4x2s" path="res://Treasure Hunters/Merchant Ship/Sprites/Ship/Sail/No Wind/5.png" id="12_6uh5d"]
+[ext_resource type="Texture2D" uid="uid://b626ggf0cr6h6" path="res://Treasure Hunters/Merchant Ship/Sprites/Ship/Sail/No Wind/6.png" id="13_ugnon"]
+[ext_resource type="Texture2D" uid="uid://daya8remov8ud" path="res://Treasure Hunters/Merchant Ship/Sprites/Ship/Sail/No Wind/7.png" id="14_mg2ew"]
+[ext_resource type="Texture2D" uid="uid://qf15uuqgjbop" path="res://Treasure Hunters/Merchant Ship/Sprites/Ship/Sail/No Wind/8.png" id="15_d16x5"]
+[ext_resource type="Texture2D" uid="uid://38m08waxuspw" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Idle 01.png" id="16_ugnon"]
+[ext_resource type="Texture2D" uid="uid://d250g13re0d6u" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Idle 02.png" id="17_mg2ew"]
+[ext_resource type="Texture2D" uid="uid://b6yotnqwg6ahc" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Idle 03.png" id="18_d16x5"]
+[ext_resource type="Texture2D" uid="uid://daeg037d3tvi" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Idle 04.png" id="19_x4jox"]
+[ext_resource type="Texture2D" uid="uid://cp2wupdeyfful" path="res://Treasure Hunters/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/01-Idle/Idle 05.png" id="20_snpp8"]
+[ext_resource type="Texture2D" uid="uid://cf0v1mjucpmnp" path="res://Treasure Hunters/Merchant Ship/Sprites/Ship/Anchor/1.png" id="21_mg2ew"]
+[ext_resource type="Texture2D" uid="uid://csnuvau3ckfl0" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Big Text/10.png" id="26_484xv"]
+[ext_resource type="Texture2D" uid="uid://caq4ihc47lbv7" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Big Text/1.png" id="27_ko6av"]
+[ext_resource type="Texture2D" uid="uid://b6yjgrk1p1bdw" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Big Text/3.png" id="28_8xvvu"]
+[ext_resource type="Texture2D" uid="uid://qr3gdnnvrk5p" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Big Text/11.png" id="29_5mnvh"]
+[ext_resource type="Texture2D" uid="uid://gygw8nwknp64" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Big Text/19.png" id="30_4iywc"]
+[ext_resource type="Texture2D" uid="uid://dy8d8ecu0bbnr" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Big Text/'.png" id="30_50aho"]
+[ext_resource type="Texture2D" uid="uid://byhgn7simgo8h" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Big Text/4.png" id="32_6h30j"]
+[ext_resource type="Texture2D" uid="uid://mrsvpcy1lfyr" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Big Text/22.png" id="33_kh8uo"]
+[ext_resource type="Texture2D" uid="uid://b37ay78ll2tiu" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Big Text/5.png" id="34_dojbg"]
+[ext_resource type="Texture2D" uid="uid://52p28lvrhqf0" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Big Text/14.png" id="35_5auaw"]
+[ext_resource type="Texture2D" uid="uid://ctjtdivh145l0" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Big Text/20.png" id="36_i2afh"]
+[ext_resource type="Texture2D" uid="uid://0keu03lyslms" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Big Text/21.png" id="37_yglx8"]
+[ext_resource type="Texture2D" uid="uid://bvjk83yg4ml38" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Big Text/18.png" id="38_ivfn3"]
+[ext_resource type="Theme" uid="uid://dt0u15iyqkpju" path="res://wood_and_paper.tres" id="39_ivfn3"]
+[ext_resource type="Texture2D" uid="uid://qorolew50emk" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Small Text/Small Text/14.png" id="40_1utbv"]
+[ext_resource type="Texture2D" uid="uid://4ndxc1hsd7iv" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Small Text/Small Text/5.png" id="41_4kyoq"]
+[ext_resource type="Texture2D" uid="uid://ikayfal6p8mg" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Small Text/Small Text/23.png" id="42_dyupo"]
+[ext_resource type="Texture2D" uid="uid://wsrxxx1n8dt4" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Small Text/Small Text/7.png" id="43_t5q6u"]
+[ext_resource type="Texture2D" uid="uid://dono4p6lwjm6v" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Small Text/Small Text/1.png" id="44_east7"]
+[ext_resource type="Texture2D" uid="uid://ralqk8k3yf08" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Small Text/Small Text/13.png" id="45_udn37"]
+[ext_resource type="Texture2D" uid="uid://dthbecq66yl1" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Small Text/Small Text/3.png" id="46_east7"]
+[ext_resource type="Texture2D" uid="uid://p2ln6lm38a7k" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Small Text/Small Text/15.png" id="47_udn37"]
+[ext_resource type="Texture2D" uid="uid://8wu40jbdanyy" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Small Text/Small Text/20.png" id="48_3rlhy"]
+[ext_resource type="Texture2D" uid="uid://nkj4edny4v77" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Small Text/Small Text/9.png" id="49_ggtds"]
+[ext_resource type="Texture2D" uid="uid://03seajorvped" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Small Text/Small Text/21.png" id="50_b3mvj"]
+[ext_resource type="PackedScene" uid="uid://buw8jeq616p61" path="res://Scenes/fade.tscn" id="51_udn37"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ps378"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_cwqts")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_th2ad")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qh4d7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_lv7gn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_5vuho")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ohkfa")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x4jox"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_34adv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_8fpq2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_yrftc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_v636t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_6uh5d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ugnon")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_mg2ew")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_d16x5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y2o84"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_ugnon")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_mg2ew")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_d16x5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_x4jox")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_snpp8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6aagf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_yosvi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_2qdx2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_3eqdi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_yu0ss")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Title" type="Node2D"]
+scale = Vector2(3, 3)
+script = ExtResource("1_3rlhy")
+
+[node name="Background" parent="." instance=ExtResource("1_w31pl")]
+position = Vector2(210, 140)
+_scroll_speed = -32.0
+
+[node name="Ship" type="AnimatedSprite2D" parent="."]
+position = Vector2(310.333, 204)
+sprite_frames = SubResource("SpriteFrames_ps378")
+autoplay = "default"
+
+[node name="Sail" type="AnimatedSprite2D" parent="Ship"]
+position = Vector2(20.6667, -36)
+sprite_frames = SubResource("SpriteFrames_x4jox")
+autoplay = "default"
+
+[node name="Jack" type="AnimatedSprite2D" parent="Ship"]
+position = Vector2(-14.6667, -23)
+sprite_frames = SubResource("SpriteFrames_y2o84")
+autoplay = "default"
+
+[node name="Anchor" type="Sprite2D" parent="Ship"]
+position = Vector2(-18.3333, 7)
+texture = ExtResource("21_mg2ew")
+
+[node name="Water" type="Node2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Water"]
+position = Vector2(-11.6667, 215.667)
+sprite_frames = SubResource("SpriteFrames_6aagf")
+autoplay = "default"
+offset = Vector2(48, 8)
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Water"]
+position = Vector2(84.3333, 215.667)
+sprite_frames = SubResource("SpriteFrames_6aagf")
+autoplay = "default"
+offset = Vector2(48, 8)
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Water"]
+position = Vector2(180.333, 215.667)
+sprite_frames = SubResource("SpriteFrames_6aagf")
+autoplay = "default"
+offset = Vector2(48, 8)
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="Water"]
+position = Vector2(276.333, 215.667)
+sprite_frames = SubResource("SpriteFrames_6aagf")
+autoplay = "default"
+offset = Vector2(48, 8)
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="Water"]
+position = Vector2(372.333, 215.667)
+sprite_frames = SubResource("SpriteFrames_6aagf")
+autoplay = "default"
+offset = Vector2(48, 8)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Title" type="VBoxContainer" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.333
+anchor_right = 0.5
+anchor_bottom = 0.333
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(8, 8)
+pivot_offset = Vector2(70, 14)
+
+[node name="Jack\'s" type="HBoxContainer" parent="CanvasLayer/Title"]
+layout_mode = 2
+
+[node name="J" type="TextureRect" parent="CanvasLayer/Title/Jack\'s"]
+layout_mode = 2
+texture = ExtResource("26_484xv")
+
+[node name="A" type="TextureRect" parent="CanvasLayer/Title/Jack\'s"]
+layout_mode = 2
+texture = ExtResource("27_ko6av")
+
+[node name="C" type="TextureRect" parent="CanvasLayer/Title/Jack\'s"]
+layout_mode = 2
+texture = ExtResource("28_8xvvu")
+
+[node name="K" type="TextureRect" parent="CanvasLayer/Title/Jack\'s"]
+layout_mode = 2
+texture = ExtResource("29_5mnvh")
+
+[node name="\'" type="TextureRect" parent="CanvasLayer/Title/Jack\'s"]
+layout_mode = 2
+texture = ExtResource("30_50aho")
+
+[node name="S" type="TextureRect" parent="CanvasLayer/Title/Jack\'s"]
+layout_mode = 2
+texture = ExtResource("30_4iywc")
+
+[node name="Adventure" type="HBoxContainer" parent="CanvasLayer/Title"]
+layout_mode = 2
+
+[node name="A" type="TextureRect" parent="CanvasLayer/Title/Adventure"]
+layout_mode = 2
+texture = ExtResource("27_ko6av")
+stretch_mode = 4
+
+[node name="D" type="TextureRect" parent="CanvasLayer/Title/Adventure"]
+layout_mode = 2
+texture = ExtResource("32_6h30j")
+stretch_mode = 4
+
+[node name="V" type="TextureRect" parent="CanvasLayer/Title/Adventure"]
+layout_mode = 2
+texture = ExtResource("33_kh8uo")
+stretch_mode = 4
+
+[node name="E" type="TextureRect" parent="CanvasLayer/Title/Adventure"]
+layout_mode = 2
+texture = ExtResource("34_dojbg")
+stretch_mode = 4
+
+[node name="N" type="TextureRect" parent="CanvasLayer/Title/Adventure"]
+layout_mode = 2
+texture = ExtResource("35_5auaw")
+stretch_mode = 4
+
+[node name="T" type="TextureRect" parent="CanvasLayer/Title/Adventure"]
+layout_mode = 2
+texture = ExtResource("36_i2afh")
+stretch_mode = 4
+
+[node name="U" type="TextureRect" parent="CanvasLayer/Title/Adventure"]
+layout_mode = 2
+texture = ExtResource("37_yglx8")
+stretch_mode = 4
+
+[node name="R" type="TextureRect" parent="CanvasLayer/Title/Adventure"]
+layout_mode = 2
+texture = ExtResource("38_ivfn3")
+stretch_mode = 4
+
+[node name="E2" type="TextureRect" parent="CanvasLayer/Title/Adventure"]
+layout_mode = 2
+texture = ExtResource("34_dojbg")
+stretch_mode = 4
+
+[node name="Buttons" type="VBoxContainer" parent="CanvasLayer"]
+offset_left = 163.0
+offset_top = 398.0
+offset_right = 235.0
+offset_bottom = 450.0
+scale = Vector2(4, 4)
+theme = ExtResource("39_ivfn3")
+
+[node name="New Game" type="Button" parent="CanvasLayer/Buttons"]
+custom_minimum_size = Vector2(64, 24)
+layout_mode = 2
+
+[node name="Label" type="HBoxContainer" parent="CanvasLayer/Buttons/New Game"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.5
+offset_top = -3.0
+offset_right = 24.5
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 2
+
+[node name="N" type="TextureRect" parent="CanvasLayer/Buttons/New Game/Label"]
+layout_mode = 2
+texture = ExtResource("40_1utbv")
+stretch_mode = 4
+
+[node name="E" type="TextureRect" parent="CanvasLayer/Buttons/New Game/Label"]
+layout_mode = 2
+texture = ExtResource("41_4kyoq")
+stretch_mode = 4
+
+[node name="W" type="TextureRect" parent="CanvasLayer/Buttons/New Game/Label"]
+layout_mode = 2
+texture = ExtResource("42_dyupo")
+stretch_mode = 4
+
+[node name="space" type="TextureRect" parent="CanvasLayer/Buttons/New Game/Label"]
+layout_mode = 2
+stretch_mode = 4
+
+[node name="G" type="TextureRect" parent="CanvasLayer/Buttons/New Game/Label"]
+layout_mode = 2
+texture = ExtResource("43_t5q6u")
+stretch_mode = 4
+
+[node name="A" type="TextureRect" parent="CanvasLayer/Buttons/New Game/Label"]
+layout_mode = 2
+texture = ExtResource("44_east7")
+stretch_mode = 4
+
+[node name="M" type="TextureRect" parent="CanvasLayer/Buttons/New Game/Label"]
+layout_mode = 2
+texture = ExtResource("45_udn37")
+stretch_mode = 4
+
+[node name="E2" type="TextureRect" parent="CanvasLayer/Buttons/New Game/Label"]
+layout_mode = 2
+texture = ExtResource("41_4kyoq")
+stretch_mode = 4
+
+[node name="Continue" type="Button" parent="CanvasLayer/Buttons"]
+custom_minimum_size = Vector2(72, 24)
+layout_mode = 2
+disabled = true
+
+[node name="Label" type="HBoxContainer" parent="CanvasLayer/Buttons/Continue"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.5
+offset_top = -3.0
+offset_right = 24.5
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 2
+
+[node name="C" type="TextureRect" parent="CanvasLayer/Buttons/Continue/Label"]
+layout_mode = 2
+texture = ExtResource("46_east7")
+stretch_mode = 4
+
+[node name="O" type="TextureRect" parent="CanvasLayer/Buttons/Continue/Label"]
+layout_mode = 2
+texture = ExtResource("47_udn37")
+stretch_mode = 4
+
+[node name="N" type="TextureRect" parent="CanvasLayer/Buttons/Continue/Label"]
+layout_mode = 2
+texture = ExtResource("40_1utbv")
+stretch_mode = 4
+
+[node name="T" type="TextureRect" parent="CanvasLayer/Buttons/Continue/Label"]
+layout_mode = 2
+texture = ExtResource("48_3rlhy")
+stretch_mode = 4
+
+[node name="I" type="TextureRect" parent="CanvasLayer/Buttons/Continue/Label"]
+layout_mode = 2
+texture = ExtResource("49_ggtds")
+stretch_mode = 4
+
+[node name="N2" type="TextureRect" parent="CanvasLayer/Buttons/Continue/Label"]
+layout_mode = 2
+texture = ExtResource("40_1utbv")
+stretch_mode = 4
+
+[node name="U" type="TextureRect" parent="CanvasLayer/Buttons/Continue/Label"]
+layout_mode = 2
+texture = ExtResource("50_b3mvj")
+stretch_mode = 4
+
+[node name="E" type="TextureRect" parent="CanvasLayer/Buttons/Continue/Label"]
+layout_mode = 2
+texture = ExtResource("41_4kyoq")
+stretch_mode = 4
+
+[node name="Fade" parent="CanvasLayer" instance=ExtResource("51_udn37")]
+
+[connection signal="pressed" from="CanvasLayer/Buttons/New Game" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="CanvasLayer/Buttons/Continue" to="." method="_on_continue_pressed"]

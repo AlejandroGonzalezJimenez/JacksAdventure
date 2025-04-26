@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://dk2gqsbjh5are"]
+[gd_scene load_steps=65 format=3 uid="uid://dk2gqsbjh5are"]
 
 [ext_resource type="Script" uid="uid://bkc87ofd4ljy" path="res://Scripts/title_manager.gd" id="1_3rlhy"]
 [ext_resource type="PackedScene" uid="uid://cre4dalncoglv" path="res://Scenes/background.tscn" id="1_w31pl"]
@@ -52,6 +52,14 @@
 [ext_resource type="Texture2D" uid="uid://nkj4edny4v77" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Small Text/Small Text/9.png" id="49_ggtds"]
 [ext_resource type="Texture2D" uid="uid://03seajorvped" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Small Text/Small Text/21.png" id="50_b3mvj"]
 [ext_resource type="PackedScene" uid="uid://buw8jeq616p61" path="res://Scenes/fade.tscn" id="51_udn37"]
+[ext_resource type="Texture2D" uid="uid://5t1dht88gds2" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Small Text/Small Text/22.png" id="52_b3mvj"]
+[ext_resource type="Texture2D" uid="uid://bexbilmms1wnb" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Small Text/Small Text/18.png" id="53_co0en"]
+[ext_resource type="Texture2D" uid="uid://cy0rfjyvgakqd" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Small Text/Small Text/19.png" id="54_yb3nd"]
+[ext_resource type="Texture2D" uid="uid://dwk0ulacd5lhc" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Small Text/Small Text/6.png" id="55_jelu8"]
+[ext_resource type="Texture2D" uid="uid://ds41jlp4yvnhp" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Small Text/Small Text/12.png" id="56_qod0x"]
+[ext_resource type="Texture2D" uid="uid://dmlw7407uu1hn" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Small Text/Small Text/47.png" id="57_yt8r4"]
+[ext_resource type="Texture2D" uid="uid://c2sbk32t4ilqu" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Small Text/Small Text/25.png" id="58_jelu8"]
+[ext_resource type="Texture2D" uid="uid://2vgwo3luueom" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Small Text/Small Icons/5.png" id="59_qod0x"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ps378"]
 animations = [{
@@ -163,7 +171,7 @@ position = Vector2(210, 140)
 _scroll_speed = -32.0
 
 [node name="Ship" type="AnimatedSprite2D" parent="."]
-position = Vector2(310.333, 204)
+position = Vector2(336.667, 207)
 sprite_frames = SubResource("SpriteFrames_ps378")
 autoplay = "default"
 
@@ -427,7 +435,193 @@ layout_mode = 2
 texture = ExtResource("41_4kyoq")
 stretch_mode = 4
 
+[node name="Confirmation" type="PanelContainer" parent="CanvasLayer"]
+visible = false
+offset_left = 477.0
+offset_top = 370.0
+offset_right = 607.0
+offset_bottom = 480.0
+scale = Vector2(3, 3)
+theme = ExtResource("39_ivfn3")
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Confirmation"]
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Confirmation"]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Confirmation/VBoxContainer"]
+layout_mode = 2
+
+[node name="Overwrite" type="HBoxContainer" parent="CanvasLayer/Confirmation/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="O" type="TextureRect" parent="CanvasLayer/Confirmation/VBoxContainer/VBoxContainer/Overwrite"]
+layout_mode = 2
+texture = ExtResource("47_udn37")
+
+[node name="V" type="TextureRect" parent="CanvasLayer/Confirmation/VBoxContainer/VBoxContainer/Overwrite"]
+layout_mode = 2
+texture = ExtResource("52_b3mvj")
+
+[node name="E" type="TextureRect" parent="CanvasLayer/Confirmation/VBoxContainer/VBoxContainer/Overwrite"]
+layout_mode = 2
+texture = ExtResource("41_4kyoq")
+
+[node name="R" type="TextureRect" parent="CanvasLayer/Confirmation/VBoxContainer/VBoxContainer/Overwrite"]
+layout_mode = 2
+texture = ExtResource("53_co0en")
+
+[node name="W" type="TextureRect" parent="CanvasLayer/Confirmation/VBoxContainer/VBoxContainer/Overwrite"]
+layout_mode = 2
+texture = ExtResource("42_dyupo")
+
+[node name="R2" type="TextureRect" parent="CanvasLayer/Confirmation/VBoxContainer/VBoxContainer/Overwrite"]
+layout_mode = 2
+texture = ExtResource("53_co0en")
+
+[node name="I" type="TextureRect" parent="CanvasLayer/Confirmation/VBoxContainer/VBoxContainer/Overwrite"]
+layout_mode = 2
+texture = ExtResource("49_ggtds")
+
+[node name="T" type="TextureRect" parent="CanvasLayer/Confirmation/VBoxContainer/VBoxContainer/Overwrite"]
+layout_mode = 2
+texture = ExtResource("48_3rlhy")
+
+[node name="E2" type="TextureRect" parent="CanvasLayer/Confirmation/VBoxContainer/VBoxContainer/Overwrite"]
+layout_mode = 2
+texture = ExtResource("41_4kyoq")
+
+[node name="Save File?" type="HBoxContainer" parent="CanvasLayer/Confirmation/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="S" type="TextureRect" parent="CanvasLayer/Confirmation/VBoxContainer/VBoxContainer/Save File?"]
+layout_mode = 2
+texture = ExtResource("54_yb3nd")
+
+[node name="A" type="TextureRect" parent="CanvasLayer/Confirmation/VBoxContainer/VBoxContainer/Save File?"]
+layout_mode = 2
+texture = ExtResource("44_east7")
+
+[node name="V" type="TextureRect" parent="CanvasLayer/Confirmation/VBoxContainer/VBoxContainer/Save File?"]
+layout_mode = 2
+texture = ExtResource("52_b3mvj")
+
+[node name="E" type="TextureRect" parent="CanvasLayer/Confirmation/VBoxContainer/VBoxContainer/Save File?"]
+layout_mode = 2
+texture = ExtResource("41_4kyoq")
+
+[node name="Space" type="TextureRect" parent="CanvasLayer/Confirmation/VBoxContainer/VBoxContainer/Save File?"]
+layout_mode = 2
+
+[node name="F" type="TextureRect" parent="CanvasLayer/Confirmation/VBoxContainer/VBoxContainer/Save File?"]
+layout_mode = 2
+texture = ExtResource("55_jelu8")
+
+[node name="I" type="TextureRect" parent="CanvasLayer/Confirmation/VBoxContainer/VBoxContainer/Save File?"]
+layout_mode = 2
+texture = ExtResource("49_ggtds")
+
+[node name="L" type="TextureRect" parent="CanvasLayer/Confirmation/VBoxContainer/VBoxContainer/Save File?"]
+layout_mode = 2
+texture = ExtResource("56_qod0x")
+
+[node name="E2" type="TextureRect" parent="CanvasLayer/Confirmation/VBoxContainer/VBoxContainer/Save File?"]
+layout_mode = 2
+texture = ExtResource("41_4kyoq")
+
+[node name="?" type="TextureRect" parent="CanvasLayer/Confirmation/VBoxContainer/VBoxContainer/Save File?"]
+layout_mode = 2
+texture = ExtResource("57_yt8r4")
+
+[node name="Buttons" type="HBoxContainer" parent="CanvasLayer/Confirmation/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Yes" type="Button" parent="CanvasLayer/Confirmation/VBoxContainer/Buttons"]
+custom_minimum_size = Vector2(36, 24)
+layout_mode = 2
+
+[node name="Yes" type="HBoxContainer" parent="CanvasLayer/Confirmation/VBoxContainer/Buttons/Yes"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -11.5
+offset_top = -3.0
+offset_right = 11.5
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Y" type="TextureRect" parent="CanvasLayer/Confirmation/VBoxContainer/Buttons/Yes/Yes"]
+layout_mode = 2
+texture = ExtResource("58_jelu8")
+stretch_mode = 5
+
+[node name="E" type="TextureRect" parent="CanvasLayer/Confirmation/VBoxContainer/Buttons/Yes/Yes"]
+layout_mode = 2
+texture = ExtResource("41_4kyoq")
+stretch_mode = 5
+
+[node name="S" type="TextureRect" parent="CanvasLayer/Confirmation/VBoxContainer/Buttons/Yes/Yes"]
+layout_mode = 2
+texture = ExtResource("54_yb3nd")
+stretch_mode = 5
+
+[node name="No" type="Button" parent="CanvasLayer/Confirmation/VBoxContainer/Buttons"]
+custom_minimum_size = Vector2(36, 24)
+layout_mode = 2
+
+[node name="No" type="HBoxContainer" parent="CanvasLayer/Confirmation/VBoxContainer/Buttons/No"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -7.0
+offset_top = -3.0
+offset_right = 7.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="N" type="TextureRect" parent="CanvasLayer/Confirmation/VBoxContainer/Buttons/No/No"]
+layout_mode = 2
+texture = ExtResource("40_1utbv")
+stretch_mode = 5
+
+[node name="O" type="TextureRect" parent="CanvasLayer/Confirmation/VBoxContainer/Buttons/No/No"]
+layout_mode = 2
+texture = ExtResource("47_udn37")
+stretch_mode = 5
+
+[node name="Exit" type="Button" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -81.0
+offset_top = 18.0
+offset_right = -61.0
+offset_bottom = 38.0
+grow_horizontal = 0
+scale = Vector2(3, 3)
+theme = ExtResource("39_ivfn3")
+icon = ExtResource("59_qod0x")
+
 [node name="Fade" parent="CanvasLayer" instance=ExtResource("51_udn37")]
 
 [connection signal="pressed" from="CanvasLayer/Buttons/New Game" to="." method="_on_new_game_pressed"]
 [connection signal="pressed" from="CanvasLayer/Buttons/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="CanvasLayer/Confirmation/VBoxContainer/Buttons/Yes" to="." method="_on_yes_pressed"]
+[connection signal="pressed" from="CanvasLayer/Confirmation/VBoxContainer/Buttons/No" to="." method="_on_no_pressed"]
+[connection signal="pressed" from="CanvasLayer/Exit" to="." method="_on_exit_pressed"]

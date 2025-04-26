@@ -123,10 +123,9 @@ func _restart(game_over : bool = false) -> void:
 func _on_level_select_pressed() -> void:
 	_game_over_menu.visible = false
 	await _fade.fade_to_black()
-	File.data.retry()
-	print("Return to level selection menu")
+	get_tree().change_scene_to_file("res://Scenes/level_select.tscn")
 
 func _on_exit_pressed() -> void:
 	_game_over_menu.visible = false
 	await _fade.fade_to_black()
-	get_tree().quit()
+	get_tree().change_scene_to_file("res://Scenes/title.tscn")

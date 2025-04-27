@@ -1,6 +1,7 @@
-[gd_scene load_steps=31 format=3 uid="uid://dhx14051ecc2"]
+[gd_scene load_steps=33 format=3 uid="uid://dhx14051ecc2"]
 
 [ext_resource type="Script" uid="uid://br7o45rvjst03" path="res://Scripts/Environment/level.gd" id="1_x2kbf"]
+[ext_resource type="AudioStream" uid="uid://bjgbeghrl2tjx" path="res://Sound Effects/Music/320978__littlerobotsoundfactory__loop_the_seven_seas_00.wav" id="2_2uvtt"]
 [ext_resource type="Texture2D" uid="uid://b216ljljooxbm" path="res://Treasure Hunters/Palm Tree Island/Sprites/Terrain/Terrain (32x32).png" id="2_b1njm"]
 [ext_resource type="Texture2D" uid="uid://f21f0i5nuqtb" path="res://Treasure Hunters/Palm Tree Island/Sprites/Front Palm Trees/Front Palm Bottom and Grass (32x32).png" id="3_2uvtt"]
 [ext_resource type="Script" uid="uid://btnguexlnia26" path="res://Scripts/Environment/water.gd" id="4_iqin1"]
@@ -19,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://lb27rof3af5e" path="res://Scenes/Characters/red_totem.tscn" id="17_40q6t"]
 [ext_resource type="Script" uid="uid://dcxyu5awkbprl" path="res://Scripts/Characters/Enemies/totem_pole.gd" id="18_744tj"]
 [ext_resource type="Script" uid="uid://ddl6gueyfiaeq" path="res://Scripts/UI/gauge.gd" id="19_1xo27"]
+[ext_resource type="AudioStream" uid="uid://dx0w2b67x78d8" path="res://Sound Effects/Music/321030__littlerobotsoundfactory__loop_jungle_war_drums_00.wav" id="20_2uvtt"]
 [ext_resource type="Texture2D" uid="uid://wwq2pnrxpb1v" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Life Bars/Big Bars/2.png" id="20_t0o2h"]
 [ext_resource type="Texture2D" uid="uid://ct7anubq007hd" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Life Bars/Big Bars/3.png" id="21_q48st"]
 [ext_resource type="Texture2D" uid="uid://bn0ne6dn3r6g3" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Life Bars/Big Bars/4.png" id="22_valry"]
@@ -458,6 +460,8 @@ size = Vector2(384, 160)
 [node name="Level" type="Area2D"]
 process_mode = 1
 script = ExtResource("1_x2kbf")
+music = ExtResource("2_2uvtt")
+level_unlocked = 4
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(-504, -408)
@@ -640,6 +644,7 @@ collision_layer = 0
 collision_mask = 256
 monitorable = false
 script = ExtResource("18_744tj")
+_boss_music = ExtResource("20_2uvtt")
 _bosses = [NodePath("../Enemies/Totem Pole/Blue Totem"), NodePath("../Enemies/Totem Pole/Green Totem"), NodePath("../Enemies/Totem Pole/Red Totem")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boss Encounter"]

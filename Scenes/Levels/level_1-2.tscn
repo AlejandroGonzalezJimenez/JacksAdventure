@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://cjudt8nrgddv0"]
+[gd_scene load_steps=12 format=3 uid="uid://cjudt8nrgddv0"]
 
 [ext_resource type="Script" uid="uid://br7o45rvjst03" path="res://Scripts/Environment/level.gd" id="1_b0uwu"]
 [ext_resource type="TileSet" uid="uid://clv572tl08qgk" path="res://tile_set_ship_background.tres" id="2_20lha"]
+[ext_resource type="AudioStream" uid="uid://bjgbeghrl2tjx" path="res://Sound Effects/Music/320978__littlerobotsoundfactory__loop_the_seven_seas_00.wav" id="2_a5ict"]
 [ext_resource type="TileSet" uid="uid://ck0p2lmu4p041" path="res://tile_set_ship.tres" id="4_a5ict"]
 [ext_resource type="PackedScene" uid="uid://clfrdyhberpy4" path="res://Scenes/Decorations/candle.tscn" id="8_tuors"]
 [ext_resource type="PackedScene" uid="uid://ctop0syblw5lw" path="res://Scenes/Decorations/window.tscn" id="9_g2k4b"]
@@ -16,6 +17,8 @@ size = Vector2(1800, 1431.13)
 [node name="Level" type="Area2D"]
 process_mode = 1
 script = ExtResource("1_b0uwu")
+music = ExtResource("2_a5ict")
+level_unlocked = 3
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(576, -480)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://dk2gqsbjh5are"]
+[gd_scene load_steps=66 format=3 uid="uid://dk2gqsbjh5are"]
 
 [ext_resource type="Script" uid="uid://bkc87ofd4ljy" path="res://Scripts/title_manager.gd" id="1_3rlhy"]
 [ext_resource type="PackedScene" uid="uid://cre4dalncoglv" path="res://Scenes/background.tscn" id="1_w31pl"]
@@ -60,6 +60,7 @@
 [ext_resource type="Texture2D" uid="uid://dmlw7407uu1hn" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Small Text/Small Text/47.png" id="57_yt8r4"]
 [ext_resource type="Texture2D" uid="uid://c2sbk32t4ilqu" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Small Text/Small Text/25.png" id="58_jelu8"]
 [ext_resource type="Texture2D" uid="uid://2vgwo3luueom" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Small Text/Small Icons/5.png" id="59_qod0x"]
+[ext_resource type="AudioStream" uid="uid://cgtlx1fvrwo5n" path="res://Sound Effects/Music/321018__littlerobotsoundfactory__loop_pirates_ahoy_00.wav" id="61_yt8r4"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ps378"]
 animations = [{
@@ -165,6 +166,7 @@ animations = [{
 [node name="Title" type="Node2D"]
 scale = Vector2(3, 3)
 script = ExtResource("1_3rlhy")
+_music = ExtResource("61_yt8r4")
 
 [node name="Background" parent="." instance=ExtResource("1_w31pl")]
 position = Vector2(210, 140)

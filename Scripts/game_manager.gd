@@ -29,6 +29,7 @@ func _load_level():
 	_init_boundaries()
 	_init_ui()
 	_pause(false)
+	Music.start_track(_level.music)
 
 func _init_boundaries():
 	# get the level boundaries from the level
@@ -59,11 +60,13 @@ func _pause(should_be_paused : bool):
 
 func collect_map():
 	_player.set_enabled(false)
+	File.data.set_progress_marker(Data.Progress.COMPLETED)
+	File.data.set_progress_marker(Data.Progress.UNLOCKED, _level.world_unlocked, _level.level_unlocked)
 	_fanfare.stream = _victory
 	_fanfare.play()
 	await _fanfare.finished
 	await _fade.fade_to_black()
-	# load level selection scene
+	get_tree().change_scene_to_file("res://Scenes/level_select.tscn")
 
 func collect_coin(value : int):
 	File.data.coins += value

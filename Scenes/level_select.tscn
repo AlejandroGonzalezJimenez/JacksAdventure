@@ -1,7 +1,8 @@
-[gd_scene load_steps=66 format=3 uid="uid://bffp11n7veofu"]
+[gd_scene load_steps=67 format=3 uid="uid://bffp11n7veofu"]
 
 [ext_resource type="Script" uid="uid://dcryu4ionam4y" path="res://Scripts/level_select_manager.gd" id="1_qsi1e"]
 [ext_resource type="PackedScene" uid="uid://cre4dalncoglv" path="res://Scenes/background.tscn" id="2_amlj2"]
+[ext_resource type="AudioStream" uid="uid://cgtlx1fvrwo5n" path="res://Sound Effects/Music/321018__littlerobotsoundfactory__loop_pirates_ahoy_00.wav" id="2_svalo"]
 [ext_resource type="Texture2D" uid="uid://c7r823vb52hk5" path="res://Treasure Hunters/Palm Tree Island/Sprites/Objects/Ship Helm/Ship Helm Idle 01.png" id="8_07bvh"]
 [ext_resource type="Texture2D" uid="uid://dxxvuuw3khom8" path="res://Treasure Hunters/Palm Tree Island/Sprites/Objects/Ship Helm/Ship Helm Idle 02.png" id="9_ciagn"]
 [ext_resource type="Texture2D" uid="uid://dbcjyjveahfr" path="res://Treasure Hunters/Palm Tree Island/Sprites/Objects/Ship Helm/Ship Helm Idle 03.png" id="10_yx562"]
@@ -189,6 +190,7 @@ frame_7/duration = 1.0
 [node name="Level Select" type="Node2D"]
 scale = Vector2(3, 3)
 script = ExtResource("1_qsi1e")
+_music = ExtResource("2_svalo")
 
 [node name="Background" parent="." instance=ExtResource("2_amlj2")]
 position = Vector2(214, 127.667)

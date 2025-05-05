@@ -25,7 +25,8 @@ texture = ExtResource("1_2h3sp")
 sources/0 = SubResource("TileSetAtlasSource_7nbq1")
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_mg4q0"]
-a = Vector2(28, 10)
+a = Vector2(29, 8)
+b = Vector2(-1, 8)
 
 [node name="Ship Platform 3" type="StaticBody2D"]
 

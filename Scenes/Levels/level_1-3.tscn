@@ -461,7 +461,6 @@ size = Vector2(384, 160)
 process_mode = 1
 script = ExtResource("1_x2kbf")
 music = ExtResource("2_2uvtt")
-level_unlocked = 4
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(-504, -408)

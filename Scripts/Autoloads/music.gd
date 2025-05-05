@@ -3,7 +3,7 @@ extends AudioStreamPlayer
 signal volume_fade_finished
 
 # linear volume (0 = muted, 1 = full volume)
-var desired_volume : float = 1
+var desired_volume : float = 0.2
 var _volume_l : float = 0
 
 func _ready():

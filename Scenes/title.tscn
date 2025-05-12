@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://dk2gqsbjh5are"]
+[gd_scene load_steps=74 format=3 uid="uid://dk2gqsbjh5are"]
 
 [ext_resource type="Script" uid="uid://bkc87ofd4ljy" path="res://Scripts/title_manager.gd" id="1_3rlhy"]
 [ext_resource type="PackedScene" uid="uid://cre4dalncoglv" path="res://Scenes/background.tscn" id="1_w31pl"]
@@ -60,7 +60,15 @@
 [ext_resource type="Texture2D" uid="uid://dmlw7407uu1hn" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Small Text/Small Text/47.png" id="57_yt8r4"]
 [ext_resource type="Texture2D" uid="uid://c2sbk32t4ilqu" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Small Text/Small Text/25.png" id="58_jelu8"]
 [ext_resource type="Texture2D" uid="uid://2vgwo3luueom" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Small Text/Small Icons/5.png" id="59_qod0x"]
+[ext_resource type="Texture2D" uid="uid://ledb071kvdr0" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Small Text/Small Text/2.png" id="59_slvi4"]
+[ext_resource type="Texture2D" uid="uid://i4br156ecyyf" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Small Text/Small Text/11.png" id="60_7nral"]
+[ext_resource type="Texture2D" uid="uid://bojwhja48h15n" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Small Text/Small Text/49.png" id="60_11eth"]
+[ext_resource type="Texture2D" uid="uid://blaqemuu8105q" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Small Text/Small Text/4.png" id="61_ql4gd"]
 [ext_resource type="AudioStream" uid="uid://cgtlx1fvrwo5n" path="res://Sound Effects/Music/321018__littlerobotsoundfactory__loop_pirates_ahoy_00.wav" id="61_yt8r4"]
+[ext_resource type="Texture2D" uid="uid://bmgv3mmnmgbb6" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Small Text/Small Text/50.png" id="62_wl7co"]
+[ext_resource type="Texture2D" uid="uid://kgfyyv4nr1m1" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Small Text/Small Text/40.png" id="63_widfa"]
+[ext_resource type="Texture2D" uid="uid://jagxnbon7a2i" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Small Text/Small Text/16.png" id="64_0swe8"]
+[ext_resource type="Texture2D" uid="uid://j525j35ml6q4" path="res://Treasure Hunters/Wood and Paper UI/Sprites/Small Text/Small Text/10.png" id="65_aekmk"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ps378"]
 animations = [{
@@ -173,7 +181,7 @@ position = Vector2(210, 140)
 _scroll_speed = -32.0
 
 [node name="Ship" type="AnimatedSprite2D" parent="."]
-position = Vector2(336.667, 207)
+position = Vector2(344, 207)
 sprite_frames = SubResource("SpriteFrames_ps378")
 autoplay = "default"
 
@@ -231,8 +239,9 @@ anchor_left = 0.5
 anchor_top = 0.333
 anchor_right = 0.5
 anchor_bottom = 0.333
-offset_right = 40.0
-offset_bottom = 40.0
+offset_top = -39.76
+offset_right = 122.0
+offset_bottom = 0.23999
 scale = Vector2(8, 8)
 pivot_offset = Vector2(70, 14)
 
@@ -313,14 +322,14 @@ stretch_mode = 4
 
 [node name="Buttons" type="VBoxContainer" parent="CanvasLayer"]
 offset_left = 163.0
-offset_top = 398.0
+offset_top = 368.0
 offset_right = 235.0
-offset_bottom = 450.0
+offset_bottom = 448.0
 scale = Vector2(4, 4)
 theme = ExtResource("39_ivfn3")
 
 [node name="New Game" type="Button" parent="CanvasLayer/Buttons"]
-custom_minimum_size = Vector2(64, 24)
+custom_minimum_size = Vector2(54, 24)
 layout_mode = 2
 
 [node name="Label" type="HBoxContainer" parent="CanvasLayer/Buttons/New Game"]
@@ -378,7 +387,7 @@ texture = ExtResource("41_4kyoq")
 stretch_mode = 4
 
 [node name="Continue" type="Button" parent="CanvasLayer/Buttons"]
-custom_minimum_size = Vector2(72, 24)
+custom_minimum_size = Vector2(54, 24)
 layout_mode = 2
 disabled = true
 
@@ -435,6 +444,65 @@ stretch_mode = 4
 [node name="E" type="TextureRect" parent="CanvasLayer/Buttons/Continue/Label"]
 layout_mode = 2
 texture = ExtResource("41_4kyoq")
+stretch_mode = 4
+
+[node name="Controls" type="Button" parent="CanvasLayer/Buttons"]
+custom_minimum_size = Vector2(54, 24)
+layout_mode = 2
+
+[node name="Label" type="HBoxContainer" parent="CanvasLayer/Buttons/Controls"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.5
+offset_top = -3.0
+offset_right = 24.5
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 2
+
+[node name="C" type="TextureRect" parent="CanvasLayer/Buttons/Controls/Label"]
+layout_mode = 2
+texture = ExtResource("46_east7")
+stretch_mode = 4
+
+[node name="O" type="TextureRect" parent="CanvasLayer/Buttons/Controls/Label"]
+layout_mode = 2
+texture = ExtResource("47_udn37")
+stretch_mode = 4
+
+[node name="N" type="TextureRect" parent="CanvasLayer/Buttons/Controls/Label"]
+layout_mode = 2
+texture = ExtResource("40_1utbv")
+stretch_mode = 4
+
+[node name="T" type="TextureRect" parent="CanvasLayer/Buttons/Controls/Label"]
+layout_mode = 2
+texture = ExtResource("48_3rlhy")
+stretch_mode = 4
+
+[node name="R" type="TextureRect" parent="CanvasLayer/Buttons/Controls/Label"]
+layout_mode = 2
+texture = ExtResource("53_co0en")
+stretch_mode = 4
+
+[node name="O2" type="TextureRect" parent="CanvasLayer/Buttons/Controls/Label"]
+layout_mode = 2
+texture = ExtResource("47_udn37")
+stretch_mode = 4
+
+[node name="L" type="TextureRect" parent="CanvasLayer/Buttons/Controls/Label"]
+layout_mode = 2
+texture = ExtResource("56_qod0x")
+stretch_mode = 4
+
+[node name="S" type="TextureRect" parent="CanvasLayer/Buttons/Controls/Label"]
+layout_mode = 2
+texture = ExtResource("54_yb3nd")
 stretch_mode = 4
 
 [node name="Confirmation" type="PanelContainer" parent="CanvasLayer"]
@@ -607,6 +675,249 @@ layout_mode = 2
 texture = ExtResource("47_udn37")
 stretch_mode = 5
 
+[node name="Controls" type="PanelContainer" parent="CanvasLayer"]
+visible = false
+offset_left = 477.0
+offset_top = 370.0
+offset_right = 607.0
+offset_bottom = 480.0
+scale = Vector2(3, 3)
+theme = ExtResource("39_ivfn3")
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Controls"]
+custom_minimum_size = Vector2(120, 45)
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Controls"]
+layout_mode = 2
+theme_override_constants/separation = 14
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Controls/VBoxContainer"]
+layout_mode = 2
+
+[node name="a_d_ move" type="HBoxContainer" parent="CanvasLayer/Controls/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 2
+alignment = 1
+
+[node name="A" type="TextureRect" parent="CanvasLayer/Controls/VBoxContainer/VBoxContainer/a_d_ move"]
+layout_mode = 2
+texture = ExtResource("44_east7")
+
+[node name="Coma" type="TextureRect" parent="CanvasLayer/Controls/VBoxContainer/VBoxContainer/a_d_ move"]
+layout_mode = 2
+texture = ExtResource("60_11eth")
+
+[node name="D" type="TextureRect" parent="CanvasLayer/Controls/VBoxContainer/VBoxContainer/a_d_ move"]
+layout_mode = 2
+texture = ExtResource("61_ql4gd")
+
+[node name="Two dots" type="TextureRect" parent="CanvasLayer/Controls/VBoxContainer/VBoxContainer/a_d_ move"]
+layout_mode = 2
+texture = ExtResource("62_wl7co")
+
+[node name="Space" type="TextureRect" parent="CanvasLayer/Controls/VBoxContainer/VBoxContainer/a_d_ move"]
+layout_mode = 2
+
+[node name="M" type="TextureRect" parent="CanvasLayer/Controls/VBoxContainer/VBoxContainer/a_d_ move"]
+layout_mode = 2
+texture = ExtResource("45_udn37")
+
+[node name="O" type="TextureRect" parent="CanvasLayer/Controls/VBoxContainer/VBoxContainer/a_d_ move"]
+layout_mode = 2
+texture = ExtResource("47_udn37")
+
+[node name="V" type="TextureRect" parent="CanvasLayer/Controls/VBoxContainer/VBoxContainer/a_d_ move"]
+layout_mode = 2
+texture = ExtResource("52_b3mvj")
+
+[node name="E" type="TextureRect" parent="CanvasLayer/Controls/VBoxContainer/VBoxContainer/a_d_ move"]
+layout_mode = 2
+texture = ExtResource("41_4kyoq")
+
+[node name="w_space_jump" type="HBoxContainer" parent="CanvasLayer/Controls/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 2
+alignment = 1
+
+[node name="W" type="TextureRect" parent="CanvasLayer/Controls/VBoxContainer/VBoxContainer/w_space_jump"]
+layout_mode = 2
+texture = ExtResource("42_dyupo")
+
+[node name="Bar" type="TextureRect" parent="CanvasLayer/Controls/VBoxContainer/VBoxContainer/w_space_jump"]
+layout_mode = 2
+texture = ExtResource("63_widfa")
+
+[node name="S" type="TextureRect" parent="CanvasLayer/Controls/VBoxContainer/VBoxContainer/w_space_jump"]
+layout_mode = 2
+texture = ExtResource("54_yb3nd")
+
+[node name="P" type="TextureRect" parent="CanvasLayer/Controls/VBoxContainer/VBoxContainer/w_space_jump"]
+layout_mode = 2
+texture = ExtResource("64_0swe8")
+
+[node name="A" type="TextureRect" parent="CanvasLayer/Controls/VBoxContainer/VBoxContainer/w_space_jump"]
+layout_mode = 2
+texture = ExtResource("44_east7")
+
+[node name="C" type="TextureRect" parent="CanvasLayer/Controls/VBoxContainer/VBoxContainer/w_space_jump"]
+layout_mode = 2
+texture = ExtResource("46_east7")
+
+[node name="E" type="TextureRect" parent="CanvasLayer/Controls/VBoxContainer/VBoxContainer/w_space_jump"]
+layout_mode = 2
+texture = ExtResource("41_4kyoq")
+
+[node name="Two dots" type="TextureRect" parent="CanvasLayer/Controls/VBoxContainer/VBoxContainer/w_space_jump"]
+layout_mode = 2
+texture = ExtResource("62_wl7co")
+
+[node name="Space" type="TextureRect" parent="CanvasLayer/Controls/VBoxContainer/VBoxContainer/w_space_jump"]
+layout_mode = 2
+
+[node name="J" type="TextureRect" parent="CanvasLayer/Controls/VBoxContainer/VBoxContainer/w_space_jump"]
+layout_mode = 2
+texture = ExtResource("65_aekmk")
+
+[node name="U" type="TextureRect" parent="CanvasLayer/Controls/VBoxContainer/VBoxContainer/w_space_jump"]
+layout_mode = 2
+texture = ExtResource("50_b3mvj")
+
+[node name="M" type="TextureRect" parent="CanvasLayer/Controls/VBoxContainer/VBoxContainer/w_space_jump"]
+layout_mode = 2
+texture = ExtResource("45_udn37")
+
+[node name="P2" type="TextureRect" parent="CanvasLayer/Controls/VBoxContainer/VBoxContainer/w_space_jump"]
+layout_mode = 2
+texture = ExtResource("64_0swe8")
+
+[node name="j_leftclick_attack" type="HBoxContainer" parent="CanvasLayer/Controls/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 1
+alignment = 1
+
+[node name="J" type="TextureRect" parent="CanvasLayer/Controls/VBoxContainer/VBoxContainer/j_leftclick_attack"]
+layout_mode = 2
+texture = ExtResource("65_aekmk")
+
+[node name="Bar" type="TextureRect" parent="CanvasLayer/Controls/VBoxContainer/VBoxContainer/j_leftclick_attack"]
+layout_mode = 2
+texture = ExtResource("63_widfa")
+
+[node name="L" type="TextureRect" parent="CanvasLayer/Controls/VBoxContainer/VBoxContainer/j_leftclick_attack"]
+layout_mode = 2
+texture = ExtResource("56_qod0x")
+
+[node name="E" type="TextureRect" parent="CanvasLayer/Controls/VBoxContainer/VBoxContainer/j_leftclick_attack"]
+layout_mode = 2
+texture = ExtResource("41_4kyoq")
+
+[node name="F" type="TextureRect" parent="CanvasLayer/Controls/VBoxContainer/VBoxContainer/j_leftclick_attack"]
+layout_mode = 2
+texture = ExtResource("55_jelu8")
+
+[node name="T3" type="TextureRect" parent="CanvasLayer/Controls/VBoxContainer/VBoxContainer/j_leftclick_attack"]
+layout_mode = 2
+texture = ExtResource("48_3rlhy")
+
+[node name="Space" type="TextureRect" parent="CanvasLayer/Controls/VBoxContainer/VBoxContainer/j_leftclick_attack"]
+custom_minimum_size = Vector2(1, 0)
+layout_mode = 2
+
+[node name="C2" type="TextureRect" parent="CanvasLayer/Controls/VBoxContainer/VBoxContainer/j_leftclick_attack"]
+layout_mode = 2
+texture = ExtResource("46_east7")
+
+[node name="L2" type="TextureRect" parent="CanvasLayer/Controls/VBoxContainer/VBoxContainer/j_leftclick_attack"]
+layout_mode = 2
+texture = ExtResource("56_qod0x")
+
+[node name="I" type="TextureRect" parent="CanvasLayer/Controls/VBoxContainer/VBoxContainer/j_leftclick_attack"]
+layout_mode = 2
+texture = ExtResource("49_ggtds")
+
+[node name="C3" type="TextureRect" parent="CanvasLayer/Controls/VBoxContainer/VBoxContainer/j_leftclick_attack"]
+layout_mode = 2
+texture = ExtResource("46_east7")
+
+[node name="K2" type="TextureRect" parent="CanvasLayer/Controls/VBoxContainer/VBoxContainer/j_leftclick_attack"]
+layout_mode = 2
+texture = ExtResource("60_7nral")
+
+[node name="Two dots" type="TextureRect" parent="CanvasLayer/Controls/VBoxContainer/VBoxContainer/j_leftclick_attack"]
+layout_mode = 2
+texture = ExtResource("62_wl7co")
+
+[node name="A" type="TextureRect" parent="CanvasLayer/Controls/VBoxContainer/VBoxContainer/j_leftclick_attack"]
+layout_mode = 2
+texture = ExtResource("44_east7")
+
+[node name="T" type="TextureRect" parent="CanvasLayer/Controls/VBoxContainer/VBoxContainer/j_leftclick_attack"]
+layout_mode = 2
+texture = ExtResource("48_3rlhy")
+
+[node name="T2" type="TextureRect" parent="CanvasLayer/Controls/VBoxContainer/VBoxContainer/j_leftclick_attack"]
+layout_mode = 2
+texture = ExtResource("48_3rlhy")
+
+[node name="A2" type="TextureRect" parent="CanvasLayer/Controls/VBoxContainer/VBoxContainer/j_leftclick_attack"]
+layout_mode = 2
+texture = ExtResource("44_east7")
+
+[node name="C" type="TextureRect" parent="CanvasLayer/Controls/VBoxContainer/VBoxContainer/j_leftclick_attack"]
+layout_mode = 2
+texture = ExtResource("46_east7")
+
+[node name="K" type="TextureRect" parent="CanvasLayer/Controls/VBoxContainer/VBoxContainer/j_leftclick_attack"]
+layout_mode = 2
+texture = ExtResource("60_7nral")
+
+[node name="Buttons" type="HBoxContainer" parent="CanvasLayer/Controls/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="Back" type="Button" parent="CanvasLayer/Controls/VBoxContainer/Buttons"]
+custom_minimum_size = Vector2(36, 24)
+layout_mode = 2
+
+[node name="Back" type="HBoxContainer" parent="CanvasLayer/Controls/VBoxContainer/Buttons/Back"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -7.0
+offset_top = -3.0
+offset_right = 7.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 2
+
+[node name="B" type="TextureRect" parent="CanvasLayer/Controls/VBoxContainer/Buttons/Back/Back"]
+layout_mode = 2
+texture = ExtResource("59_slvi4")
+stretch_mode = 5
+
+[node name="A" type="TextureRect" parent="CanvasLayer/Controls/VBoxContainer/Buttons/Back/Back"]
+layout_mode = 2
+texture = ExtResource("44_east7")
+stretch_mode = 5
+
+[node name="C" type="TextureRect" parent="CanvasLayer/Controls/VBoxContainer/Buttons/Back/Back"]
+layout_mode = 2
+texture = ExtResource("46_east7")
+stretch_mode = 5
+
+[node name="K" type="TextureRect" parent="CanvasLayer/Controls/VBoxContainer/Buttons/Back/Back"]
+layout_mode = 2
+texture = ExtResource("60_7nral")
+stretch_mode = 5
+
 [node name="Exit" type="Button" parent="CanvasLayer"]
 anchors_preset = 1
 anchor_left = 1.0
@@ -624,6 +935,8 @@ icon = ExtResource("59_qod0x")
 
 [connection signal="pressed" from="CanvasLayer/Buttons/New Game" to="." method="_on_new_game_pressed"]
 [connection signal="pressed" from="CanvasLayer/Buttons/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="CanvasLayer/Buttons/Controls" to="." method="_on_controls_pressed"]
 [connection signal="pressed" from="CanvasLayer/Confirmation/VBoxContainer/Buttons/Yes" to="." method="_on_yes_pressed"]
 [connection signal="pressed" from="CanvasLayer/Confirmation/VBoxContainer/Buttons/No" to="." method="_on_no_pressed"]
+[connection signal="pressed" from="CanvasLayer/Controls/VBoxContainer/Buttons/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="CanvasLayer/Exit" to="." method="_on_exit_pressed"]

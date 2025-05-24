@@ -68,15 +68,19 @@ position = Vector2(-350, 985)
 position = Vector2(-704, 889)
 
 [node name="Window" parent="Decorations" instance=ExtResource("9_g2k4b")]
+z_index = -2
 position = Vector2(-48, -12)
 
 [node name="Window4" parent="Decorations" instance=ExtResource("9_g2k4b")]
+z_index = -2
 position = Vector2(985, -8)
 
 [node name="Window3" parent="Decorations" instance=ExtResource("9_g2k4b")]
+z_index = -2
 position = Vector2(-544, -9)
 
 [node name="Window2" parent="Decorations" instance=ExtResource("9_g2k4b")]
+z_index = -2
 position = Vector2(467, -9)
 
 [node name="Platforms" type="Node2D" parent="."]

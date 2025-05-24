@@ -26,8 +26,8 @@ animations = [{
 }]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_hgfr2"]
-a = Vector2(8, 0)
-b = Vector2(24, 0)
+a = Vector2(9, 0)
+b = Vector2(38, 0)
 
 [node name="Palm Tree" type="StaticBody2D"]
 
@@ -38,5 +38,6 @@ frame_progress = 0.703542
 offset = Vector2(16, 16)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-7, 0)
 shape = SubResource("SegmentShape2D_hgfr2")
 one_way_collision = true

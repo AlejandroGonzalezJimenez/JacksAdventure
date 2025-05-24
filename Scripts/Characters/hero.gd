@@ -25,12 +25,6 @@ func drop_sword():
 	_sword.be_dropped(global_position)
 	_sword = null
 
-func _air_physics(delta : float):
-	if _is_attacking && velocity.y > 0:
-		velocity.y = 0
-	else:
-		super._air_physics(delta)
-
 func _die():
 	if _has_sword:
 		drop_sword()

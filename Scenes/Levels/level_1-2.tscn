@@ -172,8 +172,7 @@ position = Vector2(136, 320)
 position = Vector2(776, 384)
 
 [node name="Seashell2" parent="Enemies" instance=ExtResource("11_1ppq2")]
-position = Vector2(976, 32)
-_is_facing_left = false
+position = Vector2(1249, 32)
 
 [node name="Fierce Tooth" parent="Enemies" instance=ExtResource("12_kcw6k")]
 position = Vector2(408, 32)

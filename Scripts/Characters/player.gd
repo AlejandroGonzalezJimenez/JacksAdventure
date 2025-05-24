@@ -5,6 +5,8 @@ var _is_enabled : bool
 
 func set_enabled(is_enabled : bool):
 	_is_enabled = is_enabled
+	if not _is_enabled:
+		_character.run(0)
 
 func _input(event : InputEvent):
 	if not _is_enabled:
